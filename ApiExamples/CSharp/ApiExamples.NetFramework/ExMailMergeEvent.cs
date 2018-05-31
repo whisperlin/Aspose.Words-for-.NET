@@ -13,6 +13,7 @@ using Aspose.Words.Drawing;
 using Aspose.Words.Fields;
 using Aspose.Words.MailMerging;
 using NUnit.Framework;
+using Xamarin.Android;
 #if NETSTANDARD2_0
 using lcpi.data.oledb;
 #endif
@@ -276,7 +277,7 @@ namespace ApiExamples
             Assert.IsNotNull(logoImage);
             Assert.IsTrue(logoImage.HasImage);
         }
-#if !NETSTANDARD2_0
+#if !(NETSTANDARD2_0 || __MOBILE__)
         [Test]
         public void MailMergeImageFromBlob()
         {

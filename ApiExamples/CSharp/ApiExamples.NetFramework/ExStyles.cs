@@ -10,6 +10,7 @@ using System.Drawing;
 using System.IO;
 using Aspose.Words;
 using NUnit.Framework;
+using Xamarin.Android;
 
 namespace ApiExamples
 {

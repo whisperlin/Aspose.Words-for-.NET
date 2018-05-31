@@ -1,0 +1,392 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AD7B78B0-AE51-4FB7-9B11-4E22A2B538CA}</ProjectGuid>
+    <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Xamarin.Android</RootNamespace>
+    <AssemblyName>Xamarin.Android</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <AndroidApplication>true</AndroidApplication>
+    <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
+    <AndroidUseLatestPlatformSdk>true</AndroidUseLatestPlatformSdk>
+    <AndroidSupportedAbis>armeabi,armeabi-v7a,x86</AndroidSupportedAbis>
+    <AndroidStoreUncompressedFileExtensions />
+    <MandroidI18n />
+    <JavaMaximumHeapSize>
+    </JavaMaximumHeapSize>
+    <JavaOptions />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <EmbedAssembliesIntoApk>True</EmbedAssembliesIntoApk>
+    <TargetFrameworkVersion>v8.1</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidLinkMode>None</AndroidLinkMode>
+    <AotAssemblies>false</AotAssemblies>
+    <EnableLLVM>false</EnableLLVM>
+    <BundleAssemblies>false</BundleAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidUseSharedRuntime>False</AndroidUseSharedRuntime>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Aspose.BarCode, Version=18.5.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
+      <HintPath>..\packages\Aspose.BarCode.18.5.0\lib\netstandard2.0\Aspose.BarCode.dll</HintPath>
+    </Reference>
+    <Reference Include="Aspose.PDF, Version=18.5.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
+      <HintPath>..\packages\Aspose.PDF.18.5.0\lib\netstandard2.0\Aspose.PDF.dll</HintPath>
+    </Reference>
+    <Reference Include="Aspose.Words, Version=18.5.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
+      <HintPath>..\packages\Aspose.Words.18.5.0\lib\MonoAndroid23\Aspose.Words.dll</HintPath>
+    </Reference>
+    <Reference Include="FormsViewGroup, Version=1.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xamarin.Forms.1.5.0.6447\lib\MonoAndroid10\FormsViewGroup.dll</HintPath>
+    </Reference>
+    <Reference Include="lcpi.data.oledb.nets2_0, Version=1.7.1.3418, Culture=neutral, PublicKeyToken=ff716095e8002e7e, processorArchitecture=MSIL">
+      <HintPath>..\packages\lcpi.data.oledb.1.7.1.3418\lib\netstandard2.0\lcpi.data.oledb.nets2_0.dll</HintPath>
+    </Reference>
+    <Reference Include="lcpi.lib.nets2_0, Version=2.1.1.1665, Culture=neutral, PublicKeyToken=ff716095e8002e7e, processorArchitecture=MSIL">
+      <HintPath>..\packages\lcpi.lib.2.1.1.1665\lib\netstandard2.0\lcpi.lib.nets2_0.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Android" />
+    <Reference Include="mscorlib" />
+    <Reference Include="nunit.framework, Version=3.6.1.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.3.6.1\lib\MonoAndroid\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.runner.Droid, Version=3.6.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\nunit.xamarin.3.6.1\lib\MonoAndroid\nunit.runner.Droid.dll</HintPath>
+    </Reference>
+    <Reference Include="PCLStorage, Version=1.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\PCLStorage.1.0.2\lib\monoandroid\PCLStorage.dll</HintPath>
+    </Reference>
+    <Reference Include="PCLStorage.Abstractions, Version=1.0.2.0, Culture=neutral, PublicKeyToken=286fe515a2c35b64, processorArchitecture=MSIL">
+      <HintPath>..\packages\PCLStorage.1.0.2\lib\monoandroid\PCLStorage.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="SkiaSharp, Version=1.60.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <HintPath>..\packages\SkiaSharp.1.60.0\lib\MonoAndroid\SkiaSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Security.AccessControl, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.AccessControl.4.4.0\lib\netstandard2.0\System.Security.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Permissions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Permissions.4.4.0\lib\netstandard2.0\System.Security.Permissions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Principal.Windows, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Principal.Windows.4.4.0\lib\netstandard2.0\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Xamarin.Android.Support.v4, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xamarin.Android.Support.v4.22.2.1.0\lib\MonoAndroid403\Xamarin.Android.Support.v4.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Core, Version=1.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xamarin.Forms.1.5.0.6447\lib\MonoAndroid10\Xamarin.Forms.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xamarin.Forms.1.5.0.6447\lib\MonoAndroid10\Xamarin.Forms.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform.Android, Version=1.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Xamarin.Forms.1.5.0.6447\lib\MonoAndroid10\Xamarin.Forms.Platform.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Xaml, Version=1.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xamarin.Forms.1.5.0.6447\lib\MonoAndroid10\Xamarin.Forms.Xaml.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\DocumentHelper.cs">
+      <Link>DocumentHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExAbsolutePositionTab.cs">
+      <Link>ExAbsolutePositionTab.cs</Link>
+    </Compile>
+    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExBookmarks.cs">
+      <Link>ExBookmarks.cs</Link>
+    </Compile>
+    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExBorder.cs">
+      <Link>ExBorder.cs</Link>
+    </Compile>
+    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExBorderCollection.cs">
+      <Link>ExBorderCollection.cs</Link>
+    </Compile>
+    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExBuildingBlocks.cs">
+      <Link>ExBuildingBlocks.cs</Link>
+    </Compile>
+    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExBuildVersion.cs">
+      <Link>ExBuildVersion.cs</Link>
+    </Compile>
+    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExCellFormat.cs">
+      <Link>ExCellFormat.cs</Link>
+    </Compile>
+    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExComment.cs">
+      <Link>ExComment.cs</Link>
+    </Compile>
+    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExControlChar.cs">
+      <Link>ExControlChar.cs</Link>
+    </Compile>
+    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExDigitalSignatureCollection.cs">
+      <Link>ExDigitalSignatureCollection.cs</Link>
+    </Compile>
+    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExDigitalSignatureUtil.cs">
+      <Link>ExDigitalSignatureUtil.cs</Link>
+    </Compile>
+    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExDocument.cs">
+      <Link>ExDocument.cs</Link>
+    </Compile>
+    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExDocumentBase.cs">
+      <Link>ExDocumentBase.cs</Link>
+    </Compile>
+    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExDocumentBuilder.cs">
+      <Link>ExDocumentBuilder.cs</Link>
+    </Compile>
+    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExDocumentBuilderImages.cs">
+      <Link>ExDocumentBuilderImages.cs</Link>
+    </Compile>
+    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExDrawing.cs">
+      <Link>ExDrawing.cs</Link>
+    </Compile>
+    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExEditableRange.cs">
+      <Link>ExEditableRange.cs</Link>
+    </Compile>
+    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExField.cs">
+      <Link>ExField.cs</Link>
+    </Compile>
+    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExFont.cs">
+      <Link>ExFont.cs</Link>
+    </Compile>
+    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExFormFields.cs">
+      <Link>ExFormFields.cs</Link>
+    </Compile>
+    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExHeaderFooter.cs">
+      <Link>ExHeaderFooter.cs</Link>
+    </Compile>
+    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExHtmlFixedSaveOptions.cs">
+      <Link>ExHtmlFixedSaveOptions.cs</Link>
+    </Compile>
+    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExHtmlLoadOptions.cs">
+      <Link>ExHtmlLoadOptions.cs</Link>
+    </Compile>
+    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExHtmlSaveOptions.cs">
+      <Link>ExHtmlSaveOptions.cs</Link>
+    </Compile>
+    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExHyphenation.cs">
+      <Link>ExHyphenation.cs</Link>
+    </Compile>
+    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExImage.cs">
+      <Link>ExImage.cs</Link>
+    </Compile>
+    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExImageSaveOptions.cs">
+      <Link>ExImageSaveOptions.cs</Link>
+    </Compile>
+    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExInlineStory.cs">
+      <Link>ExInlineStory.cs</Link>
+    </Compile>
+    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExInsertDocument.cs">
+      <Link>ExInsertDocument.cs</Link>
+    </Compile>
+    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExLists.cs">
+      <Link>ExLists.cs</Link>
+    </Compile>
+    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExMailMerge.cs">
+      <Link>ExMailMerge.cs</Link>
+    </Compile>
+    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExMailMergeCustom.cs">
+      <Link>ExMailMergeCustom.cs</Link>
+    </Compile>
+    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExMailMergeEvent.cs">
+      <Link>ExMailMergeEvent.cs</Link>
+    </Compile>
+    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExMossDoc2Pdf.cs">
+      <Link>ExMossDoc2Pdf.cs</Link>
+    </Compile>
+    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExMossRtf2Docx.cs">
+      <Link>ExMossRtf2Docx.cs</Link>
+    </Compile>
+    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExNestedMailMergeCustom.cs">
+      <Link>ExNestedMailMergeCustom.cs</Link>
+    </Compile>
+    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExNode.cs">
+      <Link>ExNode.cs</Link>
+    </Compile>
+    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExOdtSaveOptions.cs">
+      <Link>ExOdtSaveOptions.cs</Link>
+    </Compile>
+    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExOoxmlSaveOptions.cs">
+      <Link>ExOoxmlSaveOptions.cs</Link>
+    </Compile>
+    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExPageSetup.cs">
+      <Link>ExPageSetup.cs</Link>
+    </Compile>
+    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExParagraph.cs">
+      <Link>ExParagraph.cs</Link>
+    </Compile>
+    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExPclSaveOptions.cs">
+      <Link>ExPclSaveOptions.cs</Link>
+    </Compile>
+    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExPdfSaveOptions.cs">
+      <Link>ExPdfSaveOptions.cs</Link>
+    </Compile>
+    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExProperties.cs">
+      <Link>ExProperties.cs</Link>
+    </Compile>
+    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExRange.cs">
+      <Link>ExRange.cs</Link>
+    </Compile>
+    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExRenameMergeFields.cs">
+      <Link>ExRenameMergeFields.cs</Link>
+    </Compile>
+    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExRendering.cs">
+      <Link>ExRendering.cs</Link>
+    </Compile>
+    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExReplaceHyperlinks.cs">
+      <Link>ExReplaceHyperlinks.cs</Link>
+    </Compile>
+    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExReportingEngine.cs">
+      <Link>ExReportingEngine.cs</Link>
+    </Compile>
+    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExSavingCallback.cs">
+      <Link>ExSavingCallback.cs</Link>
+    </Compile>
+    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExSection.cs">
+      <Link>ExSection.cs</Link>
+    </Compile>
+    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExShape.cs">
+      <Link>ExShape.cs</Link>
+    </Compile>
+    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExSignDocumentCustom.cs">
+      <Link>ExSignDocumentCustom.cs</Link>
+    </Compile>
+    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExStructuredDocumentTag.cs">
+      <Link>ExStructuredDocumentTag.cs</Link>
+    </Compile>
+    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExStyles.cs">
+      <Link>ExStyles.cs</Link>
+    </Compile>
+    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExTable.cs">
+      <Link>ExTable.cs</Link>
+    </Compile>
+    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExTableColumn.cs">
+      <Link>ExTableColumn.cs</Link>
+    </Compile>
+    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExTabStopCollection.cs">
+      <Link>ExTabStopCollection.cs</Link>
+    </Compile>
+    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExTxtSaveOptions.cs">
+      <Link>ExTxtSaveOptions.cs</Link>
+    </Compile>
+    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExUtilityClasses.cs">
+      <Link>ExUtilityClasses.cs</Link>
+    </Compile>
+    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExVariableCollection.cs">
+      <Link>ExVariableCollection.cs</Link>
+    </Compile>
+    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExVisitor.cs">
+      <Link>ExVisitor.cs</Link>
+    </Compile>
+    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExWarningInfoCollection.cs">
+      <Link>ExWarningInfoCollection.cs</Link>
+    </Compile>
+    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExXpsSaveOptions.cs">
+      <Link>ExXpsSaveOptions.cs</Link>
+    </Compile>
+    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\TestData\Common.cs">
+      <Link>TestData\Common.cs</Link>
+    </Compile>
+    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\TestData\TestBuilders\ColorItemTestBuilder.cs">
+      <Link>TestData\TestBuilders\ColorItemTestBuilder.cs</Link>
+    </Compile>
+    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\TestData\TestBuilders\DocumentTestBuilder.cs">
+      <Link>TestData\TestBuilders\DocumentTestBuilder.cs</Link>
+    </Compile>
+    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\TestData\TestBuilders\ImageTestBuilder.cs">
+      <Link>TestData\TestBuilders\ImageTestBuilder.cs</Link>
+    </Compile>
+    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\TestData\TestBuilders\NumericTestBuilder.cs">
+      <Link>TestData\TestBuilders\NumericTestBuilder.cs</Link>
+    </Compile>
+    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\TestData\TestClasses\ClientTestClass.cs">
+      <Link>TestData\TestClasses\ClientTestClass.cs</Link>
+    </Compile>
+    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\TestData\TestClasses\ColorItemTestClass.cs">
+      <Link>TestData\TestClasses\ColorItemTestClass.cs</Link>
+    </Compile>
+    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\TestData\TestClasses\ContractTestClass.cs">
+      <Link>TestData\TestClasses\ContractTestClass.cs</Link>
+    </Compile>
+    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\TestData\TestClasses\DocumentTestClass.cs">
+      <Link>TestData\TestClasses\DocumentTestClass.cs</Link>
+    </Compile>
+    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\TestData\TestClasses\ImageTestClass.cs">
+      <Link>TestData\TestClasses\ImageTestClass.cs</Link>
+    </Compile>
+    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\TestData\TestClasses\ManagerTestClass.cs">
+      <Link>TestData\TestClasses\ManagerTestClass.cs</Link>
+    </Compile>
+    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\TestData\TestClasses\MessageTestClass.cs">
+      <Link>TestData\TestClasses\MessageTestClass.cs</Link>
+    </Compile>
+    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\TestData\TestClasses\NumericTestClass.cs">
+      <Link>TestData\TestClasses\NumericTestClass.cs</Link>
+    </Compile>
+    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\TestData\TestClasses\SignPersonTestClass.cs">
+      <Link>TestData\TestClasses\SignPersonTestClass.cs</Link>
+    </Compile>
+    <Compile Include="ApiExampleBase.cs" />
+    <Compile Include="MainActivity.cs" />
+    <Compile Include="Resources\Resource.Designer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Resources\AboutResources.txt" />
+    <None Include="Assets\AboutAssets.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\icon.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\icon.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\icon.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\AndroidManifest.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Xamarin.Forms.1.5.0.6447\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Xamarin.Forms.1.5.0.6447\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets'))" />
+  </Target>
+  <Import Project="..\packages\Xamarin.Forms.1.5.0.6447\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.1.5.0.6447\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+     Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

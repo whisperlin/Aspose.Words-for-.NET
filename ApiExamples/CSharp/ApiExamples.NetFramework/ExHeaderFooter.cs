@@ -13,6 +13,7 @@ using Aspose.Words.Saving;
 using Aspose.Words.Tables;
 using Aspose.Words.Replacing;
 using NUnit.Framework;
+using Xamarin.Android;
 
 namespace ApiExamples
 {

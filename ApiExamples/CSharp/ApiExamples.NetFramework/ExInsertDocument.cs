@@ -12,6 +12,7 @@ using Aspose.Words;
 using Aspose.Words.MailMerging;
 using Aspose.Words.Replacing;
 using NUnit.Framework;
+using Xamarin.Android;
 
 namespace ApiExamples
 {

@@ -12,6 +12,7 @@ using System.IO;
 using System.Threading;
 using Aspose.Words;
 using NUnit.Framework;
+using Xamarin.Android;
 
 namespace ApiExamples
 {

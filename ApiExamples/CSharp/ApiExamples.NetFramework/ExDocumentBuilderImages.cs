@@ -8,10 +8,11 @@ using System.IO;
 using Aspose.Words;
 using Aspose.Words.Drawing;
 using NUnit.Framework;
-#if NETSTANDARD2_0
+using Xamarin.Android;
+#if NETSTANDARD2_0 || __MOBILE__
 using SkiaSharp;
 #endif
-#if !NETSTANDARD2_0
+#if !(NETSTANDARD2_0 || __MOBILE__)
 using System.Drawing;
 using System.Drawing.Imaging;
 #endif
@@ -47,7 +48,7 @@ namespace ApiExamples
             //ExSummary:Shows how to import an image into a document from a byte array.
             Document doc = new Document();
             DocumentBuilder builder = new DocumentBuilder(doc);
-#if NETSTANDARD2_0
+#if NETSTANDARD2_0 || __MOBILE__
             using (SkiaSharp.SKBitmap bitmap = SkiaSharp.SKBitmap.Decode(ImageDir + "Aspose.Words.gif"))
             {
                 using (SkiaSharp.SKFileWStream fs = new SkiaSharp.SKFileWStream(MyDir + "Artifacts/InsertImageFromByteArray.png"))
@@ -81,7 +82,7 @@ namespace ApiExamples
             //ExSummary:Shows how to import an image into a document from a byte array, with a custom size.
             Document doc = new Document();
             DocumentBuilder builder = new DocumentBuilder(doc);
-#if NETSTANDARD2_0
+#if NETSTANDARD2_0 || __MOBILE__
             using (SkiaSharp.SKBitmap bitmap = SkiaSharp.SKBitmap.Decode(ImageDir + "Aspose.Words.gif"))
             {
                 using (SkiaSharp.SKFileWStream fs = new SkiaSharp.SKFileWStream(MyDir + "Artifacts/InsertImageFromByteArrayCustomSize.png"))
@@ -115,7 +116,7 @@ namespace ApiExamples
             //ExSummary:Shows how to import an image into a document from a byte array, also using relative positions.
             Document doc = new Document();
             DocumentBuilder builder = new DocumentBuilder(doc);
-#if NETSTANDARD2_0
+#if NETSTANDARD2_0 || __MOBILE__
             using (SkiaSharp.SKBitmap bitmap = SkiaSharp.SKBitmap.Decode(ImageDir + "Aspose.Words.gif"))
             {
                 using (SkiaSharp.SKFileWStream fs = new SkiaSharp.SKFileWStream(MyDir + "Artifacts/InsertImageFromByteArrayCustomSize.png"))
@@ -149,7 +150,7 @@ namespace ApiExamples
             //ExSummary:Shows how to import an image into a document, with a custom size.
             Document doc = new Document();
             DocumentBuilder builder = new DocumentBuilder(doc);
-#if NETSTANDARD2_0
+#if NETSTANDARD2_0 || __MOBILE__
             using (SkiaSharp.SKBitmap rasterImage = SkiaSharp.SKBitmap.Decode(ImageDir + "Aspose.Words.gif"))
             {
                 builder.InsertImage(rasterImage, ConvertUtil.PixelToPoint(450), ConvertUtil.PixelToPoint(144));
@@ -174,7 +175,7 @@ namespace ApiExamples
             //ExSummary:Shows how to import an image into a document, also using relative positions.
             Document doc = new Document();
             DocumentBuilder builder = new DocumentBuilder(doc);
-#if NETSTANDARD2_0
+#if NETSTANDARD2_0 || __MOBILE__
             using (SkiaSharp.SKBitmap rasterImage = SkiaSharp.SKBitmap.Decode(ImageDir + "Aspose.Words.gif"))
             {
                 builder.InsertImage(rasterImage, RelativeHorizontalPosition.Margin, 100, RelativeVerticalPosition.Margin, 100, 200, 100, WrapType.Square);

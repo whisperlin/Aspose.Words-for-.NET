@@ -11,6 +11,7 @@ using Aspose.Words.Saving;
 using Aspose.Pdf.Facades;
 using Aspose.Pdf.Text;
 using NUnit.Framework;
+using Xamarin.Android;
 
 namespace ApiExamples
 {

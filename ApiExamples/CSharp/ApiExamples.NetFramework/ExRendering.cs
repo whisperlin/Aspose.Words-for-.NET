@@ -9,15 +9,18 @@ using System;
 using System.Collections;
 using System.Drawing;
 using System.IO;
+using Android.PrintServices;
+using Aspose.BarCode;
 using Aspose.Words;
 using Aspose.Words.Fonts;
 using Aspose.Words.Rendering;
 using Aspose.Words.Saving;
 using NUnit.Framework;
-#if NETSTANDARD2_0
+using Xamarin.Android;
+#if NETSTANDARD2_0 || __MOBILE__
 using SkiaSharp;
 #endif
-#if !NETSTANDARD2_0
+#if !(NETSTANDARD2_0 || __MOBILE__)
 using System.Drawing.Printing;
 using System.Drawing.Text;
 using System.Windows.Forms;
@@ -314,7 +317,7 @@ namespace ApiExamples
 
             // Rewind the stream and create a .NET image from it.
             stream.Position = 0;
-#if NETSTANDARD2_0
+#if NETSTANDARD2_0 || __MOBILE__
             // Read the stream back into an image.
             SkiaSharp.SKBitmap image = SkiaSharp.SKBitmap.Decode(stream);
 #else
@@ -366,7 +369,7 @@ namespace ApiExamples
             doc.Save(MyDir + @"\Artifacts\Rendering.UpdateFields.pdf");
             //ExEnd
         }
-#if !NETSTANDARD2_0
+#if !(NETSTANDARD2_0 || __MOBILE__)
         [Ignore("Run only when the printer driver is installed")]
         [Test]
         public void Print()
@@ -492,7 +495,7 @@ namespace ApiExamples
             const float myResolution = 200.0f;
 
             Size pageSize = pageInfo.GetSizeInPixels(myScale, myResolution);
-#if NETSTANDARD2_0
+#if NETSTANDARD2_0 || __MOBILE__
             using (SKBitmap bitmap = new SKBitmap(pageSize.Width, pageSize.Height))
             {
                 using (SKCanvas canvas = new SKCanvas(bitmap))
@@ -550,7 +553,7 @@ namespace ApiExamples
             //ExFor:Document.RenderToSize
             //ExSummary:Render to a bitmap at a specified location and size.
             Document doc = new Document(MyDir + "Rendering.doc");
-#if NETSTANDARD2_0
+#if NETSTANDARD2_0 || __MOBILE__
             using (SKBitmap bitmap = new SKBitmap(700, 700))
             {
                 // User has some sort of a Graphics object. In this case created from a bitmap.
@@ -685,7 +688,7 @@ namespace ApiExamples
             // Calculate the size of the image that will contain all the thumbnails.
             int imgWidth = thumbSize.Width * thumbColumns;
             int imgHeight = thumbSize.Height * thumbRows;
-#if NETSTANDARD2_0
+#if NETSTANDARD2_0 || __MOBILE__
             using (SKBitmap bitmap = new SKBitmap(imgWidth, imgHeight))
             {
                 // The user has to provides a Graphics object to draw on.
@@ -756,7 +759,7 @@ namespace ApiExamples
             //ExEnd
         }
 
-#if !NETSTANDARD2_0
+#if !(NETSTANDARD2_0 || __MOBILE__)
         [Ignore("Run only when the printer driver is installed")]
         [Test]
         public void CustomPrint()

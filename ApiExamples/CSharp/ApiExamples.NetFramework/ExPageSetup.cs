@@ -9,6 +9,7 @@ using System.Drawing;
 using System.Drawing.Printing;
 using Aspose.Words;
 using NUnit.Framework;
+using Xamarin.Android;
 
 namespace ApiExamples
 {
@@ -99,6 +100,7 @@ namespace ApiExamples
             //ExEnd
         }
 
+#if !__MOBILE__
         [Test]
         [Ignore("Run only when the printer driver is installed")]
         public void DefaultPaperTray()
@@ -158,6 +160,7 @@ namespace ApiExamples
             }
             //ExEnd
         }
+#endif
 
         [Test]
         public void PageMargins()

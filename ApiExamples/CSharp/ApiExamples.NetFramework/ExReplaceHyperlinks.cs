@@ -17,6 +17,7 @@ using System.Text.RegularExpressions;
 using Aspose.Words;
 using Aspose.Words.Fields;
 using NUnit.Framework;
+using Xamarin.Android;
 
 namespace ApiExamples
 {

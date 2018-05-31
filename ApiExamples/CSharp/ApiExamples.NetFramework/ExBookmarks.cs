@@ -11,6 +11,7 @@ using Aspose.Pdf.Facades;
 using NUnit.Framework;
 using Aspose.Words;
 using Aspose.Words.Saving;
+using Xamarin.Android;
 using Bookmark = Aspose.Words.Bookmark;
 
 namespace ApiExamples

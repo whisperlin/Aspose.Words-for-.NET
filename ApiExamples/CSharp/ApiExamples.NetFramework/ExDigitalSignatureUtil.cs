@@ -9,6 +9,7 @@ using System;
 using System.IO;
 using Aspose.Words;
 using NUnit.Framework;
+using Xamarin.Android;
 
 namespace ApiExamples
 {

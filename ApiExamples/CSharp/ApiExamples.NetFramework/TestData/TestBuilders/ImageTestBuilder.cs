@@ -1,9 +1,10 @@
 ﻿using System.IO;
 using ApiExamples.TestData.TestClasses;
-#if NETSTANDARD2_0
+using Xamarin.Android;
+#if NETSTANDARD2_0 || __MOBILE__
 using SkiaSharp;
 #endif
-#if !NETSTANDARD2_0 
+#if !(NETSTANDARD2_0  || __MOBILE__)
 using System.Drawing;
 #endif
 
@@ -11,7 +12,7 @@ namespace ApiExamples.TestData.TestBuilders
 {
     public class ImageTestBuilder : ApiExampleBase
     {
-#if NETSTANDARD2_0
+#if NETSTANDARD2_0 || __MOBILE__
         private SKBitmap mImage;
 #else
         private Image mImage;
@@ -22,7 +23,7 @@ namespace ApiExamples.TestData.TestBuilders
 
         public ImageTestBuilder()
         {
-#if NETSTANDARD2_0
+#if NETSTANDARD2_0 || __MOBILE__
             this.mImage = SKBitmap.Decode(ImageDir + "Watermark.png");
 #else
             this.mImage = Image.FromFile(ImageDir + "Watermark.png");
@@ -32,7 +33,7 @@ namespace ApiExamples.TestData.TestBuilders
             this.mImageUri = string.Empty;
         }
 
-#if NETSTANDARD2_0
+#if NETSTANDARD2_0 || __MOBILE__
         public ImageTestBuilder WithImage(SKBitmap image)
         {
             this.mImage = image;

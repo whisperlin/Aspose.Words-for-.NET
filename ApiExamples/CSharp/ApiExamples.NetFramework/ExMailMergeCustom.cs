@@ -9,6 +9,7 @@ using System.Collections;
 using Aspose.Words;
 using Aspose.Words.MailMerging;
 using NUnit.Framework;
+using Xamarin.Android;
 
 namespace ApiExamples
 {

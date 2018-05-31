@@ -3,6 +3,7 @@ using Aspose.Words.BuildingBlocks;
 using Aspose.Words.Drawing;
 using Aspose.Words.Loading;
 using NUnit.Framework;
+using Xamarin.Android;
 
 namespace ApiExamples
 {
@@ -140,7 +141,7 @@ namespace ApiExamples
             //ExEnd
         }
 
-#if !NETSTANDARD2_0
+#if !(NETSTANDARD2_0 || __MOBILE__)
         //ExStart
         //ExFor:DocumentBase.ResourceLoadingCallback
         //ExSummary:Shows how to process inserted resources differently.

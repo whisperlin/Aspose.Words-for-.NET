@@ -3,6 +3,7 @@ using Aspose.Words;
 using Aspose.Words.Fields;
 using Aspose.Words.Drawing;
 using NUnit.Framework;
+using Xamarin.Android;
 
 namespace ApiExamples
 {

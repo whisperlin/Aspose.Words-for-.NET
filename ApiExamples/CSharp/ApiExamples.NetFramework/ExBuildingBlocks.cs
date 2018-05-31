@@ -4,6 +4,7 @@ using System.Text;
 using Aspose.Words;
 using Aspose.Words.BuildingBlocks;
 using NUnit.Framework;
+using Xamarin.Android;
 
 namespace ApiExamples
 {
