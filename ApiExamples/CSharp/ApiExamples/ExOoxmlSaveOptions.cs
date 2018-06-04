@@ -13,7 +13,6 @@ using Aspose.Words.Lists;
 using Aspose.Words.Saving;
 using Aspose.Words.Settings;
 using NUnit.Framework;
-using Xamarin.Android;
 
 namespace ApiExamples
 {
@@ -90,7 +89,7 @@ namespace ApiExamples
             OoxmlSaveOptions options = new OoxmlSaveOptions();
             options.Compliance = OoxmlCompliance.Iso29500_2008_Transitional;
 
-            doc.Save(MyDir + @"\Artifacts\RestartingDocumentList.docx", options);
+            doc.Save(MyDir + "Artifacts/RestartingDocumentList.docx", options);
             //ExEnd
         }
 

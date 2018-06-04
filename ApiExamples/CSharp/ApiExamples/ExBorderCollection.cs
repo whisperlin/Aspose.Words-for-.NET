@@ -9,7 +9,6 @@ using System.Collections;
 using System.Drawing;
 using Aspose.Words;
 using NUnit.Framework;
-using Xamarin.Android;
 
 namespace ApiExamples
 {
@@ -36,7 +35,7 @@ namespace ApiExamples
                 b.LineStyle = LineStyle.Double;
             }
 
-            doc.Save(MyDir + @"\Artifacts\Border.ChangedColourBorder.doc");                                                    
+            doc.Save(MyDir + "Artifacts/Border.ChangedColourBorder.doc");                                                    
             //ExEnd
         }
 

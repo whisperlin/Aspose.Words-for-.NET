@@ -9,7 +9,7 @@ using System;
 using Aspose.Words;
 using Aspose.Words.Saving;
 using NUnit.Framework;
-using Xamarin.Android;
+
 #if !__MOBILE__
 using Aspose.Pdf.Facades;
 using Aspose.Pdf.Text;  
@@ -53,12 +53,12 @@ namespace ApiExamples
             pdfSaveOptions.OutlineOptions.CreateMissingOutlineLevels = true;
             pdfSaveOptions.SaveFormat = SaveFormat.Pdf;
 
-            doc.Save(MyDir + @"\Artifacts\CreateMissingOutlineLevels.pdf", pdfSaveOptions);
+            doc.Save(MyDir + "Artifacts/CreateMissingOutlineLevels.pdf", pdfSaveOptions);
             //ExEnd
 #if !__MOBILE__
             // Bind PDF with Aspose.PDF
             PdfBookmarkEditor bookmarkEditor = new PdfBookmarkEditor();
-            bookmarkEditor.BindPdf(MyDir + @"\Artifacts\CreateMissingOutlineLevels.pdf");
+            bookmarkEditor.BindPdf(MyDir + "Artifacts/CreateMissingOutlineLevels.pdf");
 
             // Get all bookmarks from the document
             Bookmarks bookmarks = bookmarkEditor.ExtractBookmarks();
@@ -81,7 +81,7 @@ namespace ApiExamples
             PdfSaveOptions pdfSaveOptions = new PdfSaveOptions();
             pdfSaveOptions.DmlRenderingMode = DmlRenderingMode.DrawingML;
 
-            doc.Save(MyDir + @"\Artifacts\DrawingMl.pdf", pdfSaveOptions);
+            doc.Save(MyDir + "Artifacts/DrawingMl.pdf", pdfSaveOptions);
             //ExEnd
         }
 
@@ -96,10 +96,10 @@ namespace ApiExamples
             PdfSaveOptions pdfSaveOptions = new PdfSaveOptions();
             pdfSaveOptions.UpdateFields = false;
 
-            doc.Save(MyDir + @"\Artifacts\UpdateFields_False.pdf", pdfSaveOptions);
+            doc.Save(MyDir + "Artifacts/UpdateFields_False.pdf", pdfSaveOptions);
             //ExEnd
 #if !__MOBILE__
-            Aspose.Pdf.Document pdfDocument = new Aspose.Pdf.Document(MyDir + @"\Artifacts\UpdateFields_False.pdf");
+            Aspose.Pdf.Document pdfDocument = new Aspose.Pdf.Document(MyDir + "Artifacts/UpdateFields_False.pdf");
 
             // Get text fragment by search String
             TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("Page  of");
@@ -118,9 +118,9 @@ namespace ApiExamples
             PdfSaveOptions pdfSaveOptions = new PdfSaveOptions();
             pdfSaveOptions.UpdateFields = true;
 
-            doc.Save(MyDir + @"\Artifacts\UpdateFields_False.pdf", pdfSaveOptions);
+            doc.Save(MyDir + "Artifacts/UpdateFields_False.pdf", pdfSaveOptions);
 #if !__MOBILE__
-            Aspose.Pdf.Document pdfDocument = new Aspose.Pdf.Document(MyDir + @"\Artifacts\UpdateFields_False.pdf");
+            Aspose.Pdf.Document pdfDocument = new Aspose.Pdf.Document(MyDir + "Artifacts/UpdateFields_False.pdf");
 
             // Get text fragment by search String
             TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("Page 1 of 2");
@@ -151,14 +151,14 @@ namespace ApiExamples
             options.ImageCompression = PdfImageCompression.Jpeg;
             options.PreserveFormFields = true;
 
-            doc.Save(MyDir + @"\Artifacts\SaveOptions.PdfImageCompression Out.pdf", options);
+            doc.Save(MyDir + "Artifacts/SaveOptions.PdfImageCompression Out.pdf", options);
 
             PdfSaveOptions optionsA1B = new PdfSaveOptions();
             optionsA1B.Compliance = PdfCompliance.PdfA1b;
             optionsA1B.ImageCompression = PdfImageCompression.Jpeg;
             optionsA1B.JpegQuality = 100; // Use JPEG compression at 50% quality to reduce file size.
 
-            doc.Save(MyDir + @"\Artifacts\SaveOptions.PdfImageComppression PDF_A_1_B Out.pdf", optionsA1B);
+            doc.Save(MyDir + "Artifacts/SaveOptions.PdfImageComppression PDF_A_1_B Out.pdf", optionsA1B);
             //ExEnd
 
             PdfSaveOptions optionsA1A = new PdfSaveOptions();
@@ -166,7 +166,7 @@ namespace ApiExamples
             optionsA1A.ExportDocumentStructure = true;
             optionsA1A.ImageCompression = PdfImageCompression.Jpeg;
 
-            doc.Save(MyDir + @"\Artifacts\SaveOptions.PdfImageComppression PDF_A_1_A Out.pdf", optionsA1A);
+            doc.Save(MyDir + "Artifacts/SaveOptions.PdfImageComppression PDF_A_1_A Out.pdf", optionsA1A);
         }
 
         [Test]
@@ -183,7 +183,7 @@ namespace ApiExamples
             pdfSaveOptions.ColorMode = ColorMode.Grayscale;
 
             // Assert that color image in document was grey
-            doc.Save(MyDir + @"\Artifacts\ColorMode.PdfGrayscaleMode.pdf", pdfSaveOptions);
+            doc.Save(MyDir + "Artifacts/ColorMode.PdfGrayscaleMode.pdf", pdfSaveOptions);
             //ExEnd
         }
 
@@ -199,10 +199,10 @@ namespace ApiExamples
             PdfSaveOptions pdfSaveOptions = new PdfSaveOptions();
             pdfSaveOptions.DisplayDocTitle = true;
 
-            doc.Save(MyDir + @"\Artifacts\PdfTitle.pdf", pdfSaveOptions);
+            doc.Save(MyDir + "Artifacts/PdfTitle.pdf", pdfSaveOptions);
             //ExEnd
 #if !__MOBILE__
-            Aspose.Pdf.Document pdfDocument = new Aspose.Pdf.Document(MyDir + @"\Artifacts\PdfTitle.pdf");
+            Aspose.Pdf.Document pdfDocument = new Aspose.Pdf.Document(MyDir + "Artifacts/PdfTitle.pdf");
 
             Assert.IsTrue(pdfDocument.DisplayDocTitle);
             Assert.AreEqual("Windows bar pdf title", pdfDocument.Info.Title);
@@ -222,7 +222,7 @@ namespace ApiExamples
             SaveOptions saveOptions = SaveOptions.CreateSaveOptions(SaveFormat.Pdf);
             saveOptions.MemoryOptimization = true;
 
-            doc.Save(MyDir + @"\Artifacts\SaveOptions.MemoryOptimization Out.pdf", saveOptions);
+            doc.Save(MyDir + "Artifacts/SaveOptions.MemoryOptimization Out.pdf", saveOptions);
             //ExEnd
         }
 

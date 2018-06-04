@@ -3,7 +3,6 @@ using System.Drawing;
 using System.Globalization;
 using Aspose.BarCode;
 using Aspose.Words.Fields;
-using Xamarin.Android;
 #if NETSTANDARD2_0 || __MOBILE__
 using SkiaSharp;
 #endif
@@ -179,9 +178,9 @@ namespace ApiExamples
             }
 
 #if NETSTANDARD2_0 || __MOBILE__
-            builder.BarCodeImage.Save(ApiExampleBase.MyDir + @"\Artifacts\GetBarcodeImage.png");
+            builder.BarCodeImage.Save(ApiExampleBase.MyDir + "Artifacts/GetBarcodeImage.png");
 
-            return SkiaSharp.SKBitmap.Decode(ApiExampleBase.MyDir + @"\Artifacts\OldBarcodeImage.png");
+            return SkiaSharp.SKBitmap.Decode(ApiExampleBase.MyDir + "Artifacts/OldBarcodeImage.png");
 #else
             return builder.BarCodeImage;
 #endif
@@ -207,9 +206,9 @@ namespace ApiExamples
             builder.EncodeType = Aspose.BarCode.Generation.EncodeTypes.Postnet;
             builder.CodeText = parameters.PostalAddress;
 #if NETSTANDARD2_0 || __MOBILE__
-            builder.BarCodeImage.Save(ApiExampleBase.MyDir + @"\Artifacts\OldBarcodeImage.png");
+            builder.BarCodeImage.Save(ApiExampleBase.MyDir + "Artifacts/OldBarcodeImage.png");
 
-            return SkiaSharp.SKBitmap.Decode(ApiExampleBase.MyDir + @"\Artifacts\OldBarcodeImage.png");
+            return SkiaSharp.SKBitmap.Decode(ApiExampleBase.MyDir + "Artifacts/OldBarcodeImage.png");
 #else
             return builder.BarCodeImage;
 #endif

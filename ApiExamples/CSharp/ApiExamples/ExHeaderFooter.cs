@@ -13,7 +13,6 @@ using Aspose.Words.Saving;
 using Aspose.Words.Tables;
 using Aspose.Words.Replacing;
 using NUnit.Framework;
-using Xamarin.Android;
 
 namespace ApiExamples
 {
@@ -37,7 +36,7 @@ namespace ApiExamples
             // Add a paragraph with text to the footer.
             footer.AppendParagraph("TEST FOOTER");
 
-            doc.Save(MyDir + @"\Artifacts\HeaderFooter.CreateFooter.doc");
+            doc.Save(MyDir + "Artifacts/HeaderFooter.CreateFooter.doc");
             //ExEnd
 
             Assert.True(doc.FirstSection.HeadersFooters[HeaderFooterType.FooterPrimary].Range.Text.Contains("TEST FOOTER"));
@@ -76,7 +75,7 @@ namespace ApiExamples
                     footer.Remove();
             }
 
-            doc.Save(MyDir + @"\Artifacts\HeaderFooter.RemoveFooters.doc");
+            doc.Save(MyDir + "Artifacts/HeaderFooter.RemoveFooters.doc");
             //ExEnd
         }
 
@@ -92,11 +91,11 @@ namespace ApiExamples
             HtmlSaveOptions saveOptions = new HtmlSaveOptions(SaveFormat.Html);
             saveOptions.ExportHeadersFootersMode = ExportHeadersFootersMode.None; // Disables exporting headers and footers.
 
-            doc.Save(MyDir + @"\Artifacts\HeaderFooter.DisableHeadersFooters.html", saveOptions);
+            doc.Save(MyDir + "Artifacts/HeaderFooter.DisableHeadersFooters.html", saveOptions);
             //ExEnd
 
             // Verify that the output document is correct.
-            doc = new Document(MyDir + @"\Artifacts\HeaderFooter.DisableHeadersFooters.html");
+            doc = new Document(MyDir + "Artifacts/HeaderFooter.DisableHeadersFooters.html");
             Assert.IsFalse(doc.Range.Text.Contains("DYNAMIC TEMPLATE"));
         }
 
@@ -122,11 +121,11 @@ namespace ApiExamples
             
             footer.Range.Replace("(C) 2006 Aspose Pty Ltd.", "Copyright (C) 2011 by Aspose Pty Ltd.", options);
 
-            doc.Save(MyDir + @"\Artifacts\HeaderFooter.ReplaceText.doc");
+            doc.Save(MyDir + "Artifacts/HeaderFooter.ReplaceText.doc");
             //ExEnd
 
             // Verify that the appropriate changes were made to the output document.
-            doc = new Document(MyDir + @"\Artifacts\HeaderFooter.ReplaceText.doc");
+            doc = new Document(MyDir + "Artifacts/HeaderFooter.ReplaceText.doc");
             Assert.IsTrue(doc.Range.Text.Contains("Copyright (C) 2011 by Aspose Pty Ltd."));
         }
 
@@ -303,7 +302,7 @@ namespace ApiExamples
             row.LastCell.CellFormat.PreferredWidth = PreferredWidth.FromPercent(100 * 2 / 3);
 
             // Save the resulting document.
-            doc.Save(MyDir + @"\Artifacts\HeaderFooter.Primer.doc");
+            doc.Save(MyDir + "Artifacts/HeaderFooter.Primer.doc");
         }
 
         /// <summary>

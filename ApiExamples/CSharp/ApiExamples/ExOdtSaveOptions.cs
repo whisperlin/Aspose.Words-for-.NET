@@ -8,7 +8,6 @@
 using Aspose.Words;
 using Aspose.Words.Saving;
 using NUnit.Framework;
-using Xamarin.Android;
 
 namespace ApiExamples
 {
@@ -27,7 +26,7 @@ namespace ApiExamples
             OdtSaveOptions saveOptions = new OdtSaveOptions();
             saveOptions.MeasureUnit = OdtSaveMeasureUnit.Inches;
 
-            doc.Save(MyDir + @"\Artifacts\OdtSaveOptions.MeasureUnit.odt");
+            doc.Save(MyDir + "Artifacts/OdtSaveOptions.MeasureUnit.odt");
             //ExEnd
         }
     }

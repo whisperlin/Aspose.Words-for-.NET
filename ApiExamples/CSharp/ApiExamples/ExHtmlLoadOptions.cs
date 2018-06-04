@@ -11,7 +11,6 @@ using Aspose.Words;
 using Aspose.Words.Fields;
 using Aspose.Words.Markup;
 using NUnit.Framework;
-using Xamarin.Android;
 
 namespace ApiExamples
 {
@@ -32,7 +31,7 @@ namespace ApiExamples
             loadOptions.WebRequestTimeout = 1000;
 
             Document doc = new Document(MyDir + "Shape.VmlAndDml.htm", loadOptions);
-            doc.Save(MyDir + @"\Artifacts\Shape.VmlAndDml.docx");
+            doc.Save(MyDir + "Artifacts/Shape.VmlAndDml.docx");
             //ExEnd
         }
 

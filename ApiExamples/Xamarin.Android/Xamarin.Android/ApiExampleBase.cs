@@ -13,7 +13,7 @@ using Android.App;
 using Aspose.Words;
 using NUnit.Framework;
 
-namespace Xamarin.Android
+namespace ApiExamples
 {
     /// <summary>
     /// Provides common infrastructure for all API examples that are implemented as unit tests.

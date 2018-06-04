@@ -1,6 +1,5 @@
 ﻿using System.IO;
 using ApiExamples.TestData.TestClasses;
-using Xamarin.Android;
 #if NETSTANDARD2_0 || __MOBILE__
 using SkiaSharp;
 #endif

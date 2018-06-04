@@ -8,7 +8,6 @@
 using System;
 using Aspose.Words;
 using NUnit.Framework;
-using Xamarin.Android;
 
 namespace ApiExamples
 {
@@ -29,7 +28,7 @@ namespace ApiExamples
                 para.ParagraphFormat.TabStops.Clear();
             }
 
-            doc.Save(MyDir + @"\Artifacts\Document.AllTabStopsRemoved.doc");
+            doc.Save(MyDir + "Artifacts/Document.AllTabStopsRemoved.doc");
             //ExEnd
         }
 
@@ -56,7 +55,7 @@ namespace ApiExamples
                 para.ParagraphFormat.TabStops.Add(ConvertUtil.MillimeterToPoint(50), TabAlignment.Left, TabLeader.Dashes);
             }
 
-            doc.Save(MyDir + @"\Artifacts\Document.AddedTabStops.doc");
+            doc.Save(MyDir + "Artifacts/Document.AddedTabStops.doc");
             //ExEnd
         }
 
@@ -77,7 +76,7 @@ namespace ApiExamples
 
             Console.WriteLine(paragraph.ParagraphFormat.TabStops.Count);
 
-            doc.Save(MyDir + @"\Artifacts\Document.RemovedTabStopsByIndex.doc");
+            doc.Save(MyDir + "Artifacts/Document.RemovedTabStopsByIndex.doc");
             //ExEnd
         }
 

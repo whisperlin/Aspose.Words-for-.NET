@@ -2,7 +2,6 @@
 using Aspose.Words;
 using Aspose.Words.Saving;
 using NUnit.Framework;
-using Xamarin.Android;
 
 namespace ApiExamples
 {
@@ -46,13 +45,13 @@ namespace ApiExamples
             HtmlFixedSaveOptions htmlFixedSaveOptions = new HtmlFixedSaveOptions { PageIndex = 0, PageCount = doc.PageCount };
             htmlFixedSaveOptions.PageSavingCallback = new CustomPageFileNamePageSavingCallback();
 
-            doc.Save(MyDir + @"\Artifacts\Rendering.html", htmlFixedSaveOptions);
+            doc.Save(MyDir + "Artifacts/Rendering.html", htmlFixedSaveOptions);
 
-            string[] filePaths = Directory.GetFiles(MyDir + @"\Artifacts\", "Page_*.html");
+            string[] filePaths = Directory.GetFiles(MyDir + "Artifacts/", "Page_*.html");
 
             for (int i = 0; i < doc.PageCount; i++)
             {
-                string file = string.Format(MyDir + @"\Artifacts\Page_{0}.html", i);
+                string file = string.Format(MyDir + "Artifacts/Page_{0}.html", i);
                 Assert.AreEqual(file, filePaths[i]);//ExSkip
             }
         }
@@ -65,7 +64,7 @@ namespace ApiExamples
             public void PageSaving(PageSavingArgs args)
             {
                 // Specify name of the output file for the current page.
-                args.PageFileName = string.Format(MyDir + @"\Artifacts\Page_{0}.html", args.PageIndex);
+                args.PageFileName = string.Format(MyDir + "Artifacts/Page_{0}.html", args.PageIndex);
             }
         }
         //ExEnd

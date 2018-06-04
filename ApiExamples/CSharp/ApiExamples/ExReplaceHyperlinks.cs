@@ -17,7 +17,6 @@ using System.Text.RegularExpressions;
 using Aspose.Words;
 using Aspose.Words.Fields;
 using NUnit.Framework;
-using Xamarin.Android;
 
 namespace ApiExamples
 {
@@ -56,7 +55,7 @@ namespace ApiExamples
                 }
             }
 
-            doc.Save(MyDir + @"\Artifacts\ReplaceHyperlinks.doc");
+            doc.Save(MyDir + "Artifacts/ReplaceHyperlinks.doc");
         }
 
         private const String NewUrl = @"http://www.aspose.com";

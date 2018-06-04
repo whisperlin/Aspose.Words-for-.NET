@@ -1,7 +1,6 @@
 ﻿using System.Text;
 using NUnit.Framework;
 using Aspose.Words;
-using Xamarin.Android;
 
 namespace ApiExamples
 {

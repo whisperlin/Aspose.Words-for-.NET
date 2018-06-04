@@ -12,14 +12,11 @@ using Aspose.Words.Fields;
 using Aspose.Words;
 using Aspose.Words.MailMerging;
 using NUnit.Framework;
-using Xamarin.Android;
 #if NETSTANDARD2_0
 using lcpi.data.oledb;
 #endif
 #if !(NETSTANDARD2_0 || __MOBILE__)
 using System.Data.OleDb;
-=======
-#if !(NETSTANDARD2_0 || __MOBILE__)
 using System.Web;
 #endif
 
@@ -47,7 +44,7 @@ namespace ApiExamples
             doc.MailMerge.Execute(new String[] { "FullName", "Company", "Address", "Address2", "City" }, new object[] { "James Bond", "MI5 Headquarters", "Milbank", "", "London" });
 
             // Send the document in Word format to the client browser with an option to save to disk or open inside the current browser.
-            Assert.That(() => doc.Save(Response, @"\Artifacts\MailMerge.ExecuteArray.doc", ContentDisposition.Inline, null), Throws.TypeOf<ArgumentNullException>()); //Thrown because HttpResponse is null in the test.
+            Assert.That(() => doc.Save(Response, "Artifacts/MailMerge.ExecuteArray.doc", ContentDisposition.Inline, null), Throws.TypeOf<ArgumentNullException>()); //Thrown because HttpResponse is null in the test.
             //ExEnd
         }
 #endif
@@ -73,7 +70,7 @@ namespace ApiExamples
             // Field values from the table are inserted into the mail merge fields found in the document.
             doc.MailMerge.Execute(table);
 
-            doc.Save(MyDir + @"\Artifacts\MailMerge.ExecuteDataTable.doc");
+            doc.Save(MyDir + "Artifacts/MailMerge.ExecuteDataTable.doc");
             //ExEnd
         }
 
@@ -332,9 +329,9 @@ namespace ApiExamples
             doc.MailMerge.CleanupOptions = MailMergeCleanupOptions.RemoveEmptyTableRows;
             doc.MailMerge.ExecuteWithRegions(data);
 
-            doc.Save(MyDir + @"\Artifacts\MailMerge.CleanUp.docx");
+            doc.Save(MyDir + "Artifacts/MailMerge.CleanUp.docx");
 
-            Assert.IsTrue(DocumentHelper.CompareDocs(MyDir + @"\Artifacts\MailMerge.CleanUp.docx", MyDir + @"\Golds\MailMerge.CleanUp Gold.docx"));
+            Assert.IsTrue(DocumentHelper.CompareDocs(MyDir + "Artifacts/MailMerge.CleanUp.docx", MyDir + @"\Golds\MailMerge.CleanUp Gold.docx"));
         }
 
         /// <summary>

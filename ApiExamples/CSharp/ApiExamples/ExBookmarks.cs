@@ -10,7 +10,6 @@ using System.Collections;
 using NUnit.Framework;
 using Aspose.Words;
 using Aspose.Words.Saving;
-using Xamarin.Android;
 using Bookmark = Aspose.Words.Bookmark;
 #if !__MOBILE__
 using Aspose.Pdf.Facades;
@@ -176,7 +175,7 @@ namespace ApiExamples
 
             p.AppendChild(new Run(doc, "Text after bookmark."));
 
-            doc.Save(MyDir + @"\Artifacts\Bookmarks.CreateBookmarkWithNodes.doc");
+            doc.Save(MyDir + "Artifacts/Bookmarks.CreateBookmarkWithNodes.doc");
             //ExEnd
 
             Assert.AreEqual(doc.Range.Bookmarks["My bookmark"].Text, "Text inside bookmark. ");
@@ -230,12 +229,12 @@ namespace ApiExamples
             pdfSaveOptions.OutlineOptions.BookmarksOutlineLevels.Add("My Bookmark", 1);
             pdfSaveOptions.OutlineOptions.BookmarksOutlineLevels.Add("Nested Bookmark", 2);
 
-            doc.Save(MyDir + @"\Artifacts\Bookmarks.WhiteSpaces Out.pdf", pdfSaveOptions);
+            doc.Save(MyDir + "Artifacts/Bookmarks.WhiteSpaces Out.pdf", pdfSaveOptions);
             //ExEnd
 #if !__MOBILE__
             //Bind pdf with Aspose.Pdf
             PdfBookmarkEditor bookmarkEditor = new PdfBookmarkEditor();
-            bookmarkEditor.BindPdf(MyDir + @"\Artifacts\Bookmarks.WhiteSpaces Out.pdf");
+            bookmarkEditor.BindPdf(MyDir + "Artifacts/Bookmarks.WhiteSpaces Out.pdf");
 
             //Get all bookmarks from the document
             Bookmarks bookmarks = bookmarkEditor.ExtractBookmarks();

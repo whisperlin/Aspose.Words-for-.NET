@@ -12,7 +12,6 @@ using System.IO;
 using System.Threading;
 using Aspose.Words;
 using NUnit.Framework;
-using Xamarin.Android;
 
 namespace ApiExamples
 {
@@ -42,7 +41,7 @@ namespace ApiExamples
             // By default, all sections are protected, but we can selectively turn protection off.
             doc.Sections[0].ProtectedForForms = false;
 
-            builder.Document.Save(MyDir + @"\Artifacts\Section.Protect.doc");
+            builder.Document.Save(MyDir + "Artifacts/Section.Protect.doc");
             //ExEnd
         }
 
@@ -153,7 +152,7 @@ namespace ApiExamples
             Console.WriteLine("Hello World!\x000c", doc.GetText());
 
             // Save the document.
-            doc.Save(MyDir + @"\Artifacts\Section.CreateFromScratch.doc");
+            doc.Save(MyDir + "Artifacts/Section.CreateFromScratch.doc");
             //ExEnd
 
             Assert.AreEqual("Hello World!\x000c", doc.GetText());
@@ -424,7 +423,7 @@ namespace ApiExamples
             foreach (Section section in doc)
                 section.PageSetup.PaperSize = PaperSize.Letter;
 
-            doc.Save(MyDir + @"\Artifacts\Section.ModifyPageSetupInAllSections.doc");
+            doc.Save(MyDir + "Artifacts/Section.ModifyPageSetupInAllSections.doc");
             //ExEnd
         }
 

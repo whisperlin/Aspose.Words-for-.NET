@@ -8,7 +8,6 @@ using System.IO;
 using Aspose.Words;
 using Aspose.Words.Drawing;
 using NUnit.Framework;
-using Xamarin.Android;
 #if NETSTANDARD2_0 || __MOBILE__
 using SkiaSharp;
 #endif
@@ -36,7 +35,7 @@ namespace ApiExamples
                 builder.InsertImage(stream, RelativeHorizontalPosition.Margin, 100, RelativeVerticalPosition.Margin, 100, 200, 100, WrapType.Square);
             }
 
-            builder.Document.Save(MyDir + @"\Artifacts\Image.CreateFromStreamRelativePosition.doc");
+            builder.Document.Save(MyDir + "Artifacts/Image.CreateFromStreamRelativePosition.doc");
             //ExEnd
         }
 
@@ -68,7 +67,7 @@ namespace ApiExamples
                 image.Save(imageBytes, ImageFormat.Png);
 
                 builder.InsertImage(imageBytes.ToArray());
-                builder.Document.Save(MyDir + @"\Artifacts\Image.CreateFromByteArrayDefault.doc");
+                builder.Document.Save(MyDir + "Artifacts/Image.CreateFromByteArrayDefault.doc");
             }
 #endif
             //ExEnd
@@ -102,7 +101,7 @@ namespace ApiExamples
                 image.Save(imageBytes, ImageFormat.Png);
 
                 builder.InsertImage(imageBytes, ConvertUtil.PixelToPoint(450), ConvertUtil.PixelToPoint(144));
-                builder.Document.Save(MyDir + @"\Artifacts\Image.CreateFromByteArrayCustomSize.doc");
+                builder.Document.Save(MyDir + "Artifacts/Image.CreateFromByteArrayCustomSize.doc");
             }
 #endif
             //ExEnd
@@ -136,7 +135,7 @@ namespace ApiExamples
                 image.Save(imageBytes, ImageFormat.Png);
 
                 builder.InsertImage(imageBytes, RelativeHorizontalPosition.Margin, 100, RelativeVerticalPosition.Margin, 100, 200, 100, WrapType.Square);
-                builder.Document.Save(MyDir + @"\Artifacts\Image.CreateFromByteArrayRelativePosition.doc");
+                builder.Document.Save(MyDir + "Artifacts/Image.CreateFromByteArrayRelativePosition.doc");
             }
 #endif
             //ExEnd
@@ -163,7 +162,7 @@ namespace ApiExamples
                 builder.Writeln();
             }
 #endif
-            builder.Document.Save(MyDir + @"\Artifacts\Image.CreateFromImageWithStreamCustomSize.doc");
+            builder.Document.Save(MyDir + "Artifacts/Image.CreateFromImageWithStreamCustomSize.doc");
             //ExEnd
         }
 
@@ -186,7 +185,7 @@ namespace ApiExamples
                 builder.InsertImage(rasterImage, RelativeHorizontalPosition.Margin, 100, RelativeVerticalPosition.Margin, 100, 200, 100, WrapType.Square);
             }
 #endif
-            builder.Document.Save(MyDir + @"\Artifacts\Image.CreateFromImageWithStreamRelativePosition.doc");
+            builder.Document.Save(MyDir + "Artifacts/Image.CreateFromImageWithStreamRelativePosition.doc");
             //ExEnd
         }
 
@@ -204,7 +203,7 @@ namespace ApiExamples
                 builder.InsertImage(stream, ConvertUtil.PixelToPoint(400), ConvertUtil.PixelToPoint(400));
             }
 
-            builder.Document.Save(MyDir + @"\Artifacts\Image.CreateFromStreamCustomSize.doc");
+            builder.Document.Save(MyDir + "Artifacts/Image.CreateFromStreamCustomSize.doc");
             //ExEnd
         }
 
@@ -219,7 +218,7 @@ namespace ApiExamples
 
             builder.InsertImage(ImageDir + "Aspose.Words.gif", ConvertUtil.PixelToPoint(400), ConvertUtil.PixelToPoint(400));
 
-            doc.Save(MyDir + @"\Artifacts\DocumentBuilder.InsertImageFromUrlCustomSize.doc");
+            doc.Save(MyDir + "Artifacts/DocumentBuilder.InsertImageFromUrlCustomSize.doc");
             //ExEnd
         }
     }

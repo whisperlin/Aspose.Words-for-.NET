@@ -1,7 +1,6 @@
 ﻿using System.IO;
 using ApiExamples.TestData.TestClasses;
 using Aspose.Words;
-using Xamarin.Android;
 
 namespace ApiExamples.TestData.TestBuilders
 {

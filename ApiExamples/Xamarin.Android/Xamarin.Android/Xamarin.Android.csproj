@@ -108,241 +108,244 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\DocumentHelper.cs">
+    <Compile Include="..\..\CSharp\ApiExamples\CustomBarcodeGenerator.cs">
+      <Link>CustomBarcodeGenerator.cs</Link>
+    </Compile>
+    <Compile Include="..\..\CSharp\ApiExamples\DocumentHelper.cs">
       <Link>DocumentHelper.cs</Link>
     </Compile>
-    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExAbsolutePositionTab.cs">
+    <Compile Include="..\..\CSharp\ApiExamples\ExAbsolutePositionTab.cs">
       <Link>ExAbsolutePositionTab.cs</Link>
     </Compile>
-    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExBookmarks.cs">
+    <Compile Include="..\..\CSharp\ApiExamples\ExBookmarks.cs">
       <Link>ExBookmarks.cs</Link>
     </Compile>
-    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExBorder.cs">
+    <Compile Include="..\..\CSharp\ApiExamples\ExBorder.cs">
       <Link>ExBorder.cs</Link>
     </Compile>
-    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExBorderCollection.cs">
+    <Compile Include="..\..\CSharp\ApiExamples\ExBorderCollection.cs">
       <Link>ExBorderCollection.cs</Link>
     </Compile>
-    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExBuildingBlocks.cs">
+    <Compile Include="..\..\CSharp\ApiExamples\ExBuildingBlocks.cs">
       <Link>ExBuildingBlocks.cs</Link>
     </Compile>
-    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExBuildVersion.cs">
+    <Compile Include="..\..\CSharp\ApiExamples\ExBuildVersion.cs">
       <Link>ExBuildVersion.cs</Link>
     </Compile>
-    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExCellFormat.cs">
+    <Compile Include="..\..\CSharp\ApiExamples\ExCellFormat.cs">
       <Link>ExCellFormat.cs</Link>
     </Compile>
-    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExComment.cs">
+    <Compile Include="..\..\CSharp\ApiExamples\ExComment.cs">
       <Link>ExComment.cs</Link>
     </Compile>
-    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExControlChar.cs">
+    <Compile Include="..\..\CSharp\ApiExamples\ExControlChar.cs">
       <Link>ExControlChar.cs</Link>
     </Compile>
-    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExDigitalSignatureCollection.cs">
+    <Compile Include="..\..\CSharp\ApiExamples\ExDigitalSignatureCollection.cs">
       <Link>ExDigitalSignatureCollection.cs</Link>
     </Compile>
-    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExDigitalSignatureUtil.cs">
+    <Compile Include="..\..\CSharp\ApiExamples\ExDigitalSignatureUtil.cs">
       <Link>ExDigitalSignatureUtil.cs</Link>
     </Compile>
-    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExDocument.cs">
+    <Compile Include="..\..\CSharp\ApiExamples\ExDocument.cs">
       <Link>ExDocument.cs</Link>
     </Compile>
-    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExDocumentBase.cs">
+    <Compile Include="..\..\CSharp\ApiExamples\ExDocumentBase.cs">
       <Link>ExDocumentBase.cs</Link>
     </Compile>
-    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExDocumentBuilder.cs">
+    <Compile Include="..\..\CSharp\ApiExamples\ExDocumentBuilder.cs">
       <Link>ExDocumentBuilder.cs</Link>
     </Compile>
-    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExDocumentBuilderImages.cs">
+    <Compile Include="..\..\CSharp\ApiExamples\ExDocumentBuilderImages.cs">
       <Link>ExDocumentBuilderImages.cs</Link>
     </Compile>
-    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExDrawing.cs">
+    <Compile Include="..\..\CSharp\ApiExamples\ExDrawing.cs">
       <Link>ExDrawing.cs</Link>
     </Compile>
-    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExEditableRange.cs">
+    <Compile Include="..\..\CSharp\ApiExamples\ExEditableRange.cs">
       <Link>ExEditableRange.cs</Link>
     </Compile>
-    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExField.cs">
+    <Compile Include="..\..\CSharp\ApiExamples\ExField.cs">
       <Link>ExField.cs</Link>
     </Compile>
-    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExFont.cs">
+    <Compile Include="..\..\CSharp\ApiExamples\ExFont.cs">
       <Link>ExFont.cs</Link>
     </Compile>
-    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExFormFields.cs">
+    <Compile Include="..\..\CSharp\ApiExamples\ExFormFields.cs">
       <Link>ExFormFields.cs</Link>
     </Compile>
-    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExHeaderFooter.cs">
+    <Compile Include="..\..\CSharp\ApiExamples\ExHeaderFooter.cs">
       <Link>ExHeaderFooter.cs</Link>
     </Compile>
-    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExHtmlFixedSaveOptions.cs">
+    <Compile Include="..\..\CSharp\ApiExamples\ExHtmlFixedSaveOptions.cs">
       <Link>ExHtmlFixedSaveOptions.cs</Link>
     </Compile>
-    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExHtmlLoadOptions.cs">
+    <Compile Include="..\..\CSharp\ApiExamples\ExHtmlLoadOptions.cs">
       <Link>ExHtmlLoadOptions.cs</Link>
     </Compile>
-    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExHtmlSaveOptions.cs">
+    <Compile Include="..\..\CSharp\ApiExamples\ExHtmlSaveOptions.cs">
       <Link>ExHtmlSaveOptions.cs</Link>
     </Compile>
-    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExHyphenation.cs">
+    <Compile Include="..\..\CSharp\ApiExamples\ExHyphenation.cs">
       <Link>ExHyphenation.cs</Link>
     </Compile>
-    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExImage.cs">
+    <Compile Include="..\..\CSharp\ApiExamples\ExImage.cs">
       <Link>ExImage.cs</Link>
     </Compile>
-    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExImageSaveOptions.cs">
+    <Compile Include="..\..\CSharp\ApiExamples\ExImageSaveOptions.cs">
       <Link>ExImageSaveOptions.cs</Link>
     </Compile>
-    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExInlineStory.cs">
+    <Compile Include="..\..\CSharp\ApiExamples\ExInlineStory.cs">
       <Link>ExInlineStory.cs</Link>
     </Compile>
-    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExInsertDocument.cs">
+    <Compile Include="..\..\CSharp\ApiExamples\ExInsertDocument.cs">
       <Link>ExInsertDocument.cs</Link>
     </Compile>
-    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExLists.cs">
+    <Compile Include="..\..\CSharp\ApiExamples\ExLists.cs">
       <Link>ExLists.cs</Link>
     </Compile>
-    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExMailMerge.cs">
+    <Compile Include="..\..\CSharp\ApiExamples\ExMailMerge.cs">
       <Link>ExMailMerge.cs</Link>
     </Compile>
-    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExMailMergeCustom.cs">
+    <Compile Include="..\..\CSharp\ApiExamples\ExMailMergeCustom.cs">
       <Link>ExMailMergeCustom.cs</Link>
     </Compile>
-    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExMailMergeEvent.cs">
+    <Compile Include="..\..\CSharp\ApiExamples\ExMailMergeEvent.cs">
       <Link>ExMailMergeEvent.cs</Link>
     </Compile>
-    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExMossDoc2Pdf.cs">
+    <Compile Include="..\..\CSharp\ApiExamples\ExMossDoc2Pdf.cs">
       <Link>ExMossDoc2Pdf.cs</Link>
     </Compile>
-    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExMossRtf2Docx.cs">
+    <Compile Include="..\..\CSharp\ApiExamples\ExMossRtf2Docx.cs">
       <Link>ExMossRtf2Docx.cs</Link>
     </Compile>
-    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExNestedMailMergeCustom.cs">
+    <Compile Include="..\..\CSharp\ApiExamples\ExNestedMailMergeCustom.cs">
       <Link>ExNestedMailMergeCustom.cs</Link>
     </Compile>
-    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExNode.cs">
+    <Compile Include="..\..\CSharp\ApiExamples\ExNode.cs">
       <Link>ExNode.cs</Link>
     </Compile>
-    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExOdtSaveOptions.cs">
+    <Compile Include="..\..\CSharp\ApiExamples\ExOdtSaveOptions.cs">
       <Link>ExOdtSaveOptions.cs</Link>
     </Compile>
-    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExOoxmlSaveOptions.cs">
+    <Compile Include="..\..\CSharp\ApiExamples\ExOoxmlSaveOptions.cs">
       <Link>ExOoxmlSaveOptions.cs</Link>
     </Compile>
-    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExPageSetup.cs">
+    <Compile Include="..\..\CSharp\ApiExamples\ExPageSetup.cs">
       <Link>ExPageSetup.cs</Link>
     </Compile>
-    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExParagraph.cs">
+    <Compile Include="..\..\CSharp\ApiExamples\ExParagraph.cs">
       <Link>ExParagraph.cs</Link>
     </Compile>
-    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExPclSaveOptions.cs">
+    <Compile Include="..\..\CSharp\ApiExamples\ExPclSaveOptions.cs">
       <Link>ExPclSaveOptions.cs</Link>
     </Compile>
-    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExPdfSaveOptions.cs">
+    <Compile Include="..\..\CSharp\ApiExamples\ExPdfSaveOptions.cs">
       <Link>ExPdfSaveOptions.cs</Link>
     </Compile>
-    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExProperties.cs">
+    <Compile Include="..\..\CSharp\ApiExamples\ExProperties.cs">
       <Link>ExProperties.cs</Link>
     </Compile>
-    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExRange.cs">
+    <Compile Include="..\..\CSharp\ApiExamples\ExRange.cs">
       <Link>ExRange.cs</Link>
     </Compile>
-    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExRenameMergeFields.cs">
+    <Compile Include="..\..\CSharp\ApiExamples\ExRenameMergeFields.cs">
       <Link>ExRenameMergeFields.cs</Link>
     </Compile>
-    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExRendering.cs">
+    <Compile Include="..\..\CSharp\ApiExamples\ExRendering.cs">
       <Link>ExRendering.cs</Link>
     </Compile>
-    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExReplaceHyperlinks.cs">
+    <Compile Include="..\..\CSharp\ApiExamples\ExReplaceHyperlinks.cs">
       <Link>ExReplaceHyperlinks.cs</Link>
     </Compile>
-    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExReportingEngine.cs">
+    <Compile Include="..\..\CSharp\ApiExamples\ExReportingEngine.cs">
       <Link>ExReportingEngine.cs</Link>
     </Compile>
-    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExSavingCallback.cs">
+    <Compile Include="..\..\CSharp\ApiExamples\ExSavingCallback.cs">
       <Link>ExSavingCallback.cs</Link>
     </Compile>
-    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExSection.cs">
+    <Compile Include="..\..\CSharp\ApiExamples\ExSection.cs">
       <Link>ExSection.cs</Link>
     </Compile>
-    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExShape.cs">
+    <Compile Include="..\..\CSharp\ApiExamples\ExShape.cs">
       <Link>ExShape.cs</Link>
     </Compile>
-    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExSignDocumentCustom.cs">
+    <Compile Include="..\..\CSharp\ApiExamples\ExSignDocumentCustom.cs">
       <Link>ExSignDocumentCustom.cs</Link>
     </Compile>
-    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExStructuredDocumentTag.cs">
+    <Compile Include="..\..\CSharp\ApiExamples\ExStructuredDocumentTag.cs">
       <Link>ExStructuredDocumentTag.cs</Link>
     </Compile>
-    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExStyles.cs">
+    <Compile Include="..\..\CSharp\ApiExamples\ExStyles.cs">
       <Link>ExStyles.cs</Link>
     </Compile>
-    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExTable.cs">
+    <Compile Include="..\..\CSharp\ApiExamples\ExTable.cs">
       <Link>ExTable.cs</Link>
     </Compile>
-    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExTableColumn.cs">
+    <Compile Include="..\..\CSharp\ApiExamples\ExTableColumn.cs">
       <Link>ExTableColumn.cs</Link>
     </Compile>
-    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExTabStopCollection.cs">
+    <Compile Include="..\..\CSharp\ApiExamples\ExTabStopCollection.cs">
       <Link>ExTabStopCollection.cs</Link>
     </Compile>
-    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExTxtSaveOptions.cs">
+    <Compile Include="..\..\CSharp\ApiExamples\ExTxtSaveOptions.cs">
       <Link>ExTxtSaveOptions.cs</Link>
     </Compile>
-    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExUtilityClasses.cs">
+    <Compile Include="..\..\CSharp\ApiExamples\ExUtilityClasses.cs">
       <Link>ExUtilityClasses.cs</Link>
     </Compile>
-    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExVariableCollection.cs">
+    <Compile Include="..\..\CSharp\ApiExamples\ExVariableCollection.cs">
       <Link>ExVariableCollection.cs</Link>
     </Compile>
-    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExVisitor.cs">
+    <Compile Include="..\..\CSharp\ApiExamples\ExVisitor.cs">
       <Link>ExVisitor.cs</Link>
     </Compile>
-    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExWarningInfoCollection.cs">
+    <Compile Include="..\..\CSharp\ApiExamples\ExWarningInfoCollection.cs">
       <Link>ExWarningInfoCollection.cs</Link>
     </Compile>
-    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\ExXpsSaveOptions.cs">
+    <Compile Include="..\..\CSharp\ApiExamples\ExXpsSaveOptions.cs">
       <Link>ExXpsSaveOptions.cs</Link>
     </Compile>
-    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\TestData\Common.cs">
+    <Compile Include="..\..\CSharp\ApiExamples\TestData\Common.cs">
       <Link>TestData\Common.cs</Link>
     </Compile>
-    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\TestData\TestBuilders\ColorItemTestBuilder.cs">
+    <Compile Include="..\..\CSharp\ApiExamples\TestData\TestBuilders\ColorItemTestBuilder.cs">
       <Link>TestData\TestBuilders\ColorItemTestBuilder.cs</Link>
     </Compile>
-    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\TestData\TestBuilders\DocumentTestBuilder.cs">
+    <Compile Include="..\..\CSharp\ApiExamples\TestData\TestBuilders\DocumentTestBuilder.cs">
       <Link>TestData\TestBuilders\DocumentTestBuilder.cs</Link>
     </Compile>
-    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\TestData\TestBuilders\ImageTestBuilder.cs">
+    <Compile Include="..\..\CSharp\ApiExamples\TestData\TestBuilders\ImageTestBuilder.cs">
       <Link>TestData\TestBuilders\ImageTestBuilder.cs</Link>
     </Compile>
-    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\TestData\TestBuilders\NumericTestBuilder.cs">
+    <Compile Include="..\..\CSharp\ApiExamples\TestData\TestBuilders\NumericTestBuilder.cs">
       <Link>TestData\TestBuilders\NumericTestBuilder.cs</Link>
     </Compile>
-    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\TestData\TestClasses\ClientTestClass.cs">
+    <Compile Include="..\..\CSharp\ApiExamples\TestData\TestClasses\ClientTestClass.cs">
       <Link>TestData\TestClasses\ClientTestClass.cs</Link>
     </Compile>
-    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\TestData\TestClasses\ColorItemTestClass.cs">
+    <Compile Include="..\..\CSharp\ApiExamples\TestData\TestClasses\ColorItemTestClass.cs">
       <Link>TestData\TestClasses\ColorItemTestClass.cs</Link>
     </Compile>
-    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\TestData\TestClasses\ContractTestClass.cs">
+    <Compile Include="..\..\CSharp\ApiExamples\TestData\TestClasses\ContractTestClass.cs">
       <Link>TestData\TestClasses\ContractTestClass.cs</Link>
     </Compile>
-    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\TestData\TestClasses\DocumentTestClass.cs">
+    <Compile Include="..\..\CSharp\ApiExamples\TestData\TestClasses\DocumentTestClass.cs">
       <Link>TestData\TestClasses\DocumentTestClass.cs</Link>
     </Compile>
-    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\TestData\TestClasses\ImageTestClass.cs">
+    <Compile Include="..\..\CSharp\ApiExamples\TestData\TestClasses\ImageTestClass.cs">
       <Link>TestData\TestClasses\ImageTestClass.cs</Link>
     </Compile>
-    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\TestData\TestClasses\ManagerTestClass.cs">
+    <Compile Include="..\..\CSharp\ApiExamples\TestData\TestClasses\ManagerTestClass.cs">
       <Link>TestData\TestClasses\ManagerTestClass.cs</Link>
     </Compile>
-    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\TestData\TestClasses\MessageTestClass.cs">
+    <Compile Include="..\..\CSharp\ApiExamples\TestData\TestClasses\MessageTestClass.cs">
       <Link>TestData\TestClasses\MessageTestClass.cs</Link>
     </Compile>
-    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\TestData\TestClasses\NumericTestClass.cs">
+    <Compile Include="..\..\CSharp\ApiExamples\TestData\TestClasses\NumericTestClass.cs">
       <Link>TestData\TestClasses\NumericTestClass.cs</Link>
     </Compile>
-    <Compile Include="..\..\CSharp\ApiExamples.NetFramework\TestData\TestClasses\SignPersonTestClass.cs">
+    <Compile Include="..\..\CSharp\ApiExamples\TestData\TestClasses\SignPersonTestClass.cs">
       <Link>TestData\TestClasses\SignPersonTestClass.cs</Link>
     </Compile>
     <Compile Include="ApiExampleBase.cs" />

@@ -18,7 +18,7 @@ namespace ApiExamples
     /// </summary>
     public class ApiExampleBase
     {
-        private readonly String dirPath = MyDir + @"\Artifacts\";
+        private readonly String dirPath = MyDir + "Artifacts/";
 
         [SetUp]
         public void SetUp()

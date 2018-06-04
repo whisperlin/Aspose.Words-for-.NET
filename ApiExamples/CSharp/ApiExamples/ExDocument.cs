@@ -27,7 +27,6 @@ using Aspose.Words.Settings;
 using Aspose.Words.Tables;
 using Aspose.Words.Themes;
 using NUnit.Framework;
-using Xamarin.Android;
 
 namespace ApiExamples
 {
@@ -104,7 +103,7 @@ namespace ApiExamples
             //ExFor:Document.Save(String)
             //ExId:SaveToFile
             //ExSummary:Saves a document to a file.
-            doc.Save(MyDir + @"\Artifacts\Document.OpenFromFile.doc");
+            doc.Save(MyDir + "Artifacts/Document.OpenFromFile.doc");
             //ExEnd
         }
 
@@ -115,7 +114,7 @@ namespace ApiExamples
             //ExId:OpenAndSaveToFile
             //ExSummary:Opens a document from a file and saves it to a different format
             Document doc = new Document(MyDir + "Document.doc");
-            doc.Save(MyDir + @"\Artifacts\Document.html");
+            doc.Save(MyDir + "Artifacts/Document.html");
             //ExEnd
         }
 
@@ -173,7 +172,7 @@ namespace ApiExamples
             stream.Close();
 
             // Save in the DOC format.
-            doc.Save(MyDir + @"\Artifacts\Document.OpenFromStreamWithBaseUri.doc");
+            doc.Save(MyDir + "Artifacts/Document.OpenFromStreamWithBaseUri.doc");
             //ExEnd
 
             // Lets make sure the image was imported successfully into a Shape node.
@@ -213,7 +212,7 @@ namespace ApiExamples
             Document doc = new Document(byteStream);
 
             // Convert the document to any format supported by Aspose.Words.
-            doc.Save(MyDir + @"\Artifacts\Document.OpenFromWeb.docx");
+            doc.Save(MyDir + "Artifacts/Document.OpenFromWeb.docx");
             //ExEnd
         }
 
@@ -248,7 +247,7 @@ namespace ApiExamples
 
             // Save the document to disk.
             // The extension of the filename can be changed to save the document into other formats. e.g PDF, DOCX, ODT, RTF.
-            doc.Save(MyDir + @"\Artifacts\Document.HtmlPageFromWebpage.doc");
+            doc.Save(MyDir + "Artifacts/Document.HtmlPageFromWebpage.doc");
             //ExEnd
         }
 
@@ -313,7 +312,7 @@ namespace ApiExamples
             //ExSummary:Converts from DOC to HTML format.
             Document doc = new Document(MyDir + "Document.doc");
 
-            doc.Save(MyDir + @"\Artifacts\Document.ConvertToHtml.html", SaveFormat.Html);
+            doc.Save(MyDir + "Artifacts/Document.ConvertToHtml.html", SaveFormat.Html);
             //ExEnd
         }
 
@@ -325,7 +324,7 @@ namespace ApiExamples
             //ExSummary:Converts from DOC to MHTML format.
             Document doc = new Document(MyDir + "Document.doc");
 
-            doc.Save(MyDir + @"\Artifacts\Document.ConvertToMhtml.mht");
+            doc.Save(MyDir + "Artifacts/Document.ConvertToMhtml.mht");
             //ExEnd
         }
 
@@ -337,7 +336,7 @@ namespace ApiExamples
             //ExSummary:Shows how to save a document in TXT format.
             Document doc = new Document(MyDir + "Document.doc");
 
-            doc.Save(MyDir + @"\Artifacts\Document.ConvertToTxt.txt");
+            doc.Save(MyDir + "Artifacts/Document.ConvertToTxt.txt");
             //ExEnd
         }
 
@@ -351,7 +350,7 @@ namespace ApiExamples
             //ExSummary:Converts a whole document from DOC to PDF using default options.
             Document doc = new Document(MyDir + "Document.doc");
 
-            doc.Save(MyDir + @"\Artifacts\Document.Doc2PdfSave.pdf");
+            doc.Save(MyDir + "Artifacts/Document.Doc2PdfSave.pdf");
             //ExEnd
         }
 
@@ -383,7 +382,7 @@ namespace ApiExamples
             Document doc = new Document(MyDir + "Document.EpubConversion.doc");
 
             // Save the document in EPUB format.
-            doc.Save(MyDir + @"\Artifacts\Document.EpubConversion.epub");
+            doc.Save(MyDir + "Artifacts/Document.EpubConversion.epub");
             //ExEnd
         }
 
@@ -421,7 +420,7 @@ namespace ApiExamples
             saveOptions.SaveFormat = SaveFormat.Epub;
 
             // Export the document as an EPUB file.
-            doc.Save(MyDir + @"\Artifacts\Document.EpubConversion.epub", saveOptions);
+            doc.Save(MyDir + "Artifacts/Document.EpubConversion.epub", saveOptions);
             //ExEnd
         }
 
@@ -438,7 +437,7 @@ namespace ApiExamples
             // If this is setting is false (by default) then the HTML tags will be exported in condensed form with no indentation.
             htmlOptions.PrettyFormat = true;
 
-            doc.Save(MyDir + @"\Artifacts\Document.PrettyFormat.html", htmlOptions);
+            doc.Save(MyDir + "Artifacts/Document.PrettyFormat.html", htmlOptions);
             //ExEnd
         }
 
@@ -467,11 +466,11 @@ namespace ApiExamples
             options.ExportTextInputFormFieldAsText = true;
             options.ImagesFolder = imagesDir;
 
-            doc.Save(MyDir + @"\Artifacts\Document.SaveWithOptions.html", options);
+            doc.Save(MyDir + "Artifacts/Document.SaveWithOptions.html", options);
             //ExEnd
 
             // Verify the images were saved to the correct location.
-            Assert.IsTrue(File.Exists(MyDir + @"\Artifacts\Document.SaveWithOptions.html"));
+            Assert.IsTrue(File.Exists(MyDir + "Artifacts/Document.SaveWithOptions.html"));
             Assert.AreEqual(9, Directory.GetFiles(imagesDir).Length);
 
             Directory.Delete(imagesDir, true);
@@ -498,7 +497,7 @@ namespace ApiExamples
             // Create and pass the object which implements the handler methods.
             options.FontSavingCallback = new HandleFontSaving();
 
-            doc.Save(MyDir + @"\Artifacts\Document.SaveWithFontsExport.html", options);
+            doc.Save(MyDir + "Artifacts/Document.SaveWithFontsExport.html", options);
         }
 
         public class HandleFontSaving : IFontSavingCallback
@@ -529,7 +528,7 @@ namespace ApiExamples
             HtmlSaveOptions options = new HtmlSaveOptions(SaveFormat.Html);
             options.ImageSavingCallback = new HandleImageSaving();
 
-            doc.Save(MyDir + @"\Artifacts\Document.SaveWithCustomImagesExport.html", options);
+            doc.Save(MyDir + "Artifacts/Document.SaveWithCustomImagesExport.html", options);
         }
 
         public class HandleImageSaving : IImageSavingCallback
@@ -567,7 +566,7 @@ namespace ApiExamples
             // Insert sample HTML content
             builder.InsertHtml("<p>Hello World</p>");
 
-            doc.Save(MyDir + @"\Artifacts\Document.FontChanger.doc");
+            doc.Save(MyDir + "Artifacts/Document.FontChanger.doc");
 
             // Check that the inserted content has the correct formatting
             Run run = (Run)doc.GetChild(NodeType.Run, 0, true);
@@ -660,7 +659,7 @@ namespace ApiExamples
             Document doc = new Document(docStream);
 
             // Save the document with the original file name, " Out" and the document's file extension.
-            doc.Save(MyDir + @"\Artifacts\Document.WithFileExtension" + FileFormatUtil.SaveFormatToExtension(saveFormat));
+            doc.Save(MyDir + "Artifacts/Document.WithFileExtension" + FileFormatUtil.SaveFormatToExtension(saveFormat));
             //ExEnd
 
             Assert.AreEqual(".doc", FileFormatUtil.SaveFormatToExtension(saveFormat));
@@ -699,7 +698,7 @@ namespace ApiExamples
             dstDoc.AppendDocument(srcDoc, ImportFormatMode.KeepSourceFormatting);
 
             // Save the document.
-            dstDoc.Save(MyDir + @"\Artifacts\Document.AppendDocument.doc");
+            dstDoc.Save(MyDir + "Artifacts/Document.AppendDocument.doc");
             //ExEnd
         }
 
@@ -840,14 +839,14 @@ namespace ApiExamples
             options.DigitalSignatureDetails = new PdfDigitalSignatureDetails(certificateHolder, "Test Signing", "Aspose Office", DateTime.Now);
 
             // Save the document as PDF with the digital signature set.
-            doc.Save(MyDir + @"\Artifacts\Document.Signed.pdf", options);
+            doc.Save(MyDir + "Artifacts/Document.Signed.pdf", options);
             //ExEnd
         }
 
         [Test]
         public void AppendAllDocumentsInFolder()
         {
-            String path = MyDir + @"\Artifacts\Document.AppendDocumentsFromFolder.doc";
+            String path = MyDir + "Artifacts/Document.AppendDocumentsFromFolder.doc";
 
             // Delete the file that was created by the previous run as I don't want to append it again.
             if (File.Exists(path))
@@ -913,7 +912,7 @@ namespace ApiExamples
             Console.WriteLine("Number of runs before:{0}, after:{1}, joined:{2}", runsBefore, runsAfter, joinCount);
 
             // Save the optimized document to disk.
-            doc.Save(MyDir + @"\Artifacts\Document.JoinRunsWithSameFormatting.html");
+            doc.Save(MyDir + "Artifacts/Document.JoinRunsWithSameFormatting.html");
             //ExEnd
 
             // Verify that runs were joined in the document.
@@ -930,7 +929,7 @@ namespace ApiExamples
             Document doc = new Document(MyDir + "Document.doc");
 
             doc.AttachedTemplate = "";
-            doc.Save(MyDir + @"\Artifacts\Document.DetachTemplate.doc");
+            doc.Save(MyDir + "Artifacts/Document.DetachTemplate.doc");
             //ExEnd
         }
 
@@ -1231,7 +1230,7 @@ namespace ApiExamples
             Console.WriteLine("Cell shading after style expansion: " + cellShadingAfter);
             //ExEnd
 
-            doc.Save(MyDir + @"\Artifacts\Table.ExpandTableStyleFormatting.docx");
+            doc.Save(MyDir + "Artifacts/Table.ExpandTableStyleFormatting.docx");
 
             Assert.AreEqual(0.0d, cellShadingBefore);
             Assert.AreEqual(0.0d, cellShadingAfter);
@@ -1281,7 +1280,7 @@ namespace ApiExamples
             Document doc = new Document(MyDir + "Document.doc");
             doc.ViewOptions.ViewType = ViewType.PageLayout;
             doc.ViewOptions.ZoomPercent = 50;
-            doc.Save(MyDir + @"\Artifacts\Document.SetZoom.doc");
+            doc.Save(MyDir + "Artifacts/Document.SetZoom.doc");
             //ExEnd
         }
 
@@ -1317,10 +1316,10 @@ namespace ApiExamples
             // Lets change number of columns for footnotes on page. If columns value is 0 than footnotes area is formatted with a number of columns based on
             // the number of columns on the displayed page
             doc.FootnoteOptions.Columns = 2;
-            doc.Save(MyDir + @"\Artifacts\Document.FootnoteOptions.docx");
+            doc.Save(MyDir + "Artifacts/Document.FootnoteOptions.docx");
 
             //Assert that number of columns gets correct
-            doc = new Document(MyDir + @"\Artifacts\Document.FootnoteOptions.docx");
+            doc = new Document(MyDir + "Artifacts/Document.FootnoteOptions.docx");
             Assert.AreEqual(2, doc.FirstSection.PageSetup.FootnoteOptions.Columns);
         }
 
@@ -1441,7 +1440,7 @@ namespace ApiExamples
             doc1.Revisions.AcceptAll();
 
             // doc1, when saved, now resembles doc2.
-            doc1.Save(MyDir + @"\Artifacts\Document.Compare.doc");
+            doc1.Save(MyDir + "Artifacts/Document.Compare.doc");
             //ExEnd
         }
 
@@ -1463,10 +1462,10 @@ namespace ApiExamples
 
             doc1.Compare(doc2, "vderyushev", DateTime.Now, compareOptions);
 
-            doc1.Save(MyDir + @"\Artifacts\Document.CompareOptions.docx");
+            doc1.Save(MyDir + "Artifacts/Document.CompareOptions.docx");
             //ExEnd
 
-            Assert.IsTrue(DocumentHelper.CompareDocs(MyDir + @"\Artifacts\Document.CompareOptions.docx", MyDir + @"\Golds\Document.CompareOptions Gold.docx"));
+            Assert.IsTrue(DocumentHelper.CompareDocs(MyDir + "Artifacts/Document.CompareOptions.docx", MyDir + @"\Golds\Document.CompareOptions Gold.docx"));
         }
 
         [Test]
@@ -1482,9 +1481,9 @@ namespace ApiExamples
 
             doc1.Compare(doc2, "vderyushev", DateTime.Now, compareOptions);
 
-            doc1.Save(MyDir + @"\Artifacts\Document.UseCurrentDocumentFormatting.docx");
+            doc1.Save(MyDir + "Artifacts/Document.UseCurrentDocumentFormatting.docx");
 
-            Assert.IsTrue(DocumentHelper.CompareDocs(MyDir + @"\Artifacts\Document.UseCurrentDocumentFormatting.docx", MyDir + @"\Golds\Document.UseCurrentDocumentFormatting Gold.docx"));
+            Assert.IsTrue(DocumentHelper.CompareDocs(MyDir + "Artifacts/Document.UseCurrentDocumentFormatting.docx", MyDir + @"\Golds\Document.UseCurrentDocumentFormatting Gold.docx"));
         }
 
         [Test]
@@ -1562,7 +1561,7 @@ namespace ApiExamples
             doc.FirstSection.Body.AppendParagraph("Hello again!");
             Console.WriteLine(doc.Revisions.Count); // 4
 
-            doc.Save(MyDir + @"\Artifacts\Document.StartTrackRevisions.doc");
+            doc.Save(MyDir + "Artifacts/Document.StartTrackRevisions.doc");
             //ExEnd
         }
 
@@ -1578,7 +1577,7 @@ namespace ApiExamples
             doc.LayoutOptions.RevisionOptions.ShowRevisionBalloons = true;
 
             //Check that revisions are in balloons 
-            doc.Save(MyDir + @"\Artifacts\ShowRevisionBalloons.pdf");
+            doc.Save(MyDir + "Artifacts/ShowRevisionBalloons.pdf");
             //ExEnd
         }
 
@@ -1596,7 +1595,7 @@ namespace ApiExamples
 
             // Revisions will now show up as normal text in the output document.
             doc.AcceptAllRevisions();
-            doc.Save(MyDir + @"\Artifacts\Document.AcceptedRevisions.doc");
+            doc.Save(MyDir + "Artifacts/Document.AcceptedRevisions.doc");
             //ExEnd
         }
 
@@ -1644,7 +1643,7 @@ namespace ApiExamples
             doc.HyphenationOptions.HyphenationZone = 720; // 0.5 inch
             doc.HyphenationOptions.HyphenateCaps = true;
 
-            doc.Save(MyDir + @"\Artifacts\HyphenationOptions.docx");
+            doc.Save(MyDir + "Artifacts/HyphenationOptions.docx");
             //ExEnd
 
             Assert.AreEqual(true, doc.HyphenationOptions.AutoHyphenation);
@@ -1652,7 +1651,7 @@ namespace ApiExamples
             Assert.AreEqual(720, doc.HyphenationOptions.HyphenationZone);
             Assert.AreEqual(true, doc.HyphenationOptions.HyphenateCaps);
 
-            Assert.IsTrue(DocumentHelper.CompareDocs(MyDir + @"\Artifacts\HyphenationOptions.docx", MyDir + @"\Golds\Document.HyphenationOptions Gold.docx"));
+            Assert.IsTrue(DocumentHelper.CompareDocs(MyDir + "Artifacts/HyphenationOptions.docx", MyDir + @"\Golds\Document.HyphenationOptions Gold.docx"));
         }
 
         [Test]
@@ -1827,11 +1826,11 @@ namespace ApiExamples
             SaveOptions options = new ImageSaveOptions(SaveFormat.Jpeg);
 
             options.UseAntiAliasing = false;
-            doc.Save(MyDir + @"\Artifacts\Document.SaveOptionsLowQuality.jpg", options);
+            doc.Save(MyDir + "Artifacts/Document.SaveOptionsLowQuality.jpg", options);
 
             options.UseAntiAliasing = true;
             options.UseHighQualityRendering = true;
-            doc.Save(MyDir + @"\Artifacts\Document.SaveOptionsHighQuality.jpg", options);
+            doc.Save(MyDir + "Artifacts/Document.SaveOptionsHighQuality.jpg", options);
             //ExEnd
         }
 
@@ -1950,20 +1949,20 @@ namespace ApiExamples
 
             builder.Writeln("This does not count as a revision.");
 
-            doc.Save(MyDir + @"\Artifacts\Revisions.docx");
+            doc.Save(MyDir + "Artifacts/Revisions.docx");
 
             // We can get rid of all the changes we made that counted as revisions
             doc.Revisions.RejectAll();
             Assert.IsFalse(doc.HasRevisions);
 
             // The second line that our builder wrote will not appear at all in the output
-            doc.Save(MyDir + @"\Artifacts\RevisionsRejected.docx");
+            doc.Save(MyDir + "Artifacts/RevisionsRejected.docx");
 
             // Alternatively, we can track revisions from Microsoft Word like this
             // This is the same as turning on "Track Changes" in Word
             doc.TrackRevisions = true;
 
-            doc.Save(MyDir + @"\Artifacts\RevisionsTrackedFromMSWord.docx");
+            doc.Save(MyDir + "Artifacts/RevisionsTrackedFromMSWord.docx");
             //ExEnd
         }
 
@@ -2010,7 +2009,7 @@ namespace ApiExamples
             // Any changes to the styes in this template will be propagated to those styles in the document
             doc.AutomaticallyUpdateSyles = true;
 
-            doc.Save(MyDir + @"\Artifacts\TemplateStylesUpdating.docx");
+            doc.Save(MyDir + "Artifacts/TemplateStylesUpdating.docx");
             //ExEnd
         }
 
@@ -2034,7 +2033,7 @@ namespace ApiExamples
 
             // This example covers only a small portion of all the compatibility attributes 
             // To see the entire list, in any of the output files go into File > Options > Advanced > Compatibility for...
-            doc.Save(MyDir + @"\Artifacts\DefaultCompatibility.docx");
+            doc.Save(MyDir + "Artifacts/DefaultCompatibility.docx");
 
             // We can hand pick any value and change it to create a custom compatibility
             // We can also change a bunch of values at once to suit a defined compatibility scheme with the OptimizeFor method
@@ -2049,7 +2048,7 @@ namespace ApiExamples
             Assert.AreEqual(false, co.UseWord2002TableStyleRules);
             Assert.AreEqual(true, co.UseWord2010TableStyleRules);
 
-            doc.Save(MyDir + @"\Artifacts\Optimised for Word 2010.docx");
+            doc.Save(MyDir + "Artifacts/Optimised for Word 2010.docx");
 
             doc.CompatibilityOptions.OptimizeFor(MsWordVersion.Word2000);
 
@@ -2061,7 +2060,7 @@ namespace ApiExamples
             Assert.AreEqual(true, co.UseWord2002TableStyleRules);
             Assert.AreEqual(false, co.UseWord2010TableStyleRules);
 
-            doc.Save(MyDir + @"\Artifacts\Optimised for Word 2000.docx");
+            doc.Save(MyDir + "Artifacts/Optimised for Word 2000.docx");
             //ExEnd
         }
 
@@ -2091,7 +2090,7 @@ namespace ApiExamples
             Assert.AreEqual(doc.FirstSection, doc.Sections[0]);
             Assert.AreEqual(doc.LastSection, doc.Sections[1]);
 
-            doc.Save(MyDir + @"\Artifacts\HeaderFooter.ReplaceText Out.doc");
+            doc.Save(MyDir + "Artifacts/HeaderFooter.ReplaceText Out.doc");
             //ExEnd
         }
 
@@ -2137,7 +2136,7 @@ namespace ApiExamples
             theme.Colors.Accent2 = Color.Yellow;
 
             // Save the document to use our theme
-            doc.Save(MyDir + @"\Artifacts\Document.Theme.docx");
+            doc.Save(MyDir + "Artifacts/Document.Theme.docx");
             //ExEnd
         }
 
@@ -2226,7 +2225,7 @@ namespace ApiExamples
 
             doc.LayoutOptions.IsShowHiddenText = true;
 
-            doc.Save(MyDir + @"\Artifacts\Document.LayoutOptions.pdf");
+            doc.Save(MyDir + "Artifacts/Document.LayoutOptions.pdf");
         }
 
         [Test]
@@ -2250,13 +2249,13 @@ namespace ApiExamples
             // The delimiter character is selected in the ODSO settings of mail merge settings
             string[] lines = { "FirstName|LastName|Message",
                 "John|Doe|Hello! This message was created with Aspose Words mail merge." };
-            File.WriteAllLines(MyDir + @"\Artifacts\Document.Lines.txt", lines);
+            File.WriteAllLines(MyDir + "Artifacts/Document.Lines.txt", lines);
 
             // Set the data source, query and other things
             MailMergeSettings mailMergeSettings = doc.MailMergeSettings;
             mailMergeSettings.MainDocumentType = MailMergeMainDocumentType.MailingLabels;
             mailMergeSettings.DataType = MailMergeDataType.Native;
-            mailMergeSettings.DataSource = MyDir + @"\Artifacts\Document.Lines.txt";
+            mailMergeSettings.DataSource = MyDir + "Artifacts/Document.Lines.txt";
             mailMergeSettings.Query = "SELECT * FROM " + doc.MailMergeSettings.DataSource;
             mailMergeSettings.LinkToQuery = true;
             mailMergeSettings.ViewMergedData = true;
@@ -2265,11 +2264,11 @@ namespace ApiExamples
             Odso odso = mailMergeSettings.Odso;
             odso.DataSourceType = OdsoDataSourceType.Text;
             odso.ColumnDelimiter = '|';
-            odso.DataSource = MyDir + @"\Artifacts\Document.Lines.txt";
+            odso.DataSource = MyDir + "Artifacts/Document.Lines.txt";
             odso.FirstRowContainsColumnNames = true;
 
             // The mail merge will be performed when this document is opened 
-            doc.Save(MyDir + @"\Artifacts\Document.MailMergeSettings.docx");
+            doc.Save(MyDir + "Artifacts/Document.MailMergeSettings.docx");
             //ExEnd
         }
 
@@ -2321,11 +2320,11 @@ namespace ApiExamples
                 "If gray shading is turned on, this is the text that will have a gray background.", 0);
 
             // Our bookmarked text will appear gray here
-            doc.Save(MyDir + @"\Artifacts\Document.ShadeFormDataTrue.docx");
+            doc.Save(MyDir + "Artifacts/Document.ShadeFormDataTrue.docx");
 
             // In this file, shading will be turned off and the bookmarked text will blend in with the other text
             doc.ShadeFormData = false;
-            doc.Save(MyDir + @"\Artifacts\Document.ShadeFormDataFalse.docx");
+            doc.Save(MyDir + "Artifacts/Document.ShadeFormDataFalse.docx");
             //ExEnd
         }
 
@@ -2347,8 +2346,8 @@ namespace ApiExamples
             // We can use this property to see how many there are
             Assert.AreEqual(4, doc.VersionsCount);
 
-            doc.Save(MyDir + @"\Artifacts\Document.Versions.docx");      
-            doc = new Document(MyDir + @"\Artifacts\Document.Versions.docx");
+            doc.Save(MyDir + "Artifacts/Document.Versions.docx");      
+            doc = new Document(MyDir + "Artifacts/Document.Versions.docx");
 
             // If we save and open the document, the versions are lost
             Assert.AreEqual(0, doc.VersionsCount);
@@ -2377,10 +2376,10 @@ namespace ApiExamples
             // Save the document
             // Without the password, we can only read this document in Microsoft Word
             // With the password, we can read and write
-            doc.Save(MyDir + @"\Artifacts\Document.WriteProtection.docx");
+            doc.Save(MyDir + "Artifacts/Document.WriteProtection.docx");
 
             // Re-open our document
-            Document docProtected = new Document(MyDir + @"\Artifacts\Document.WriteProtection.docx");
+            Document docProtected = new Document(MyDir + "Artifacts/Document.WriteProtection.docx");
             DocumentBuilder docProtectedBuilder = new DocumentBuilder(docProtected);
             docProtectedBuilder.MoveToDocumentEnd();
 
@@ -2389,7 +2388,7 @@ namespace ApiExamples
             docProtectedBuilder.Writeln("Writing text in a protected document.");
 
             // We will still need the password if we want to open this one with Word
-            docProtected.Save(MyDir + @"\Artifacts\Document.WriteProtectionEditedAfter.docx");
+            docProtected.Save(MyDir + "Artifacts/Document.WriteProtectionEditedAfter.docx");
             //ExEnd
         }
     }

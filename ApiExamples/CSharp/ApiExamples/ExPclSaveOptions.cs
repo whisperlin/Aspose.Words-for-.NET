@@ -8,7 +8,6 @@
 using Aspose.Words;
 using Aspose.Words.Saving;
 using NUnit.Framework;
-using Xamarin.Android;
 
 namespace ApiExamples
 {
@@ -27,7 +26,7 @@ namespace ApiExamples
             PclSaveOptions saveOptions = new PclSaveOptions();
             saveOptions.RasterizeTransformedElements = true;
 
-            doc.Save(MyDir + @"\Artifacts\Document.EpubConversion.pcl", saveOptions);
+            doc.Save(MyDir + "Artifacts/Document.EpubConversion.pcl", saveOptions);
             //ExEnd
         }
 
@@ -44,7 +43,7 @@ namespace ApiExamples
             saveOptions.AddPrinterFont("Courier", "Courier");
             saveOptions.FallbackFontName = "Times New Roman";
 
-            doc.Save(MyDir + @"\Artifacts\Document.EpubConversion.pcl", saveOptions);
+            doc.Save(MyDir + "Artifacts/Document.EpubConversion.pcl", saveOptions);
             //ExEnd
         }
     }

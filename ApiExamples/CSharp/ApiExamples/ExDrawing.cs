@@ -4,7 +4,6 @@ using System.Text;
 using Aspose.Words;
 using Aspose.Words.Drawing;
 using NUnit.Framework;
-using Xamarin.Android;
 using Shape = Aspose.Words.Drawing.Shape;
 
 namespace ApiExamples
@@ -87,7 +86,7 @@ namespace ApiExamples
                 filledInArrowImg.Stroke.JoinStyle = JoinStyle.Round;
             }
 
-            doc.Save(MyDir + @"\Artifacts\Drawing.VariousShapes.docx");
+            doc.Save(MyDir + "Artifacts/Drawing.VariousShapes.docx");
             //ExEnd
         }
 #endif
@@ -224,7 +223,7 @@ namespace ApiExamples
             builder.Write("This text is flipped 90 degrees to the left.");
 
             textbox.TextBox.LayoutFlow = LayoutFlow.BottomToTop;
-            doc.Save(MyDir + @"\Artifacts\Drawing.TextBox.docx");
+            doc.Save(MyDir + "Artifacts/Drawing.TextBox.docx");
             //ExEnd
         }
     }

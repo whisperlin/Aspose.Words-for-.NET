@@ -11,7 +11,7 @@ using Aspose.Words.Tables;
 using System;
 using System.IO;
 using NUnit.Framework;
-using Xamarin.Android;
+
 #if !(NETSTANDARD2_0 || __MOBILE__)
 using System.Collections.Generic;
 using System.Linq;

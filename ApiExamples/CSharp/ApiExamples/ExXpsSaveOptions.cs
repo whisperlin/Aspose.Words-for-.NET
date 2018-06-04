@@ -8,7 +8,6 @@
 using Aspose.Words;
 using Aspose.Words.Saving;
 using NUnit.Framework;
-using Xamarin.Android;
 
 namespace ApiExamples
 {
@@ -26,7 +25,7 @@ namespace ApiExamples
             XpsSaveOptions saveOptions = new XpsSaveOptions();
             saveOptions.OptimizeOutput = true;
 
-            doc.Save(MyDir + @"\Artifacts\XPSOutputOptimize.xps");
+            doc.Save(MyDir + "Artifacts/XPSOutputOptimize.xps");
             //ExEnd
         }
     }

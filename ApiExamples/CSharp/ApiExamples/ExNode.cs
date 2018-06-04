@@ -12,7 +12,6 @@ using Aspose.Words;
 using Aspose.Words.Saving;
 using Aspose.Words.Tables;
 using NUnit.Framework;
-using Xamarin.Android;
 
 namespace ApiExamples
 {
