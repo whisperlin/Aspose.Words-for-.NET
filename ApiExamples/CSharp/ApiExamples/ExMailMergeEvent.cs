@@ -21,7 +21,6 @@ using lcpi.data.oledb;
 using System.Data.OleDb;
 #endif
 
-
 namespace ApiExamples
 {
     [TestFixture]
