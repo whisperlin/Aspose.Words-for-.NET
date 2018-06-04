@@ -8,10 +8,12 @@
 using System;
 using Aspose.Words;
 using Aspose.Words.Saving;
-using Aspose.Pdf.Facades;
-using Aspose.Pdf.Text;
 using NUnit.Framework;
 using Xamarin.Android;
+#if !__MOBILE__
+using Aspose.Pdf.Facades;
+using Aspose.Pdf.Text;  
+#endif
 
 namespace ApiExamples
 {
@@ -53,7 +55,7 @@ namespace ApiExamples
 
             doc.Save(MyDir + @"\Artifacts\CreateMissingOutlineLevels.pdf", pdfSaveOptions);
             //ExEnd
-
+#if !__MOBILE__
             // Bind PDF with Aspose.PDF
             PdfBookmarkEditor bookmarkEditor = new PdfBookmarkEditor();
             bookmarkEditor.BindPdf(MyDir + @"\Artifacts\CreateMissingOutlineLevels.pdf");
@@ -62,6 +64,7 @@ namespace ApiExamples
             Bookmarks bookmarks = bookmarkEditor.ExtractBookmarks();
 
             Assert.AreEqual(11, bookmarks.Count);
+#endif
         }
 
         //Note: Test doesn't contain validation result.
@@ -95,7 +98,7 @@ namespace ApiExamples
 
             doc.Save(MyDir + @"\Artifacts\UpdateFields_False.pdf", pdfSaveOptions);
             //ExEnd
-
+#if !__MOBILE__
             Aspose.Pdf.Document pdfDocument = new Aspose.Pdf.Document(MyDir + @"\Artifacts\UpdateFields_False.pdf");
 
             // Get text fragment by search String
@@ -104,6 +107,7 @@ namespace ApiExamples
 
             // Assert that fields are not updated
             Assert.AreEqual("Page  of", textFragmentAbsorber.TextFragments[1].Text);
+#endif
         }
 
         [Test]
@@ -115,7 +119,7 @@ namespace ApiExamples
             pdfSaveOptions.UpdateFields = true;
 
             doc.Save(MyDir + @"\Artifacts\UpdateFields_False.pdf", pdfSaveOptions);
-
+#if !__MOBILE__
             Aspose.Pdf.Document pdfDocument = new Aspose.Pdf.Document(MyDir + @"\Artifacts\UpdateFields_False.pdf");
 
             // Get text fragment by search String
@@ -124,6 +128,7 @@ namespace ApiExamples
 
             // Assert that fields are updated
             Assert.AreEqual("Page 1 of 2", textFragmentAbsorber.TextFragments[1].Text);
+#endif
         }
 
         //ToDo: Add gold asserts for PDF files
@@ -196,11 +201,12 @@ namespace ApiExamples
 
             doc.Save(MyDir + @"\Artifacts\PdfTitle.pdf", pdfSaveOptions);
             //ExEnd
-
+#if !__MOBILE__
             Aspose.Pdf.Document pdfDocument = new Aspose.Pdf.Document(MyDir + @"\Artifacts\PdfTitle.pdf");
 
             Assert.IsTrue(pdfDocument.DisplayDocTitle);
             Assert.AreEqual("Windows bar pdf title", pdfDocument.Info.Title);
+#endif
         }
 
         [Test]

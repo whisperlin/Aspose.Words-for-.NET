@@ -7,12 +7,14 @@
 
 using System;
 using System.Collections;
-using Aspose.Pdf.Facades;
 using NUnit.Framework;
 using Aspose.Words;
 using Aspose.Words.Saving;
 using Xamarin.Android;
 using Bookmark = Aspose.Words.Bookmark;
+#if !__MOBILE__
+using Aspose.Pdf.Facades;
+#endif
 
 namespace ApiExamples
 {
@@ -230,7 +232,7 @@ namespace ApiExamples
 
             doc.Save(MyDir + @"\Artifacts\Bookmarks.WhiteSpaces Out.pdf", pdfSaveOptions);
             //ExEnd
-
+#if !__MOBILE__
             //Bind pdf with Aspose.Pdf
             PdfBookmarkEditor bookmarkEditor = new PdfBookmarkEditor();
             bookmarkEditor.BindPdf(MyDir + @"\Artifacts\Bookmarks.WhiteSpaces Out.pdf");
@@ -243,6 +245,7 @@ namespace ApiExamples
             //Assert that all the bookmarks title are with whitespaces
             Assert.AreEqual("My Bookmark", bookmarks[0].Title);
             Assert.AreEqual("Nested Bookmark", bookmarks[1].Title);
+#endif
         }
 
         //ExStart

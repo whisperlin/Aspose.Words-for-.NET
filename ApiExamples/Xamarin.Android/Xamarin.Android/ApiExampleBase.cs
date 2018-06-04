@@ -6,11 +6,12 @@
 //////////////////////////////////////////////////////////////////////////
 
 using System;
-using System.Diagnostics;
 using System.IO;
+using System.Linq;
+using System.Text.RegularExpressions;
+using Android.App;
 using Aspose.Words;
 using NUnit.Framework;
-using Environment = Android.OS.Environment;
 
 namespace Xamarin.Android
 {
@@ -19,18 +20,18 @@ namespace Xamarin.Android
     /// </summary>
     public class ApiExampleBase
     {
+        private readonly String artifactsPath = MyDir + "Artifacts/";
+
         [OneTimeSetUp]
         public void OneTimeSetUp()
         {
-            //ExecuteCommandSync();
-
             SetUnlimitedLicense();
         }
 
         [OneTimeTearDown]
         public void OneTimeTearDown()
         {
-            //Directory.Delete(MyDir, true);
+            Directory.Delete(artifactsPath, true);
         }
 
         internal static void SetUnlimitedLicense()
@@ -44,12 +45,6 @@ namespace Xamarin.Android
                 License license = new License();
                 license.SetLicense(TestLicenseFileName);
             }
-        }
-
-        internal static void RemoveLicense()
-        {
-            License license = new License();
-            license.SetLicense("");
         }
 
         /// <summary>
@@ -78,34 +73,51 @@ namespace Xamarin.Android
 
         static ApiExampleBase()
         {
-            gMyDir = Environment.ExternalStorageDirectory.AbsolutePath + "/Data/";
-            gImageDir = Environment.ExternalStorageDirectory.AbsolutePath + "/Data/Images/";
-            gDatabaseDir = Environment.ExternalStorageDirectory.AbsolutePath + "/Data/Database/";
+            gMyDir = Path.Combine(GetExternalSdCardPath(), "Data/");
+            gImageDir = Path.Combine(GetExternalSdCardPath(), "Data/Images/");
+            gDatabaseDir = Path.Combine(GetExternalSdCardPath(), "Data/Database/");
         }
 
         private static readonly String gMyDir;
         private static readonly String gImageDir;
         private static readonly String gDatabaseDir;
 
-        internal static readonly string TestLicenseFileName = Environment.ExternalStorageDirectory.AbsolutePath + "/Data/License/Aspose.Total.lic";
+        internal static readonly string TestLicenseFileName = Path.Combine(GetExternalSdCardPath(), "Data/License/Aspose.Total.lic");
 
-        void ExecuteCommandSync()
+        /// <summary>
+        /// Extended SD Card path location for KitKat (Android 19 / 4.4) and upwards.
+        /// Must be called only on devices >= KitKat or it'll crash, since some of these OS/API calls were 
+        /// only introduced in Android SDK level 19.
+        /// </summary>
+        /// <returns></returns>
+        internal static string GetExternalSdCardPath()
         {
-            string bat = @"X:\Test.bat";
+            Java.IO.File[] externalFilesDirs = Application.Context.GetExternalFilesDirs(null);
+            
+            // if there are any items, the FIRST will always be INTERNAL storage (not the SD cardO). 
+            // Any subsequent items will be removable storage which is considered 'permanently' mounted 
+            // (like inside the case, in an SD card slot). 
+            // "Transient" storage like external USB drives is ignored, you won't see it in these results.
+            if (externalFilesDirs.Any())
+            {
+                // we only want the external drive, otherwise nothing!
+                string appExternalSdPath = externalFilesDirs.Length > 1 ? externalFilesDirs[1].AbsolutePath : string.Empty;
 
-            try
-            {
-                ProcessStartInfo procInfo = new ProcessStartInfo();
-                procInfo.CreateNoWindow = true;
-                procInfo.FileName = @"cmd.exe";
-                procInfo.Verb = "runas";
-                procInfo.Arguments = "/C " + bat;
-                Process.Start(procInfo);  //Start that process.
+                // note that in the case of an SD card, ONLY the path it returns is writeable. You can 
+                // drop back to the "root" as we did with the internal one above, but that's readonly.
+                var externalSdPath = ExtractString(@"^/storage/.+?/", appExternalSdPath);
+                return externalSdPath;
             }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
+
+            return string.Empty;
+        }
+
+        internal static string ExtractString(string regex, string searchString)
+        {
+            Regex pattern = new Regex(regex);
+            Match match = pattern.Match(searchString);
+
+            return match.Value;
         }
     }
 }

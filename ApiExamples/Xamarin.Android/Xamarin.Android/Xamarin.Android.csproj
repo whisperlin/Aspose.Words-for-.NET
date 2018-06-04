@@ -14,7 +14,7 @@
     <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
-    <AndroidUseLatestPlatformSdk>true</AndroidUseLatestPlatformSdk>
+    <AndroidUseLatestPlatformSdk>false</AndroidUseLatestPlatformSdk>
     <AndroidSupportedAbis>armeabi,armeabi-v7a,x86</AndroidSupportedAbis>
     <AndroidStoreUncompressedFileExtensions />
     <MandroidI18n />
@@ -24,7 +24,7 @@
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <EmbedAssembliesIntoApk>True</EmbedAssembliesIntoApk>
-    <TargetFrameworkVersion>v8.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v7.1</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -53,20 +53,11 @@
     <Reference Include="Aspose.BarCode, Version=18.5.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
       <HintPath>..\packages\Aspose.BarCode.18.5.0\lib\netstandard2.0\Aspose.BarCode.dll</HintPath>
     </Reference>
-    <Reference Include="Aspose.PDF, Version=18.5.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
-      <HintPath>..\packages\Aspose.PDF.18.5.0\lib\netstandard2.0\Aspose.PDF.dll</HintPath>
-    </Reference>
     <Reference Include="Aspose.Words, Version=18.5.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
       <HintPath>..\packages\Aspose.Words.18.5.0\lib\MonoAndroid23\Aspose.Words.dll</HintPath>
     </Reference>
     <Reference Include="FormsViewGroup, Version=1.5.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Xamarin.Forms.1.5.0.6447\lib\MonoAndroid10\FormsViewGroup.dll</HintPath>
-    </Reference>
-    <Reference Include="lcpi.data.oledb.nets2_0, Version=1.7.1.3418, Culture=neutral, PublicKeyToken=ff716095e8002e7e, processorArchitecture=MSIL">
-      <HintPath>..\packages\lcpi.data.oledb.1.7.1.3418\lib\netstandard2.0\lcpi.data.oledb.nets2_0.dll</HintPath>
-    </Reference>
-    <Reference Include="lcpi.lib.nets2_0, Version=2.1.1.1665, Culture=neutral, PublicKeyToken=ff716095e8002e7e, processorArchitecture=MSIL">
-      <HintPath>..\packages\lcpi.lib.2.1.1.1665\lib\netstandard2.0\lcpi.lib.nets2_0.dll</HintPath>
     </Reference>
     <Reference Include="Mono.Android" />
     <Reference Include="mscorlib" />
