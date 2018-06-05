@@ -45,7 +45,7 @@ namespace ApiExamples
             doc.Range.Replace("_CustomerName_", "James Bond", options);
 
             // Save the modified document.
-            doc.Save(MyDir + "Artifacts/Range.ReplaceSimple.docx");
+            doc.Save(ArtifactsDir + "Range.ReplaceSimple.docx");
             //ExEnd
 
             Assert.AreEqual("Hello James Bond,\r\x000c", doc.GetText());
@@ -66,7 +66,7 @@ namespace ApiExamples
 
             doc.Range.Replace("sad", "bad", options);
 
-            doc.Save(MyDir + "Artifacts/ReplaceWithString.docx");
+            doc.Save(ArtifactsDir + "ReplaceWithString.docx");
         }
 
         [Test]
@@ -84,7 +84,7 @@ namespace ApiExamples
             doc.Range.Replace(new Regex("[s|m]ad"), "bad", options);
             //ExEnd
 
-            doc.Save(MyDir + "Artifacts/ReplaceWithRegex.docx");
+            doc.Save(ArtifactsDir + "ReplaceWithRegex.docx");
         }
 
         [Test]
@@ -110,7 +110,7 @@ namespace ApiExamples
             doc.Range.Replace(new Regex(@" <CustomerName>,"), String.Empty, options);
 
             // Save the modified document.
-            doc.Save(MyDir + "Artifacts/Range.ReplaceWithInsertHtml.doc");
+            doc.Save(ArtifactsDir + "Range.ReplaceWithInsertHtml.doc");
 
             Assert.AreEqual("James Bond, Hello\r\x000c", doc.GetText()); //ExSkip
         }

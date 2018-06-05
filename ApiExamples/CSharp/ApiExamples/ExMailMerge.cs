@@ -70,7 +70,7 @@ namespace ApiExamples
             // Field values from the table are inserted into the mail merge fields found in the document.
             doc.MailMerge.Execute(table);
 
-            doc.Save(MyDir + "Artifacts/MailMerge.ExecuteDataTable.doc");
+            doc.Save(ArtifactsDir + "MailMerge.ExecuteDataTable.doc");
             //ExEnd
         }
 
@@ -329,9 +329,9 @@ namespace ApiExamples
             doc.MailMerge.CleanupOptions = MailMergeCleanupOptions.RemoveEmptyTableRows;
             doc.MailMerge.ExecuteWithRegions(data);
 
-            doc.Save(MyDir + "Artifacts/MailMerge.CleanUp.docx");
+            doc.Save(ArtifactsDir + "MailMerge.CleanUp.docx");
 
-            Assert.IsTrue(DocumentHelper.CompareDocs(MyDir + "Artifacts/MailMerge.CleanUp.docx", MyDir + @"\Golds\MailMerge.CleanUp Gold.docx"));
+            Assert.IsTrue(DocumentHelper.CompareDocs(ArtifactsDir + "MailMerge.CleanUp.docx", GoldsDir + "MailMerge.CleanUp Gold.docx"));
         }
 
         /// <summary>

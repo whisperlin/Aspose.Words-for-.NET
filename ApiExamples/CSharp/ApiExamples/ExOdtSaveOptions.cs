@@ -26,7 +26,7 @@ namespace ApiExamples
             OdtSaveOptions saveOptions = new OdtSaveOptions();
             saveOptions.MeasureUnit = OdtSaveMeasureUnit.Inches;
 
-            doc.Save(MyDir + "Artifacts/OdtSaveOptions.MeasureUnit.odt");
+            doc.Save(ArtifactsDir + "OdtSaveOptions.MeasureUnit.odt");
             //ExEnd
         }
     }

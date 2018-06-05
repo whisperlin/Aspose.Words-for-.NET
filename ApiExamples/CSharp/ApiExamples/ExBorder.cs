@@ -77,7 +77,7 @@ namespace ApiExamples
 
             builder.CurrentParagraph.Runs[0].Text = "Paragraph with no border";
 
-            doc.Save(MyDir + "Artifacts/Border.NoBorder.doc");
+            doc.Save(ArtifactsDir + "Border.NoBorder.doc");
             //ExEnd
         }
 
@@ -199,7 +199,7 @@ namespace ApiExamples
                 table.AppendChild(row);
             }
 
-            doc.Save(MyDir + "Artifacts/Border.HorizontalAndVerticalBorders.docx");
+            doc.Save(ArtifactsDir + "Border.HorizontalAndVerticalBorders.docx");
             //ExEnd
         }
     }

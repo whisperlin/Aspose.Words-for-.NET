@@ -84,9 +84,9 @@ namespace ApiExamples
 
             doc.FirstSection.Body.AppendChild(sdt);
 
-            doc.Save(MyDir + "Artifacts/SDT.CustomXml.docx");
+            doc.Save(ArtifactsDir + "SDT.CustomXml.docx");
             //ExEnd
-            Assert.IsTrue(DocumentHelper.CompareDocs(MyDir + "Artifacts/SDT.CustomXml.docx", MyDir + @"\Golds\SDT.CustomXml Gold.docx"));
+            Assert.IsTrue(DocumentHelper.CompareDocs(ArtifactsDir + "SDT.CustomXml.docx", GoldsDir + "SDT.CustomXml Gold.docx"));
         }
 
         [Test]

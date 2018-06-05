@@ -41,7 +41,7 @@ namespace ApiExamples
         {
             string signPersonName = "Ron Williams";
             string srcDocumentPath = MyDir + "Document.docx";
-            string dstDocumentPath = MyDir + "Artifacts/Document.Signed.docx";
+            string dstDocumentPath = ArtifactsDir + "Document.Signed.docx";
             string certificatePath = MyDir + "morzal.pfx";
             string certificatePassword = "aw";
 

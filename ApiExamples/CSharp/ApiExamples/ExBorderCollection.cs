@@ -35,7 +35,7 @@ namespace ApiExamples
                 b.LineStyle = LineStyle.Double;
             }
 
-            doc.Save(MyDir + "Artifacts/Border.ChangedColourBorder.doc");                                                    
+            doc.Save(ArtifactsDir + "Border.ChangedColourBorder.doc");                                                    
             //ExEnd
         }
 

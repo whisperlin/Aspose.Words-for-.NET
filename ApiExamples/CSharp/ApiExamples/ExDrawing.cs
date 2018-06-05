@@ -86,7 +86,7 @@ namespace ApiExamples
                 filledInArrowImg.Stroke.JoinStyle = JoinStyle.Round;
             }
 
-            doc.Save(MyDir + "Artifacts/Drawing.VariousShapes.docx");
+            doc.Save(ArtifactsDir + "Drawing.VariousShapes.docx");
             //ExEnd
         }
 #endif
@@ -223,7 +223,7 @@ namespace ApiExamples
             builder.Write("This text is flipped 90 degrees to the left.");
 
             textbox.TextBox.LayoutFlow = LayoutFlow.BottomToTop;
-            doc.Save(MyDir + "Artifacts/Drawing.TextBox.docx");
+            doc.Save(ArtifactsDir + "Drawing.TextBox.docx");
             //ExEnd
         }
     }

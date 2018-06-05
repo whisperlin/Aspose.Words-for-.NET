@@ -92,7 +92,7 @@ namespace ApiExamples
             builder.InsertBreak(BreakType.PageBreak);
             builder.Writeln("Page3");
 
-            doc.Save(MyDir + "Artifacts/DocumentBuilder.HeadersAndFooters.doc");
+            doc.Save(ArtifactsDir + "DocumentBuilder.HeadersAndFooters.doc");
             //ExEnd
         }
 
@@ -117,7 +117,7 @@ namespace ApiExamples
 
             builder.Write(" Text between our two merge fields. ");
 
-            doc.Save(MyDir + "Artifacts/DocumentBuilder.MergeFields.docx");
+            doc.Save(ArtifactsDir + "DocumentBuilder.MergeFields.docx");
             //ExEnd			
         }
 
@@ -227,7 +227,7 @@ namespace ApiExamples
 
             builder.Writeln("Hello World!");
 
-            doc.Save(MyDir + "Artifacts/DocumentBuilderAndSave.docx");
+            doc.Save(ArtifactsDir + "DocumentBuilderAndSave.docx");
             //ExEnd
         }
 
@@ -258,7 +258,7 @@ namespace ApiExamples
 
             builder.Write(" for more information.");
 
-            doc.Save(MyDir + "Artifacts/DocumentBuilder.InsertHyperlink.doc");
+            doc.Save(ArtifactsDir + "DocumentBuilder.InsertHyperlink.doc");
             //ExEnd
         }
 
@@ -293,7 +293,7 @@ namespace ApiExamples
 
             builder.Writeln(". We hope you enjoyed the example.");
 
-            doc.Save(MyDir + "Artifacts/DocumentBuilder.PushPopFont.doc");
+            doc.Save(ArtifactsDir + "DocumentBuilder.PushPopFont.doc");
             //ExEnd
         }
 
@@ -345,7 +345,7 @@ namespace ApiExamples
             shape.Left = (builder.PageSetup.PageWidth - shape.Width) / 2;
             shape.Top = (builder.PageSetup.PageHeight - shape.Height) / 2;
 #endif
-            doc.Save(MyDir + "Artifacts/DocumentBuilder.InsertWatermark.doc");
+            doc.Save(ArtifactsDir + "DocumentBuilder.InsertWatermark.doc");
             //ExEnd
         }
 
@@ -364,7 +364,7 @@ namespace ApiExamples
 
             builder.InsertHtml(html);
 
-            doc.Save(MyDir + "Artifacts/DocumentBuilder.InsertHtml.doc");
+            doc.Save(ArtifactsDir + "DocumentBuilder.InsertHtml.doc");
             //ExEnd
         }
 
@@ -381,7 +381,7 @@ namespace ApiExamples
 
             builder.InsertHtml("<P align='right'>Paragraph right</P>" + "<b>Implicit paragraph left</b>" + "<div align='center'>Div center</div>" + "<h1 align='left'>Heading 1 left.</h1>", useBuilderFormatting);
 
-            doc.Save(MyDir + "Artifacts/DocumentBuilder.InsertHtml.doc");
+            doc.Save(ArtifactsDir + "DocumentBuilder.InsertHtml.doc");
             //ExEnd
         }
 
@@ -399,12 +399,12 @@ namespace ApiExamples
             builder.InsertHtml(mathMl);
             //ExEnd
 
-            doc.Save(MyDir + "Artifacts/MathML.docx");
-            doc.Save(MyDir + "Artifacts/MathML.pdf");
+            doc.Save(ArtifactsDir + "MathML.docx");
+            doc.Save(ArtifactsDir + "MathML.pdf");
 
-            Assert.IsTrue(DocumentHelper.CompareDocs(MyDir + @"\Golds\MathML Gold.docx", MyDir + "Artifacts/MathML.docx"));
+            Assert.IsTrue(DocumentHelper.CompareDocs(GoldsDir + "MathML Gold.docx", ArtifactsDir + "MathML.docx"));
 #if !(NETSTANDARD2_0 || __MOBILE__)
-            DocumentHelper.ComparePdf(MyDir + @"\Golds\MathML Gold.pdf", MyDir + "Artifacts/MathML.pdf");
+            DocumentHelper.ComparePdf(GoldsDir + "MathML Gold.pdf", ArtifactsDir + "MathML.pdf");
 #endif
         }
 
@@ -450,7 +450,7 @@ namespace ApiExamples
             builder.Writeln("");
             builder.Writeln("");
 
-            builder.Document.Save(MyDir + "Artifacts/DocumentBuilder.CreateForm.doc");
+            builder.Document.Save(ArtifactsDir + "DocumentBuilder.CreateForm.doc");
             //ExEnd
         }
 
@@ -563,7 +563,7 @@ namespace ApiExamples
             builder.MoveToDocumentEnd();
             builder.Writeln("End of document.");
 
-            doc.Save(MyDir + "Artifacts/DocumentBuilder.WorkingWithNodes.doc");
+            doc.Save(ArtifactsDir + "DocumentBuilder.WorkingWithNodes.doc");
             //ExEnd
         }
 
@@ -590,7 +590,7 @@ namespace ApiExamples
             builder.Italic = true;
             builder.Writeln("Vladimir Averkin");
 
-            doc.Save(MyDir + "Artifacts/DocumentBuilder.FillingDocument.doc");
+            doc.Save(ArtifactsDir + "DocumentBuilder.FillingDocument.doc");
             //ExEnd
         }
 
@@ -648,7 +648,7 @@ namespace ApiExamples
             doc.UpdateFields();
             //ExEnd
 
-            doc.Save(MyDir + "Artifacts/DocumentBuilder.InsertToc.docx");
+            doc.Save(ArtifactsDir + "DocumentBuilder.InsertToc.docx");
         }
 
         [Test]
@@ -727,7 +727,7 @@ namespace ApiExamples
 
             builder.EndTable();
 
-            builder.Document.Save(MyDir + "Artifacts/DocumentBuilder.InsertTable.doc");
+            builder.Document.Save(ArtifactsDir + "DocumentBuilder.InsertTable.doc");
             //ExEnd
         }
 
@@ -780,7 +780,7 @@ namespace ApiExamples
             builder.Writeln("50");
             builder.EndRow();
 
-            doc.Save(MyDir + "Artifacts/DocumentBuilder.SetTableStyle.docx");
+            doc.Save(ArtifactsDir + "DocumentBuilder.SetTableStyle.docx");
             //ExEnd
 
             // Verify that the style was set by expanding to direct formatting.
@@ -828,7 +828,7 @@ namespace ApiExamples
                 builder.EndRow();
             }
 
-            doc.Save(MyDir + "Artifacts/Table.HeadingRow.doc");
+            doc.Save(ArtifactsDir + "Table.HeadingRow.doc");
             //ExEnd
 
             Assert.True(table.FirstRow.RowFormat.HeadingFormat);
@@ -862,7 +862,7 @@ namespace ApiExamples
             builder.InsertCell();
             builder.Writeln("Cell #3");
 
-            doc.Save(MyDir + "Artifacts/Table.PreferredWidth.doc");
+            doc.Save(ArtifactsDir + "Table.PreferredWidth.doc");
             //ExEnd
 
             // Verify the correct settings were applied.
@@ -906,7 +906,7 @@ namespace ApiExamples
             builder.Writeln("Cell automatically sized. The size of this cell is calculated from the table preferred width.");
             builder.Writeln("In this case the cell will fill up the rest of the available space.");
 
-            doc.Save(MyDir + "Artifacts/Table.CellPreferredWidths.doc");
+            doc.Save(ArtifactsDir + "Table.CellPreferredWidths.doc");
             //ExEnd
 
             // Verify the correct settings were applied.
@@ -928,7 +928,7 @@ namespace ApiExamples
             // inserted from HTML.
             builder.InsertHtml("<table>" + "<tr>" + "<td>Row 1, Cell 1</td>" + "<td>Row 1, Cell 2</td>" + "</tr>" + "<tr>" + "<td>Row 2, Cell 2</td>" + "<td>Row 2, Cell 2</td>" + "</tr>" + "</table>");
 
-            doc.Save(MyDir + "Artifacts/DocumentBuilder.InsertTableFromHtml.doc");
+            doc.Save(ArtifactsDir + "DocumentBuilder.InsertTableFromHtml.doc");
             //ExEnd
 
             // Verify the table was constructed properly.
@@ -969,7 +969,7 @@ namespace ApiExamples
 
             builder.EndTable();
 
-            doc.Save(MyDir + "Artifacts/DocumentBuilder.InsertNestedTable.doc");
+            doc.Save(ArtifactsDir + "DocumentBuilder.InsertNestedTable.doc");
             //ExEnd
 
             Assert.AreEqual(2, doc.GetChildNodes(NodeType.Table, true).Count);
@@ -1014,7 +1014,7 @@ namespace ApiExamples
             builder.EndTable();
 
             // Save the document to disk.
-            doc.Save(MyDir + "Artifacts/DocumentBuilder.CreateSimpleTable.doc");
+            doc.Save(ArtifactsDir + "DocumentBuilder.CreateSimpleTable.doc");
             //ExEnd
 
             // Verify that the cell count of the table is four.
@@ -1109,7 +1109,7 @@ namespace ApiExamples
             builder.EndRow();
             builder.EndTable();
 
-            doc.Save(MyDir + "Artifacts/DocumentBuilder.CreateFormattedTable.doc");
+            doc.Save(ArtifactsDir + "DocumentBuilder.CreateFormattedTable.doc");
             //ExEnd
 
             // Verify that the cell style is different compared to default.
@@ -1171,7 +1171,7 @@ namespace ApiExamples
             builder.CellFormat.ClearFormatting();
             builder.Writeln("Cell #4");
 
-            doc.Save(MyDir + "Artifacts/Table.SetBordersAndShading.doc");
+            doc.Save(ArtifactsDir + "Table.SetBordersAndShading.doc");
             //ExEnd
 
             // Verify the table was created correctly.
@@ -1232,7 +1232,7 @@ namespace ApiExamples
             // Clear hyperlink formatting.
             builder.Font.ClearFormatting();
 
-            doc.Save(MyDir + "Artifacts/DocumentBuilder.InsertHyperlinkToLocalBookmark.doc");
+            doc.Save(ArtifactsDir + "DocumentBuilder.InsertHyperlinkToLocalBookmark.doc");
             //ExEnd
         }
 
@@ -1556,7 +1556,7 @@ namespace ApiExamples
             DocumentBuilder builder = new DocumentBuilder(doc);
             builder.InsertImage("http://www.aspose.com/images/aspose-logo.gif");
 
-            doc.Save(MyDir + "Artifacts/DocumentBuilder.InsertImageFromUrl.doc");
+            doc.Save(ArtifactsDir + "DocumentBuilder.InsertImageFromUrl.doc");
             //ExEnd
 
             // Verify that the image was inserted into the document.
@@ -1579,7 +1579,7 @@ namespace ApiExamples
             builder.InsertImage(ImageDir + "LogoSmall.png", RelativeHorizontalPosition.Margin, 200, RelativeVerticalPosition.Margin, 100, -1, -1, WrapType.Square);
             //ExEnd
 
-            doc.Save(MyDir + "Artifacts/DocumentBuilder.InsertImageOriginalSize.doc");
+            doc.Save(ArtifactsDir + "DocumentBuilder.InsertImageOriginalSize.doc");
         }
 
         [Test]
@@ -1673,7 +1673,7 @@ namespace ApiExamples
             SignatureLine signatureLine = builder.InsertSignatureLine(signatureLineOptions).SignatureLine;
             signatureLine.ProviderId = Guid.Parse("CF5A7BB4-8F3C-4756-9DF6-BEF7F13259A2");
             
-            doc.Save(MyDir + "Artifacts/DocumentBuilder.SignatureLineProviderId In.docx");
+            doc.Save(ArtifactsDir + "DocumentBuilder.SignatureLineProviderId In.docx");
 
             SignOptions signOptions = new SignOptions();
             signOptions.SignatureLineId = signatureLine.Id;
@@ -1683,10 +1683,10 @@ namespace ApiExamples
             
             CertificateHolder certHolder = CertificateHolder.Create(MyDir + "morzal.pfx", "aw");
 
-            DigitalSignatureUtil.Sign(MyDir + "Artifacts/DocumentBuilder.SignatureLineProviderId In.docx", MyDir + "Artifacts/DocumentBuilder.SignatureLineProviderId Out.docx", certHolder, signOptions);
+            DigitalSignatureUtil.Sign(ArtifactsDir + "DocumentBuilder.SignatureLineProviderId In.docx", ArtifactsDir + "DocumentBuilder.SignatureLineProviderId Out.docx", certHolder, signOptions);
             //ExEnd
 
-            Assert.IsTrue(DocumentHelper.CompareDocs(MyDir + "Artifacts/DocumentBuilder.SignatureLineProviderId Out.docx", MyDir + @"\Golds\DocumentBuilder.SignatureLineProviderId Gold.docx"));
+            Assert.IsTrue(DocumentHelper.CompareDocs(ArtifactsDir + "DocumentBuilder.SignatureLineProviderId Out.docx", GoldsDir + "DocumentBuilder.SignatureLineProviderId Gold.docx"));
         }
 
         [Test]
@@ -1927,9 +1927,9 @@ namespace ApiExamples
             doc.FootnoteOptions.StartNumber = 1;
             doc.FootnoteOptions.RestartRule = FootnoteNumberingRule.RestartPage;
 
-            doc.Save(MyDir + "Artifacts/DocumentBuilder.InsertFootnote.docx");
+            doc.Save(ArtifactsDir + "DocumentBuilder.InsertFootnote.docx");
 
-            Assert.IsTrue(DocumentHelper.CompareDocs(MyDir + "Artifacts/DocumentBuilder.InsertFootnote.docx", MyDir + @"\Golds\DocumentBuilder.InsertFootnote Gold.docx"));
+            Assert.IsTrue(DocumentHelper.CompareDocs(ArtifactsDir + "DocumentBuilder.InsertFootnote.docx", GoldsDir + "DocumentBuilder.InsertFootnote Gold.docx"));
         }
 
         [Test]
@@ -2009,9 +2009,9 @@ namespace ApiExamples
 
             builder.InsertDocument(docToInsert, ImportFormatMode.KeepSourceFormatting);
             //ExEnd
-            builder.Document.Save(MyDir + "Artifacts/DocumentBuilder.InsertDocument.docx");
+            builder.Document.Save(ArtifactsDir + "DocumentBuilder.InsertDocument.docx");
 
-            Assert.IsTrue(DocumentHelper.CompareDocs(MyDir + "Artifacts/DocumentBuilder.InsertDocument.docx", MyDir + @"\Golds\DocumentBuilder.InsertDocument Gold.docx"));
+            Assert.IsTrue(DocumentHelper.CompareDocs(ArtifactsDir + "DocumentBuilder.InsertDocument.docx", GoldsDir + "DocumentBuilder.InsertDocument Gold.docx"));
         }
 
         [Test]
@@ -2050,7 +2050,7 @@ namespace ApiExamples
             Shape oleObject = builder.InsertOleObject(MyDir + "Document.Spreadsheet.xlsx", false, false, representingImage);
             Shape oleObjectWithProgId = builder.InsertOleObject(MyDir + "Document.Spreadsheet.xlsx", "Excel.Sheet", false, false, representingImage);
 #endif            
-            doc.Save(MyDir + "Artifacts/Document.InsertedOleObject.docx");
+            doc.Save(ArtifactsDir + "Document.InsertedOleObject.docx");
             //ExEnd
         }
 
@@ -2074,7 +2074,7 @@ namespace ApiExamples
 
             builder.InsertChart(ChartType.Pie, ConvertUtil.PixelToPoint(300), ConvertUtil.PixelToPoint(300));
 
-            doc.Save(MyDir + "Artifacts/Document.InsertedChartDouble.doc");
+            doc.Save(ArtifactsDir + "Document.InsertedChartDouble.doc");
             //ExEnd
         }
 
@@ -2089,7 +2089,7 @@ namespace ApiExamples
 
             builder.InsertChart(ChartType.Pie, RelativeHorizontalPosition.Margin, 100, RelativeVerticalPosition.Margin, 100, 200, 100, WrapType.Square);
 
-            doc.Save(MyDir + "Artifacts/Document.InsertedChartRelativePosition.doc");
+            doc.Save(ArtifactsDir + "Document.InsertedChartRelativePosition.doc");
             //ExEnd
         }
 
@@ -2105,7 +2105,7 @@ namespace ApiExamples
             builder.Write("This field was inserted/updated at ");
             builder.InsertField(FieldType.FieldTime, true);
 
-            doc.Save(MyDir + "Artifacts/Document.InsertedField.doc");
+            doc.Save(ArtifactsDir + "Document.InsertedField.doc");
             //ExEnd
         }
 
@@ -2233,7 +2233,7 @@ namespace ApiExamples
                 builder.InsertOnlineVideo(vimeoVideoUrl, vimeoEmbedCode, imageBytes, RelativeHorizontalPosition.RightMargin, left, RelativeVerticalPosition.BottomMargin, top, image.Width, image.Height, WrapType.Square);
             }
 
-            doc.Save(MyDir + "Artifacts/DocumentBuilder.InsertOnlineVideo.docx");
+            doc.Save(ArtifactsDir + "DocumentBuilder.InsertOnlineVideo.docx");
             //ExEnd
         }
 #endif
@@ -2260,7 +2260,7 @@ namespace ApiExamples
 
             builder.Writeln("Underlined text.");
 
-            doc.Save(MyDir + "Artifacts/DocumentBuilder.Underline.docx");         
+            doc.Save(ArtifactsDir + "DocumentBuilder.Underline.docx");         
             //ExEnd
         }
 
@@ -2302,7 +2302,7 @@ namespace ApiExamples
             // The table we just made is automatically placed in the story
             Assert.IsTrue(builder.CurrentStory.Tables.Contains(table));
 
-            doc.Save(MyDir + "Artifacts/DocumentBuilder.CurrentStory.docx");
+            doc.Save(ArtifactsDir + "DocumentBuilder.CurrentStory.docx");
             //ExEnd
         }
 
@@ -2352,7 +2352,7 @@ namespace ApiExamples
             powerpointStream.Close();
             spreadsheetStream.Close();
 
-            doc.Save(MyDir + "Artifacts/DocumentBuilder.InsertOleObject.docx");
+            doc.Save(ArtifactsDir + "DocumentBuilder.InsertOleObject.docx");
             //ExEnd
         }
 
@@ -2379,7 +2379,7 @@ namespace ApiExamples
             builder.ParagraphFormat.StyleName = myStyle.Name;
             builder.Write("This is text in the same paragraph but with my custom style.");
 
-            doc.Save(MyDir + "Artifacts/DocumentBuilder.StyleSeparator.docx");
+            doc.Save(ArtifactsDir + "DocumentBuilder.StyleSeparator.docx");
             //ExEnd
         }
     }

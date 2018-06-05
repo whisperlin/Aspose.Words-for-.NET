@@ -79,9 +79,9 @@ namespace ApiExamples
 
             BuildReport(doc, Common.GetContracts(), "Contracts");
 
-            doc.Save(MyDir + "Artifacts/ReportingEngine.TestDataTable.docx");
+            doc.Save(ArtifactsDir + "ReportingEngine.TestDataTable.docx");
 
-            Assert.IsTrue(DocumentHelper.CompareDocs(MyDir + "Artifacts/ReportingEngine.TestDataTable.docx", MyDir + @"\Golds\ReportingEngine.TestDataTable Gold.docx"));
+            Assert.IsTrue(DocumentHelper.CompareDocs(ArtifactsDir + "ReportingEngine.TestDataTable.docx", GoldsDir + "ReportingEngine.TestDataTable Gold.docx"));
         }
 
         [Test]
@@ -91,9 +91,9 @@ namespace ApiExamples
 
             BuildReport(doc, Common.GetContracts(), "Contracts");
 
-            doc.Save(MyDir + "Artifacts/ReportingEngine.Total.docx");
+            doc.Save(ArtifactsDir + "ReportingEngine.Total.docx");
 
-            Assert.IsTrue(DocumentHelper.CompareDocs(MyDir + "Artifacts/ReportingEngine.Total.docx", MyDir + @"\Golds\ReportingEngine.Total Gold.docx"));
+            Assert.IsTrue(DocumentHelper.CompareDocs(ArtifactsDir + "ReportingEngine.Total.docx", GoldsDir + "ReportingEngine.Total Gold.docx"));
         }
 
         [Test]
@@ -103,9 +103,9 @@ namespace ApiExamples
 
             BuildReport(doc, Common.GetManagers(), "Managers");
 
-            doc.Save(MyDir + "Artifacts/ReportingEngine.TestNestedDataTable.docx");
+            doc.Save(ArtifactsDir + "ReportingEngine.TestNestedDataTable.docx");
 
-            Assert.IsTrue(DocumentHelper.CompareDocs(MyDir + "Artifacts/ReportingEngine.TestNestedDataTable.docx", MyDir + @"\Golds\ReportingEngine.TestNestedDataTable Gold.docx"));
+            Assert.IsTrue(DocumentHelper.CompareDocs(ArtifactsDir + "ReportingEngine.TestNestedDataTable.docx", GoldsDir + "ReportingEngine.TestNestedDataTable Gold.docx"));
         }
 
         [Test]
@@ -115,9 +115,9 @@ namespace ApiExamples
             
             BuildReport(doc, Common.GetManagers(), "managers");
 
-            doc.Save(MyDir + "Artifacts/ReportingEngine.TestChart.docx");
+            doc.Save(ArtifactsDir + "ReportingEngine.TestChart.docx");
 
-            Assert.IsTrue(DocumentHelper.CompareDocs(MyDir + "Artifacts/ReportingEngine.TestChart.docx", MyDir + @"\Golds\ReportingEngine.TestChart Gold.docx"));
+            Assert.IsTrue(DocumentHelper.CompareDocs(ArtifactsDir + "ReportingEngine.TestChart.docx", GoldsDir + "ReportingEngine.TestChart Gold.docx"));
         }
 
         [Test]
@@ -127,9 +127,9 @@ namespace ApiExamples
             
             BuildReport(doc, Common.GetManagers(), "managers");
 
-            doc.Save(MyDir + "Artifacts/ReportingEngine.TestBubbleChart.docx");
+            doc.Save(ArtifactsDir + "ReportingEngine.TestBubbleChart.docx");
 
-            Assert.IsTrue(DocumentHelper.CompareDocs(MyDir + "Artifacts/ReportingEngine.TestBubbleChart.docx", MyDir + @"\Golds\ReportingEngine.TestBubbleChart Gold.docx"));
+            Assert.IsTrue(DocumentHelper.CompareDocs(ArtifactsDir + "ReportingEngine.TestBubbleChart.docx", GoldsDir + "ReportingEngine.TestBubbleChart Gold.docx"));
         }
 
         [Test]
@@ -139,9 +139,9 @@ namespace ApiExamples
 
             BuildReport(doc, Common.GetManagers(), "managers");
 
-            doc.Save(MyDir + "Artifacts/ReportingEngine.SetChartSeriesColorDinamically.docx");
+            doc.Save(ArtifactsDir + "ReportingEngine.SetChartSeriesColorDinamically.docx");
 
-            Assert.IsTrue(DocumentHelper.CompareDocs(MyDir + "Artifacts/ReportingEngine.SetChartSeriesColorDinamically.docx", MyDir + @"\Golds\ReportingEngine.SetChartSeriesColorDinamically Gold.docx"));
+            Assert.IsTrue(DocumentHelper.CompareDocs(ArtifactsDir + "ReportingEngine.SetChartSeriesColorDinamically.docx", GoldsDir + "ReportingEngine.SetChartSeriesColorDinamically Gold.docx"));
         }
 
         [Test]
@@ -160,9 +160,9 @@ namespace ApiExamples
 
             BuildReport(doc, colors, "colorItems", new [] { typeof(ColorItemTestClass) });
 
-            doc.Save(MyDir + "Artifacts/ReportingEngine.SetPointColorDinamically.docx");
+            doc.Save(ArtifactsDir + "ReportingEngine.SetPointColorDinamically.docx");
 
-            Assert.IsTrue(DocumentHelper.CompareDocs(MyDir + "Artifacts/ReportingEngine.SetPointColorDinamically.docx", MyDir + @"\Golds\ReportingEngine.SetPointColorDinamically Gold.docx"));
+            Assert.IsTrue(DocumentHelper.CompareDocs(ArtifactsDir + "ReportingEngine.SetPointColorDinamically.docx", GoldsDir + "ReportingEngine.SetPointColorDinamically Gold.docx"));
         }
 
         [Test]
@@ -174,9 +174,9 @@ namespace ApiExamples
             
             BuildReport(doc, new object[] { Common.GetManagers(), condition }, new[] { "managers", "condition" });
 
-            doc.Save(MyDir + "Artifacts/ReportingEngine.TestLeaveChartSeries.docx");
+            doc.Save(ArtifactsDir + "ReportingEngine.TestLeaveChartSeries.docx");
 
-            Assert.IsTrue(DocumentHelper.CompareDocs(MyDir + "Artifacts/ReportingEngine.TestLeaveChartSeries.docx", MyDir + @"\Golds\ReportingEngine.TestLeaveChartSeries Gold.docx"));
+            Assert.IsTrue(DocumentHelper.CompareDocs(ArtifactsDir + "ReportingEngine.TestLeaveChartSeries.docx", GoldsDir + "ReportingEngine.TestLeaveChartSeries Gold.docx"));
         }
 
         [Test]
@@ -188,9 +188,9 @@ namespace ApiExamples
             
             BuildReport(doc, new object[] { Common.GetManagers(), condition }, new[] { "managers", "condition" });
 
-            doc.Save(MyDir + "Artifacts/ReportingEngine.TestRemoveChartSeries.docx");
+            doc.Save(ArtifactsDir + "ReportingEngine.TestRemoveChartSeries.docx");
 
-            Assert.IsTrue(DocumentHelper.CompareDocs(MyDir + "Artifacts/ReportingEngine.TestRemoveChartSeries.docx", MyDir + @"\Golds\ReportingEngine.TestRemoveChartSeries Gold.docx"));
+            Assert.IsTrue(DocumentHelper.CompareDocs(ArtifactsDir + "ReportingEngine.TestRemoveChartSeries.docx", GoldsDir + "ReportingEngine.TestRemoveChartSeries Gold.docx"));
         }
 
         [Test]
@@ -239,9 +239,9 @@ namespace ApiExamples
             
             BuildReport(doc, Common.GetManagers(), "Managers");
 
-            doc.Save(MyDir + "Artifacts/ReportingEngine.ExtensionMethods.docx");
+            doc.Save(ArtifactsDir + "ReportingEngine.ExtensionMethods.docx");
 
-            Assert.IsTrue(DocumentHelper.CompareDocs(MyDir + "Artifacts/ReportingEngine.ExtensionMethods.docx", MyDir + @"\Golds\ReportingEngine.ExtensionMethods Gold.docx"));
+            Assert.IsTrue(DocumentHelper.CompareDocs(ArtifactsDir + "ReportingEngine.ExtensionMethods.docx", GoldsDir + "ReportingEngine.ExtensionMethods Gold.docx"));
         }
 
         [Test]
@@ -255,9 +255,9 @@ namespace ApiExamples
             report.KnownTypes.Add(typeof(NumericTestBuilder));
             report.BuildReport(doc, testData, "ds");
 
-            doc.Save(MyDir + "Artifacts/ReportingEngine.Operators.docx");
+            doc.Save(ArtifactsDir + "ReportingEngine.Operators.docx");
 
-            Assert.IsTrue(DocumentHelper.CompareDocs(MyDir + "Artifacts/ReportingEngine.Operators.docx", MyDir + @"\Golds\ReportingEngine.Operators Gold.docx"));
+            Assert.IsTrue(DocumentHelper.CompareDocs(ArtifactsDir + "ReportingEngine.Operators.docx", GoldsDir + "ReportingEngine.Operators Gold.docx"));
         }
 
         [Test]
@@ -267,9 +267,9 @@ namespace ApiExamples
             
             BuildReport(doc, Common.GetManagers(), "Managers");
 
-            doc.Save(MyDir + "Artifacts/ReportingEngine.ContextualObjectMemberAccess.docx");
+            doc.Save(ArtifactsDir + "ReportingEngine.ContextualObjectMemberAccess.docx");
 
-            Assert.IsTrue(DocumentHelper.CompareDocs(MyDir + "Artifacts/ReportingEngine.ContextualObjectMemberAccess.docx", MyDir + @"\Golds\ReportingEngine.ContextualObjectMemberAccess Gold.docx"));
+            Assert.IsTrue(DocumentHelper.CompareDocs(ArtifactsDir + "ReportingEngine.ContextualObjectMemberAccess.docx", GoldsDir + "ReportingEngine.ContextualObjectMemberAccess Gold.docx"));
         }
 
         [Ignore("Will be corrected in the following merge")]
@@ -281,9 +281,9 @@ namespace ApiExamples
             DocumentTestClass doc = new DocumentTestBuilder().WithDocument(new Document(MyDir + "ReportingEngine.TestDataTable.docx")).Build();
 
             BuildReport(template, doc, "src", ReportBuildOptions.None);
-            template.Save(MyDir + "Artifacts/ReportingEngine.InsertDocumentDinamically.docx");
+            template.Save(ArtifactsDir + "ReportingEngine.InsertDocumentDinamically.docx");
 
-            Assert.IsTrue(DocumentHelper.CompareDocs(MyDir + "Artifacts/ReportingEngine.InsertDocumentDinamically.docx", MyDir + @"\Golds\ReportingEngine.InsertDocumentDinamically(stream,doc,bytes) Gold.docx"), "Fail inserting document by document");
+            Assert.IsTrue(DocumentHelper.CompareDocs(ArtifactsDir + "ReportingEngine.InsertDocumentDinamically.docx", GoldsDir + "ReportingEngine.InsertDocumentDinamically(stream,doc,bytes) Gold.docx"), "Fail inserting document by document");
         }
 
         [Test]
@@ -294,9 +294,9 @@ namespace ApiExamples
             DocumentTestClass docStream = new DocumentTestBuilder().WithDocumentStream(new FileStream(this.mDocument, FileMode.Open, FileAccess.Read)).Build();
 
             BuildReport(template, docStream, "src", ReportBuildOptions.None);
-            template.Save(MyDir + "Artifacts/ReportingEngine.InsertDocumentDinamically.docx");
+            template.Save(ArtifactsDir + "ReportingEngine.InsertDocumentDinamically.docx");
 
-            Assert.IsTrue(DocumentHelper.CompareDocs(MyDir + "Artifacts/ReportingEngine.InsertDocumentDinamically.docx", MyDir + @"\Golds\ReportingEngine.InsertDocumentDinamically(stream,doc,bytes) Gold.docx"), "Fail inserting document by stream");
+            Assert.IsTrue(DocumentHelper.CompareDocs(ArtifactsDir + "ReportingEngine.InsertDocumentDinamically.docx", GoldsDir + "ReportingEngine.InsertDocumentDinamically(stream,doc,bytes) Gold.docx"), "Fail inserting document by stream");
         }
 
         [Test]
@@ -307,9 +307,9 @@ namespace ApiExamples
             DocumentTestClass docBytes = new DocumentTestBuilder().WithDocumentBytes(File.ReadAllBytes(MyDir + "ReportingEngine.TestDataTable.docx")).Build();
 
             BuildReport(template, docBytes, "src", ReportBuildOptions.None);
-            template.Save(MyDir + "Artifacts/ReportingEngine.InsertDocumentDinamically.docx");
+            template.Save(ArtifactsDir + "ReportingEngine.InsertDocumentDinamically.docx");
 
-            Assert.IsTrue(DocumentHelper.CompareDocs(MyDir + "Artifacts/ReportingEngine.InsertDocumentDinamically.docx", MyDir + @"\Golds\ReportingEngine.InsertDocumentDinamically(stream,doc,bytes) Gold.docx"), "Fail inserting document by bytes");
+            Assert.IsTrue(DocumentHelper.CompareDocs(ArtifactsDir + "ReportingEngine.InsertDocumentDinamically.docx", GoldsDir + "ReportingEngine.InsertDocumentDinamically(stream,doc,bytes) Gold.docx"), "Fail inserting document by bytes");
         }
 
         [Test]
@@ -320,9 +320,9 @@ namespace ApiExamples
             DocumentTestClass docUri = new DocumentTestBuilder().WithDocumentUri("http://www.snee.com/xml/xslt/sample.doc").Build();
 
             BuildReport(template, docUri, "src", ReportBuildOptions.None);
-            template.Save(MyDir + "Artifacts/ReportingEngine.InsertDocumentDinamically.docx");
+            template.Save(ArtifactsDir + "ReportingEngine.InsertDocumentDinamically.docx");
 
-            Assert.IsTrue(DocumentHelper.CompareDocs(MyDir + "Artifacts/ReportingEngine.InsertDocumentDinamically.docx", MyDir + @"\Golds\ReportingEngine.InsertDocumentDinamically(uri) Gold.docx"), "Fail inserting document by uri");
+            Assert.IsTrue(DocumentHelper.CompareDocs(ArtifactsDir + "ReportingEngine.InsertDocumentDinamically.docx", GoldsDir + "ReportingEngine.InsertDocumentDinamically(uri) Gold.docx"), "Fail inserting document by uri");
         }
 
         [Test]
@@ -336,9 +336,9 @@ namespace ApiExamples
 #endif
 
             BuildReport(template, image, "src", ReportBuildOptions.None);
-            template.Save(MyDir + "Artifacts/ReportingEngine.InsertImageDinamically.docx");
+            template.Save(ArtifactsDir + "ReportingEngine.InsertImageDinamically.docx");
 
-            Assert.IsTrue(DocumentHelper.CompareDocs(MyDir + "Artifacts/ReportingEngine.InsertImageDinamically.docx", MyDir + @"\Golds\ReportingEngine.InsertImageDinamically(stream,doc,bytes) Gold.docx"), "Fail inserting document by bytes");
+            Assert.IsTrue(DocumentHelper.CompareDocs(ArtifactsDir + "ReportingEngine.InsertImageDinamically.docx", GoldsDir + "ReportingEngine.InsertImageDinamically(stream,doc,bytes) Gold.docx"), "Fail inserting document by bytes");
         }
 
         [Test]
@@ -348,9 +348,9 @@ namespace ApiExamples
             ImageTestClass imageStream = new ImageTestBuilder().WithImageStream(new FileStream(this.mImage, FileMode.Open, FileAccess.Read)).Build();
 
             BuildReport(template, imageStream, "src", ReportBuildOptions.None);
-            template.Save(MyDir + "Artifacts/ReportingEngine.InsertImageDinamically.docx");
+            template.Save(ArtifactsDir + "ReportingEngine.InsertImageDinamically.docx");
 
-            Assert.IsTrue(DocumentHelper.CompareDocs(MyDir + "Artifacts/ReportingEngine.InsertImageDinamically.docx", MyDir + @"\Golds\ReportingEngine.InsertImageDinamically(stream,doc,bytes) Gold.docx"), "Fail inserting document by bytes");
+            Assert.IsTrue(DocumentHelper.CompareDocs(ArtifactsDir + "ReportingEngine.InsertImageDinamically.docx", GoldsDir + "ReportingEngine.InsertImageDinamically(stream,doc,bytes) Gold.docx"), "Fail inserting document by bytes");
         }
 
         [Test]
@@ -360,9 +360,9 @@ namespace ApiExamples
             ImageTestClass imageBytes = new ImageTestBuilder().WithImageBytes(File.ReadAllBytes(this.mImage)).Build();
 
             BuildReport(template, imageBytes, "src", ReportBuildOptions.None);
-            template.Save(MyDir + "Artifacts/ReportingEngine.InsertImageDinamically.docx");
+            template.Save(ArtifactsDir + "ReportingEngine.InsertImageDinamically.docx");
 
-            Assert.IsTrue(DocumentHelper.CompareDocs(MyDir + "Artifacts/ReportingEngine.InsertImageDinamically.docx", MyDir + @"\Golds\ReportingEngine.InsertImageDinamically(stream,doc,bytes) Gold.docx"), "Fail inserting document by bytes");
+            Assert.IsTrue(DocumentHelper.CompareDocs(ArtifactsDir + "ReportingEngine.InsertImageDinamically.docx", GoldsDir + "ReportingEngine.InsertImageDinamically(stream,doc,bytes) Gold.docx"), "Fail inserting document by bytes");
         }
 
         [Test]
@@ -372,9 +372,9 @@ namespace ApiExamples
             ImageTestClass imageUri = new ImageTestBuilder().WithImageUri("http://joomla-aspose.dynabic.com/templates/aspose/App_Themes/V3/images/customers/americanexpress.png").Build();
 
             BuildReport(template, imageUri, "src", ReportBuildOptions.None);
-            template.Save(MyDir + "Artifacts/ReportingEngine.InsertImageDinamically.docx");
+            template.Save(ArtifactsDir + "ReportingEngine.InsertImageDinamically.docx");
 
-            Assert.IsTrue(DocumentHelper.CompareDocs(MyDir + "Artifacts/ReportingEngine.InsertImageDinamically.docx", MyDir + @"\Golds\ReportingEngine.InsertImageDinamically(uri) Gold.docx"), "Fail inserting document by bytes");
+            Assert.IsTrue(DocumentHelper.CompareDocs(ArtifactsDir + "ReportingEngine.InsertImageDinamically.docx", GoldsDir + "ReportingEngine.InsertImageDinamically(uri) Gold.docx"), "Fail inserting document by bytes");
         }
 
         [Test]
@@ -404,9 +404,9 @@ namespace ApiExamples
 
             BuildReport(doc, "", new []{ typeof(DateTime) });
 
-            doc.Save(MyDir + "Artifacts/ReportingEngine.KnownTypes.docx");
+            doc.Save(ArtifactsDir + "ReportingEngine.KnownTypes.docx");
 
-            Assert.IsTrue(DocumentHelper.CompareDocs(MyDir + "Artifacts/ReportingEngine.KnownTypes.docx", MyDir + @"\Golds\ReportingEngine.KnownTypes Gold.docx"));
+            Assert.IsTrue(DocumentHelper.CompareDocs(ArtifactsDir + "ReportingEngine.KnownTypes.docx", GoldsDir + "ReportingEngine.KnownTypes Gold.docx"));
         }
 
         [Test]
@@ -561,9 +561,9 @@ namespace ApiExamples
 
             BuildReport(doc, colors, "Colors");
 
-            doc.Save(MyDir + "Artifacts/ReportingEngine.BackColor.docx");
+            doc.Save(ArtifactsDir + "ReportingEngine.BackColor.docx");
 
-            Assert.IsTrue(DocumentHelper.CompareDocs(MyDir + "Artifacts/ReportingEngine.BackColor.docx", MyDir + @"\Golds\ReportingEngine.BackColor Gold.docx"));
+            Assert.IsTrue(DocumentHelper.CompareDocs(ArtifactsDir + "ReportingEngine.BackColor.docx", GoldsDir + "ReportingEngine.BackColor Gold.docx"));
         }
 
         private static void BuildReport(Aspose.Words.Document document, object dataSource, string dataSourceName, ReportBuildOptions reportBuildOptions)

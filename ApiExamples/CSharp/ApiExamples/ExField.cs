@@ -199,7 +199,7 @@ namespace ApiExamples
             Thread.CurrentThread.CurrentCulture = currentCulture;
             //ExEnd
 
-            doc.Save(MyDir + "Artifacts/Field.ChangeLocale.doc");
+            doc.Save(ArtifactsDir + "Field.ChangeLocale.doc");
         }
 
         [Test]
@@ -217,7 +217,7 @@ namespace ApiExamples
             tocField.Remove();
 
             // Save the output.
-            doc.Save(MyDir + "Artifacts/Document.TableOfContentsRemoveTOC.doc");
+            doc.Save(ArtifactsDir + "Document.TableOfContentsRemoveTOC.doc");
             //ExEnd
         }
 
@@ -365,9 +365,9 @@ namespace ApiExamples
             // Set custom barcode generator
             doc.FieldOptions.BarcodeGenerator = new CustomBarcodeGenerator();
 
-            doc.Save(MyDir + "Artifacts/Field.BarCode.pdf");
+            doc.Save(ArtifactsDir + "Field.BarCode.pdf");
 
-            BarCodeReader barCode = BarCodeReaderPdf(MyDir + "Artifacts/Field.BarCode.pdf");
+            BarCodeReader barCode = BarCodeReaderPdf(ArtifactsDir + "Field.BarCode.pdf");
             Assert.AreEqual("QR", barCode.GetCodeType().ToString());
         }
 
@@ -429,7 +429,7 @@ namespace ApiExamples
             }
 
             doc.UpdateFields();
-            doc.Save(MyDir + "Artifacts/Field.UpdateFieldIgnoringMergeFormat.docx");
+            doc.Save(ArtifactsDir + "Field.UpdateFieldIgnoringMergeFormat.docx");
             //ExEnd
         }
 
@@ -560,7 +560,7 @@ namespace ApiExamples
                 }
             }
 
-            doc.Save(MyDir + "Artifacts/Field.UpdateTocPages.docx");
+            doc.Save(ArtifactsDir + "Field.UpdateTocPages.docx");
         }
 
         private void RemoveSequence(Node start, Node end)

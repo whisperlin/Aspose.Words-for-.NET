@@ -24,13 +24,13 @@ namespace ApiExamples
             //ExSummary:Shows how to remove every signature from a document.
             // By string:
             Document doc = new Document(MyDir + "Document.DigitalSignature.docx");
-            string outFileName = MyDir + "Artifacts/Document.NoSignatures.FromString.docx";
+            string outFileName = ArtifactsDir + "Document.NoSignatures.FromString.docx";
 
             DigitalSignatureUtil.RemoveAllSignatures(doc.OriginalFileName, outFileName);
 
             // By stream:
             Stream streamIn = new FileStream(MyDir + "Document.DigitalSignature.docx", FileMode.Open);
-            Stream streamOut = new FileStream(MyDir + "Artifacts/Document.NoSignatures.FromStream.doc", FileMode.Create);
+            Stream streamOut = new FileStream(ArtifactsDir + "Document.NoSignatures.FromStream.doc", FileMode.Create);
 
             DigitalSignatureUtil.RemoveAllSignatures(streamIn, streamOut);
             //ExEnd
@@ -72,7 +72,7 @@ namespace ApiExamples
             SignOptions signOptions = new SignOptions { Comments = "My comment", SignTime = DateTime.Now };
 
             Stream streamIn = new FileStream(MyDir + "Document.DigitalSignature.docx", FileMode.Open);
-            Stream streamOut = new FileStream(MyDir + "Artifacts/Document.DigitalSignature.docx", FileMode.OpenOrCreate);
+            Stream streamOut = new FileStream(ArtifactsDir + "Document.DigitalSignature.docx", FileMode.OpenOrCreate);
 
             DigitalSignatureUtil.Sign(streamIn, streamOut, certificateHolder, signOptions);
             //ExEnd
@@ -89,7 +89,7 @@ namespace ApiExamples
             CertificateHolder ch = CertificateHolder.Create(MyDir + "morzal.pfx", "aw");
 
             Document doc = new Document(MyDir + "TestRepeatingSection.docx");
-            String outputFileName = MyDir + "Artifacts/TestRepeatingSection.Signed.doc";
+            String outputFileName = ArtifactsDir + "TestRepeatingSection.Signed.doc";
 
             SignOptions signOptions = new SignOptions { Comments = "Comment", SignTime = DateTime.Now };
 
@@ -103,7 +103,7 @@ namespace ApiExamples
             CertificateHolder certificateHolder = CertificateHolder.Create(MyDir + "morzal.pfx", "aw");
 
             Document doc = new Document(MyDir + "Document.Encrypted.docx", new LoadOptions("docPassword"));
-            string outputFileName = MyDir + "Artifacts/Document.Encrypted.docx";
+            string outputFileName = ArtifactsDir + "Document.Encrypted.docx";
 
             SignOptions signOptions = new SignOptions { Comments = "Comment", SignTime = DateTime.Now, DecryptionPassword = "docPassword1" };
 
@@ -119,7 +119,7 @@ namespace ApiExamples
             //ExStart
             //ExFor:SignOptions.DecryptionPassword
             //ExSummary:Shows how to sign encrypted document file.
-            string outputFileName = MyDir + "Artifacts/Document.Encrypted.docx";
+            string outputFileName = ArtifactsDir + "Document.Encrypted.docx";
 
             Document doc = new Document(MyDir + "Document.Encrypted.docx", new LoadOptions("docPassword"));
 
@@ -156,7 +156,7 @@ namespace ApiExamples
         public void NoCertificateForSign()
         {
             Document doc = new Document(MyDir + "Document.DigitalSignature.docx");
-            string outputFileName = MyDir + "Artifacts/Document.DigitalSignature.docx";
+            string outputFileName = ArtifactsDir + "Document.DigitalSignature.docx";
 
             SignOptions signOptions = new SignOptions { Comments = "Comment", SignTime = DateTime.Now, DecryptionPassword = "docPassword" };
 

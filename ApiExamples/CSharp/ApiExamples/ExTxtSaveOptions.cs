@@ -25,15 +25,15 @@ namespace ApiExamples
             TxtSaveOptions saveOptions = new TxtSaveOptions();
             saveOptions.ForcePageBreaks = false;
 
-            doc.Save(MyDir + "Artifacts/SaveOptions.PageBreaks.False.txt", saveOptions);
+            doc.Save(ArtifactsDir + "SaveOptions.PageBreaks.False.txt", saveOptions);
             //ExEnd
-            Document docFalse = new Document(MyDir + "Artifacts/SaveOptions.PageBreaks.False.txt");
+            Document docFalse = new Document(ArtifactsDir + "SaveOptions.PageBreaks.False.txt");
             Assert.AreEqual("Some text before page break\r\rJidqwjidqwojidqwojidqwojidqwojidqwoji\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\rQwdqwdqwdqwdqwdqwdqwd\rQwdqwdqwdqwdqwdqwdqw\r\r\r\r\rqwdqwdqwdqwdqwdqwdqwqwd\r\f", docFalse.GetText());
 
             saveOptions.ForcePageBreaks = true;
-            doc.Save(MyDir + "Artifacts/SaveOptions.PageBreaks.True.txt", saveOptions);
+            doc.Save(ArtifactsDir + "SaveOptions.PageBreaks.True.txt", saveOptions);
 
-            Document docTrue = new Document(MyDir + "Artifacts/SaveOptions.PageBreaks.True.txt");
+            Document docTrue = new Document(ArtifactsDir + "SaveOptions.PageBreaks.True.txt");
             Assert.AreEqual("Some text before page break\r\f\r\fJidqwjidqwojidqwojidqwojidqwojidqwoji\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\rQwdqwdqwdqwdqwdqwdqwd\rQwdqwdqwdqwdqwdqwdqw\r\r\r\r\f\r\fqwdqwdqwdqwdqwdqwdqwqwd\r\f", docTrue.GetText());
         }
     }

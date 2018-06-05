@@ -35,7 +35,7 @@ namespace ApiExamples
                 builder.InsertImage(stream, RelativeHorizontalPosition.Margin, 100, RelativeVerticalPosition.Margin, 100, 200, 100, WrapType.Square);
             }
 
-            builder.Document.Save(MyDir + "Artifacts/Image.CreateFromStreamRelativePosition.doc");
+            builder.Document.Save(ArtifactsDir + "Image.CreateFromStreamRelativePosition.doc");
             //ExEnd
         }
 
@@ -50,13 +50,13 @@ namespace ApiExamples
 #if NETSTANDARD2_0 || __MOBILE__
             using (SkiaSharp.SKBitmap bitmap = SkiaSharp.SKBitmap.Decode(ImageDir + "Aspose.Words.gif"))
             {
-                using (SkiaSharp.SKFileWStream fs = new SkiaSharp.SKFileWStream(MyDir + "Artifacts/InsertImageFromByteArray.png"))
+                using (SkiaSharp.SKFileWStream fs = new SkiaSharp.SKFileWStream(ArtifactsDir + "InsertImageFromByteArray.png"))
                 {
                     bitmap.Encode(fs, SKEncodedImageFormat.Png, 100);
                 }
 
                 builder.InsertImage(bitmap);
-                builder.Document.Save(MyDir + "Artifacts/Image.CreateFromByteArrayDefault.docx");
+                builder.Document.Save(ArtifactsDir + "Image.CreateFromByteArrayDefault.docx");
             }
 #else
             // Prepare a byte array of an image.
@@ -67,7 +67,7 @@ namespace ApiExamples
                 image.Save(imageBytes, ImageFormat.Png);
 
                 builder.InsertImage(imageBytes.ToArray());
-                builder.Document.Save(MyDir + "Artifacts/Image.CreateFromByteArrayDefault.doc");
+                builder.Document.Save(ArtifactsDir + "Image.CreateFromByteArrayDefault.doc");
             }
 #endif
             //ExEnd
@@ -84,13 +84,13 @@ namespace ApiExamples
 #if NETSTANDARD2_0 || __MOBILE__
             using (SkiaSharp.SKBitmap bitmap = SkiaSharp.SKBitmap.Decode(ImageDir + "Aspose.Words.gif"))
             {
-                using (SkiaSharp.SKFileWStream fs = new SkiaSharp.SKFileWStream(MyDir + "Artifacts/InsertImageFromByteArrayCustomSize.png"))
+                using (SkiaSharp.SKFileWStream fs = new SkiaSharp.SKFileWStream(ArtifactsDir + "InsertImageFromByteArrayCustomSize.png"))
                 {
                     bitmap.Encode(fs, SKEncodedImageFormat.Png, 100);
                 }
 
                 builder.InsertImage(bitmap, ConvertUtil.PixelToPoint(450), ConvertUtil.PixelToPoint(144));
-                builder.Document.Save(MyDir + "Artifacts/Image.CreateFromByteArrayCustomSize.doc");
+                builder.Document.Save(ArtifactsDir + "Image.CreateFromByteArrayCustomSize.doc");
             }
 #else
             // Prepare a byte array of an image.
@@ -101,7 +101,7 @@ namespace ApiExamples
                 image.Save(imageBytes, ImageFormat.Png);
 
                 builder.InsertImage(imageBytes, ConvertUtil.PixelToPoint(450), ConvertUtil.PixelToPoint(144));
-                builder.Document.Save(MyDir + "Artifacts/Image.CreateFromByteArrayCustomSize.doc");
+                builder.Document.Save(ArtifactsDir + "Image.CreateFromByteArrayCustomSize.doc");
             }
 #endif
             //ExEnd
@@ -118,13 +118,13 @@ namespace ApiExamples
 #if NETSTANDARD2_0 || __MOBILE__
             using (SkiaSharp.SKBitmap bitmap = SkiaSharp.SKBitmap.Decode(ImageDir + "Aspose.Words.gif"))
             {
-                using (SkiaSharp.SKFileWStream fs = new SkiaSharp.SKFileWStream(MyDir + "Artifacts/InsertImageFromByteArrayCustomSize.png"))
+                using (SkiaSharp.SKFileWStream fs = new SkiaSharp.SKFileWStream(ArtifactsDir + "InsertImageFromByteArrayCustomSize.png"))
                 {
                     bitmap.Encode(fs, SKEncodedImageFormat.Png, 100);
                 }
 
                 builder.InsertImage(bitmap, RelativeHorizontalPosition.Margin, 100, RelativeVerticalPosition.Margin, 100, 200, 100, WrapType.Square);
-                builder.Document.Save(MyDir + "Artifacts/Image.CreateFromByteArrayCustomSize.doc");
+                builder.Document.Save(ArtifactsDir + "Image.CreateFromByteArrayCustomSize.doc");
             }
 #else
             // Prepare a byte array of an image.
@@ -135,7 +135,7 @@ namespace ApiExamples
                 image.Save(imageBytes, ImageFormat.Png);
 
                 builder.InsertImage(imageBytes, RelativeHorizontalPosition.Margin, 100, RelativeVerticalPosition.Margin, 100, 200, 100, WrapType.Square);
-                builder.Document.Save(MyDir + "Artifacts/Image.CreateFromByteArrayRelativePosition.doc");
+                builder.Document.Save(ArtifactsDir + "Image.CreateFromByteArrayRelativePosition.doc");
             }
 #endif
             //ExEnd
@@ -162,7 +162,7 @@ namespace ApiExamples
                 builder.Writeln();
             }
 #endif
-            builder.Document.Save(MyDir + "Artifacts/Image.CreateFromImageWithStreamCustomSize.doc");
+            builder.Document.Save(ArtifactsDir + "Image.CreateFromImageWithStreamCustomSize.doc");
             //ExEnd
         }
 
@@ -185,7 +185,7 @@ namespace ApiExamples
                 builder.InsertImage(rasterImage, RelativeHorizontalPosition.Margin, 100, RelativeVerticalPosition.Margin, 100, 200, 100, WrapType.Square);
             }
 #endif
-            builder.Document.Save(MyDir + "Artifacts/Image.CreateFromImageWithStreamRelativePosition.doc");
+            builder.Document.Save(ArtifactsDir + "Image.CreateFromImageWithStreamRelativePosition.doc");
             //ExEnd
         }
 
@@ -203,7 +203,7 @@ namespace ApiExamples
                 builder.InsertImage(stream, ConvertUtil.PixelToPoint(400), ConvertUtil.PixelToPoint(400));
             }
 
-            builder.Document.Save(MyDir + "Artifacts/Image.CreateFromStreamCustomSize.doc");
+            builder.Document.Save(ArtifactsDir + "Image.CreateFromStreamCustomSize.doc");
             //ExEnd
         }
 
@@ -218,7 +218,7 @@ namespace ApiExamples
 
             builder.InsertImage(ImageDir + "Aspose.Words.gif", ConvertUtil.PixelToPoint(400), ConvertUtil.PixelToPoint(400));
 
-            doc.Save(MyDir + "Artifacts/DocumentBuilder.InsertImageFromUrlCustomSize.doc");
+            doc.Save(ArtifactsDir + "DocumentBuilder.InsertImageFromUrlCustomSize.doc");
             //ExEnd
         }
     }

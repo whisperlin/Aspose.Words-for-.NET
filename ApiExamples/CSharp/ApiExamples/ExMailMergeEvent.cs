@@ -58,7 +58,7 @@ namespace ApiExamples
             doc.MailMerge.Execute(new string[] { "htmlField1" }, new object[] { htmltext });
 
             // Save resulting document with a new name.
-            doc.Save(MyDir + "Artifacts/MailMerge.InsertHtml.doc");
+            doc.Save(ArtifactsDir + "MailMerge.InsertHtml.doc");
         }
 
         private class HandleMergeFieldInsertHtml : IFieldMergingCallback
@@ -115,7 +115,7 @@ namespace ApiExamples
             doc.MailMerge.ExecuteWithRegions(dataTable);
 
             // Save resulting document with a new name.
-            doc.Save(MyDir + "Artifacts/MailMerge.InsertCheckBox.doc");
+            doc.Save(ArtifactsDir + "MailMerge.InsertCheckBox.doc");
         }
 
         private class HandleMergeFieldInsertCheckBox : IFieldMergingCallback
@@ -181,7 +181,7 @@ namespace ApiExamples
             DataTable dataTable = GetSuppliersDataTable();
             doc.MailMerge.ExecuteWithRegions(dataTable);
 
-            doc.Save(MyDir + "Artifacts/MailMerge.AlternatingRows.doc");
+            doc.Save(ArtifactsDir + "MailMerge.AlternatingRows.doc");
         }
 
         private class HandleMergeFieldAlternatingRows : IFieldMergingCallback
@@ -267,7 +267,7 @@ namespace ApiExamples
             // Pass a URL which points to the image to merge into the document.
             doc.MailMerge.Execute(new string[] { "Logo" }, new object[] { "http://www.aspose.com/images/aspose-logo.gif" });
 
-            doc.Save(MyDir + "Artifacts/MailMerge.MergeImageFromUrl.doc");
+            doc.Save(ArtifactsDir + "MailMerge.MergeImageFromUrl.doc");
             //ExEnd
 
             // Verify the image was merged into the document.
@@ -309,7 +309,7 @@ namespace ApiExamples
             // Close the database.
             conn.Close();
 
-            doc.Save(MyDir + "Artifacts/MailMerge.MergeImage.doc");
+            doc.Save(ArtifactsDir + "MailMerge.MergeImage.doc");
         }
 
         private class HandleMergeImageFieldFromBlob : IFieldMergingCallback

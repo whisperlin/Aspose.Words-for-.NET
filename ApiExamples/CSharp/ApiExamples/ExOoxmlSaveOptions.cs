@@ -89,7 +89,7 @@ namespace ApiExamples
             OoxmlSaveOptions options = new OoxmlSaveOptions();
             options.Compliance = OoxmlCompliance.Iso29500_2008_Transitional;
 
-            doc.Save(MyDir + "Artifacts/RestartingDocumentList.docx", options);
+            doc.Save(ArtifactsDir + "RestartingDocumentList.docx", options);
             //ExEnd
         }
 

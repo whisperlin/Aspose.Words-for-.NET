@@ -44,7 +44,7 @@ namespace ApiExamples
             //Define which page will save
             saveOptions.PageIndex = 0;
 
-            doc.Save(MyDir + "Artifacts/SaveOptions.MyraidPro.gif", saveOptions);
+            doc.Save(ArtifactsDir + "SaveOptions.MyraidPro.gif", saveOptions);
             //ExEnd
         }
 
@@ -66,7 +66,7 @@ namespace ApiExamples
             ImageSaveOptions saveOptions = new ImageSaveOptions(SaveFormat.Jpeg);
             saveOptions.GraphicsQualityOptions = qualityOptions;
 
-            doc.Save(MyDir + "Artifacts/SaveOptions.QualityOptions.jpeg", saveOptions);
+            doc.Save(ArtifactsDir + "SaveOptions.QualityOptions.jpeg", saveOptions);
             //ExEnd
         }
 #endif
@@ -84,7 +84,7 @@ namespace ApiExamples
             imageSaveOptions.ImageColorMode = ImageColorMode.BlackAndWhite;
             imageSaveOptions.PixelFormat = ImagePixelFormat.Format1bppIndexed;
             
-            doc.Save(MyDir + "Artifacts/ImageSaveOptions.BlackAndWhite.png", imageSaveOptions);
+            doc.Save(ArtifactsDir + "ImageSaveOptions.BlackAndWhite.png", imageSaveOptions);
             //ExEnd
         }
     }

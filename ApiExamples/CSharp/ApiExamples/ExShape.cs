@@ -50,7 +50,7 @@ namespace ApiExamples
             Assert.AreEqual(0, doc.GetChildNodes(NodeType.Shape, true).Count);
             Assert.AreEqual(0, doc.GetChildNodes(NodeType.GroupShape, true).Count);
 
-            doc.Save(MyDir + "Artifacts/Shape.DeleteAllShapes.doc");
+            doc.Save(ArtifactsDir + "Shape.DeleteAllShapes.doc");
         }
 
         [Test]
@@ -103,7 +103,7 @@ namespace ApiExamples
             lineB.RelativeVerticalPosition = RelativeVerticalPosition.Page;
             doc.FirstSection.Body.FirstParagraph.AppendChild(lineB);
 
-            doc.Save(MyDir + "Artifacts/Shape.LineFlipOrientation.doc");
+            doc.Save(ArtifactsDir + "Shape.LineFlipOrientation.doc");
             //ExEnd
         }
 
@@ -133,7 +133,7 @@ namespace ApiExamples
             shape.Top = -100;
             builder.InsertNode(shape);
 
-            builder.Document.Save(MyDir + "Artifacts/Shape.Fill.doc");
+            builder.Document.Save(ArtifactsDir + "Shape.Fill.doc");
             //ExEnd
         }
 
@@ -212,7 +212,7 @@ namespace ApiExamples
                 }
             }
 
-            doc.Save(MyDir + "Artifacts/Shape.ReplaceTextboxesWithImages.doc");
+            doc.Save(ArtifactsDir + "Shape.ReplaceTextboxesWithImages.doc");
             //ExEnd
         }
 
@@ -260,7 +260,7 @@ namespace ApiExamples
             doc.FirstSection.Body.FirstParagraph.AppendChild(textBox);
 
             // Save the output
-            doc.Save(MyDir + "Artifacts/Shape.CreateTextBox.doc");
+            doc.Save(ArtifactsDir + "Shape.CreateTextBox.doc");
             //ExEnd
         }
 
@@ -372,7 +372,7 @@ namespace ApiExamples
 
             //Get OfficeMath node from the document and render this as image (you can also do the same with the Shape node)
             OfficeMath math = (OfficeMath)doc.GetChild(NodeType.OfficeMath, 0, true);
-            math.GetMathRenderer().Save(MyDir + "Artifacts/Shape.OfficeMath.svg", new ImageSaveOptions(SaveFormat.Svg));
+            math.GetMathRenderer().Save(ArtifactsDir + "Shape.OfficeMath.svg", new ImageSaveOptions(SaveFormat.Svg));
             //ExEnd
         }
 
@@ -411,9 +411,9 @@ namespace ApiExamples
             officeMath.DisplayType = OfficeMathDisplayType.Display;
             officeMath.Justification = OfficeMathJustification.Left;
 
-            doc.Save(MyDir + @"Artifacts\Shape.OfficeMath.docx");
+            doc.Save(ArtifactsDir + "Shape.OfficeMath.docx");
             //ExEnd
-            Assert.IsTrue(DocumentHelper.CompareDocs(MyDir + @"Artifacts\Shape.OfficeMath.docx", MyDir + @"\Golds\Shape.OfficeMath Gold.docx"));
+            Assert.IsTrue(DocumentHelper.CompareDocs(ArtifactsDir + "Shape.OfficeMath.docx", GoldsDir + "Shape.OfficeMath Gold.docx"));
         }
 
         [Test]
@@ -639,7 +639,7 @@ namespace ApiExamples
 
             builder.InsertOleObject("http://www.aspose.com", "htmlfile", true, false, null);
 
-            doc.Save(MyDir + "Artifacts/Document.InsertedOleObject.docx");
+            doc.Save(ArtifactsDir + "Document.InsertedOleObject.docx");
         }
 
         [Test]
@@ -665,11 +665,11 @@ namespace ApiExamples
                 setOlePackage.FileName = "Cat FileName.zip";
                 setOlePackage.DisplayName = "Cat DisplayName.zip";
 
-                doc.Save(MyDir + "Artifacts/Shape.InsertOlePackage.docx");
+                doc.Save(ArtifactsDir + "Shape.InsertOlePackage.docx");
             }
             //ExEnd
 
-            doc = new Document(MyDir + "Artifacts/Shape.InsertOlePackage.docx");
+            doc = new Document(ArtifactsDir + "Shape.InsertOlePackage.docx");
 
             Shape getShape = (Shape)doc.GetChild(NodeType.Shape, 0, true);
             OlePackage getOlePackage = getShape.OleFormat.OlePackage;
@@ -731,9 +731,9 @@ namespace ApiExamples
             // in this case NumberFormat will be reset to general and inherited from a source cell.
             chartDataLabel2.NumberFormat.IsLinkedToSource = true;
 
-            doc.Save(MyDir + "Artifacts/DocumentBuilder.NumberFormat.docx");
+            doc.Save(ArtifactsDir + "DocumentBuilder.NumberFormat.docx");
 
-            Assert.IsTrue(DocumentHelper.CompareDocs(MyDir + "Artifacts/DocumentBuilder.NumberFormat.docx", MyDir + @"\Golds\DocumentBuilder.NumberFormat Gold.docx"));
+            Assert.IsTrue(DocumentHelper.CompareDocs(ArtifactsDir + "DocumentBuilder.NumberFormat.docx", GoldsDir + "DocumentBuilder.NumberFormat Gold.docx"));
         }
 
         [Test]
@@ -782,7 +782,7 @@ namespace ApiExamples
             seriesColl.Add("AW Series 3", categories, new[] { double.NaN, 4, 5, double.NaN, 7, 8 });
             seriesColl.Add("AW Series 4", categories, new[] { double.NaN, double.NaN, double.NaN, double.NaN, double.NaN, 9 });
 
-            doc.Save(MyDir + "Artifacts/EmptyValuesInChartData.docx");
+            doc.Save(ArtifactsDir + "EmptyValuesInChartData.docx");
         }
 
         [Test]
@@ -822,7 +822,7 @@ namespace ApiExamples
             yAxis.Scaling.Minimum = 100;
             yAxis.Scaling.Maximum = 700;
 
-            doc.Save(MyDir + "Artifacts/ChartAxisProperties.docx");
+            doc.Save(ArtifactsDir + "ChartAxisProperties.docx");
         }
     }
 }

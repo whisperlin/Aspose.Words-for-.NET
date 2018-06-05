@@ -28,7 +28,7 @@ namespace ApiExamples
                 para.ParagraphFormat.TabStops.Clear();
             }
 
-            doc.Save(MyDir + "Artifacts/Document.AllTabStopsRemoved.doc");
+            doc.Save(ArtifactsDir + "Document.AllTabStopsRemoved.doc");
             //ExEnd
         }
 
@@ -55,7 +55,7 @@ namespace ApiExamples
                 para.ParagraphFormat.TabStops.Add(ConvertUtil.MillimeterToPoint(50), TabAlignment.Left, TabLeader.Dashes);
             }
 
-            doc.Save(MyDir + "Artifacts/Document.AddedTabStops.doc");
+            doc.Save(ArtifactsDir + "Document.AddedTabStops.doc");
             //ExEnd
         }
 
@@ -76,7 +76,7 @@ namespace ApiExamples
 
             Console.WriteLine(paragraph.ParagraphFormat.TabStops.Count);
 
-            doc.Save(MyDir + "Artifacts/Document.RemovedTabStopsByIndex.doc");
+            doc.Save(ArtifactsDir + "Document.RemovedTabStopsByIndex.doc");
             //ExEnd
         }
 

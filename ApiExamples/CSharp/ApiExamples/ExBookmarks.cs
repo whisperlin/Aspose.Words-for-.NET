@@ -175,7 +175,7 @@ namespace ApiExamples
 
             p.AppendChild(new Run(doc, "Text after bookmark."));
 
-            doc.Save(MyDir + "Artifacts/Bookmarks.CreateBookmarkWithNodes.doc");
+            doc.Save(ArtifactsDir + "Bookmarks.CreateBookmarkWithNodes.doc");
             //ExEnd
 
             Assert.AreEqual(doc.Range.Bookmarks["My bookmark"].Text, "Text inside bookmark. ");
@@ -229,12 +229,12 @@ namespace ApiExamples
             pdfSaveOptions.OutlineOptions.BookmarksOutlineLevels.Add("My Bookmark", 1);
             pdfSaveOptions.OutlineOptions.BookmarksOutlineLevels.Add("Nested Bookmark", 2);
 
-            doc.Save(MyDir + "Artifacts/Bookmarks.WhiteSpaces.pdf", pdfSaveOptions);
+            doc.Save(ArtifactsDir + "Bookmarks.WhiteSpaces.pdf", pdfSaveOptions);
             //ExEnd
 #if !__MOBILE__
             //Bind pdf with Aspose.Pdf
             PdfBookmarkEditor bookmarkEditor = new PdfBookmarkEditor();
-            bookmarkEditor.BindPdf(MyDir + "Artifacts/Bookmarks.WhiteSpaces.pdf");
+            bookmarkEditor.BindPdf(ArtifactsDir + "Bookmarks.WhiteSpaces.pdf");
 
             //Get all bookmarks from the document
             Bookmarks bookmarks = bookmarkEditor.ExtractBookmarks();

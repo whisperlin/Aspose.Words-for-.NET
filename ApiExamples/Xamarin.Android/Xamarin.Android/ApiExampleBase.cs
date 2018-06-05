@@ -20,18 +20,26 @@ namespace ApiExamples
     /// </summary>
     public class ApiExampleBase
     {
-        private readonly String artifactsPath = MyDir + "Artifacts/";
-
         [OneTimeSetUp]
         public void OneTimeSetUp()
         {
             SetUnlimitedLicense();
+
+            if (Directory.Exists(ArtifactsDir))
+            {
+                Directory.Delete(ArtifactsDir, true);
+                Directory.CreateDirectory(ArtifactsDir);
+            }
+            else
+            {
+                Directory.CreateDirectory(ArtifactsDir);
+            }
         }
 
         [OneTimeTearDown]
         public void OneTimeTearDown()
         {
-            File.Delete(artifactsPath);
+            Directory.Delete(ArtifactsDir, true);
         }
 
         internal static void SetUnlimitedLicense()
@@ -45,6 +53,14 @@ namespace ApiExamples
                 License license = new License();
                 license.SetLicense(TestLicenseFileName);
             }
+        }
+
+        /// <summary>
+        /// Gets the path to the documents used by the code examples. Ends with a back slash.
+        /// </summary>
+        internal static String ArtifactsDir
+        {
+            get { return gArtifactsDir; }
         }
 
         /// <summary>
@@ -71,18 +87,30 @@ namespace ApiExamples
             get { return gDatabaseDir; }
         }
 
-        static ApiExampleBase()
+        /// <summary>
+        /// Gets the path to the documents used by the code examples. Ends with a back slash.
+        /// </summary>
+        internal static String GoldsDir
         {
-            gMyDir = Path.Combine(GetExternalSdCardPath(), "Data/");
-            gImageDir = Path.Combine(GetExternalSdCardPath(), "Data/Images/");
-            gDatabaseDir = Path.Combine(GetExternalSdCardPath(), "Data/Database/");
+            get { return gGoldsDir; }
         }
 
+        static ApiExampleBase()
+        {
+            gArtifactsDir = Path.Combine(GetExternalAppPath(), "Artifacts/");
+            gMyDir = Path.Combine(GetSdCardPath(), "Data/");
+            gImageDir = Path.Combine(GetSdCardPath(), "Data/Images/");
+            gDatabaseDir = Path.Combine(GetSdCardPath(), "Data/Database/");
+            gGoldsDir = Path.Combine(GetSdCardPath(), "Data/Golds/");
+        }
+
+        private static readonly String gArtifactsDir;
         private static readonly String gMyDir;
         private static readonly String gImageDir;
         private static readonly String gDatabaseDir;
+        private static readonly String gGoldsDir;
 
-        internal static readonly string TestLicenseFileName = Path.Combine(GetExternalSdCardPath(), "Data/License/Aspose.Total.lic");
+        internal static readonly string TestLicenseFileName = Path.Combine(GetSdCardPath(), "Data/License/Aspose.Total.lic");
 
         /// <summary>
         /// Extended SD Card path location for KitKat (Android 19 / 4.4) and upwards.
@@ -90,7 +118,21 @@ namespace ApiExamples
         /// only introduced in Android SDK level 19.
         /// </summary>
         /// <returns></returns>
-        internal static string GetExternalSdCardPath()
+        internal static string GetSdCardPath()
+        {
+            string appExternalSdPath = GetExternalAppPath();
+            string externalSdPath = ExtractString(@"^/storage/.+?/", appExternalSdPath);
+
+            return externalSdPath;
+        }
+
+        /// <summary>
+        /// Extended SD Card path location for KitKat (Android 19 / 4.4) and upwards.
+        /// Must be called only on devices >= KitKat or it'll crash, since some of these OS/API calls were 
+        /// only introduced in Android SDK level 19.
+        /// </summary>
+        /// <returns></returns>
+        internal static string GetExternalAppPath()
         {
             Java.IO.File[] externalFilesDirs = Application.Context.GetExternalFilesDirs(null);
             
@@ -105,8 +147,7 @@ namespace ApiExamples
 
                 // note that in the case of an SD card, ONLY the path it returns is writeable. You can 
                 // drop back to the "root" as we did with the internal one above, but that's readonly.
-                var externalSdPath = ExtractString(@"^/storage/.+?/", appExternalSdPath);
-                return externalSdPath;
+                return appExternalSdPath;
             }
 
             return string.Empty;
