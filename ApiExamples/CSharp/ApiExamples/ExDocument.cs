@@ -2090,7 +2090,7 @@ namespace ApiExamples
             Assert.AreEqual(doc.FirstSection, doc.Sections[0]);
             Assert.AreEqual(doc.LastSection, doc.Sections[1]);
 
-            doc.Save(MyDir + "Artifacts/HeaderFooter.ReplaceText Out.doc");
+            doc.Save(MyDir + "Artifacts/HeaderFooter.ReplaceText.doc");
             //ExEnd
         }
 

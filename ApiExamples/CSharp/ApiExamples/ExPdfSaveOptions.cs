@@ -132,8 +132,8 @@ namespace ApiExamples
         }
 
         //ToDo: Add gold asserts for PDF files
-        // For assert this test you need to open "SaveOptions.PdfImageCompression PDF_A_1_B Out.pdf" and "SaveOptions.PdfImageCompression PDF_A_1_A Out.pdf" 
-        // and check that header image in this documents are equal header image in the "SaveOptions.PdfImageComppression Out.pdf" 
+        // For assert this test you need to open "SaveOptions.PdfImageCompression PDF_A_1_B.pdf" and "SaveOptions.PdfImageCompression PDF_A_1_A.pdf" 
+        // and check that header image in this documents are equal header image in the "SaveOptions.PdfImageComppression.pdf" 
         [Test]
         public void ImageCompression()
         {
@@ -151,14 +151,14 @@ namespace ApiExamples
             options.ImageCompression = PdfImageCompression.Jpeg;
             options.PreserveFormFields = true;
 
-            doc.Save(MyDir + "Artifacts/SaveOptions.PdfImageCompression Out.pdf", options);
+            doc.Save(MyDir + "Artifacts/SaveOptions.PdfImageCompression.pdf", options);
 
             PdfSaveOptions optionsA1B = new PdfSaveOptions();
             optionsA1B.Compliance = PdfCompliance.PdfA1b;
             optionsA1B.ImageCompression = PdfImageCompression.Jpeg;
             optionsA1B.JpegQuality = 100; // Use JPEG compression at 50% quality to reduce file size.
 
-            doc.Save(MyDir + "Artifacts/SaveOptions.PdfImageComppression PDF_A_1_B Out.pdf", optionsA1B);
+            doc.Save(MyDir + "Artifacts/SaveOptions.PdfImageComppression PDF_A_1_B.pdf", optionsA1B);
             //ExEnd
 
             PdfSaveOptions optionsA1A = new PdfSaveOptions();
@@ -166,7 +166,7 @@ namespace ApiExamples
             optionsA1A.ExportDocumentStructure = true;
             optionsA1A.ImageCompression = PdfImageCompression.Jpeg;
 
-            doc.Save(MyDir + "Artifacts/SaveOptions.PdfImageComppression PDF_A_1_A Out.pdf", optionsA1A);
+            doc.Save(MyDir + "Artifacts/SaveOptions.PdfImageComppression PDF_A_1_A.pdf", optionsA1A);
         }
 
         [Test]
@@ -222,7 +222,7 @@ namespace ApiExamples
             SaveOptions saveOptions = SaveOptions.CreateSaveOptions(SaveFormat.Pdf);
             saveOptions.MemoryOptimization = true;
 
-            doc.Save(MyDir + "Artifacts/SaveOptions.MemoryOptimization Out.pdf", saveOptions);
+            doc.Save(MyDir + "Artifacts/SaveOptions.MemoryOptimization.pdf", saveOptions);
             //ExEnd
         }
 
@@ -248,7 +248,7 @@ namespace ApiExamples
             PdfSaveOptions saveOptions = new PdfSaveOptions();
             saveOptions.MetafileRenderingOptions = metafileRenderingOptions;
             
-            doc.Save(MyDir + "PdfSaveOptions.HandleRasterWarnings Out.pdf", saveOptions);
+            doc.Save(MyDir + "PdfSaveOptions.HandleRasterWarnings.pdf", saveOptions);
 
             Assert.AreEqual(1, callback.mWarnings.Count);
             Assert.True(callback.mWarnings[0].Description.Contains("R2_XORPEN"));

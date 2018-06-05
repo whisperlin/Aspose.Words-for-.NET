@@ -229,12 +229,12 @@ namespace ApiExamples
             pdfSaveOptions.OutlineOptions.BookmarksOutlineLevels.Add("My Bookmark", 1);
             pdfSaveOptions.OutlineOptions.BookmarksOutlineLevels.Add("Nested Bookmark", 2);
 
-            doc.Save(MyDir + "Artifacts/Bookmarks.WhiteSpaces Out.pdf", pdfSaveOptions);
+            doc.Save(MyDir + "Artifacts/Bookmarks.WhiteSpaces.pdf", pdfSaveOptions);
             //ExEnd
 #if !__MOBILE__
             //Bind pdf with Aspose.Pdf
             PdfBookmarkEditor bookmarkEditor = new PdfBookmarkEditor();
-            bookmarkEditor.BindPdf(MyDir + "Artifacts/Bookmarks.WhiteSpaces Out.pdf");
+            bookmarkEditor.BindPdf(MyDir + "Artifacts/Bookmarks.WhiteSpaces.pdf");
 
             //Get all bookmarks from the document
             Bookmarks bookmarks = bookmarkEditor.ExtractBookmarks();

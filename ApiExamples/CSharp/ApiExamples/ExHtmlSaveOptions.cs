@@ -243,7 +243,7 @@ namespace ApiExamples
             saveOptions.ExportFontResources = true;
             saveOptions.ExportFontsAsBase64 = true;
             
-            doc.Save(MyDir + "Artifacts/HtmlSaveOptions.ExportPageMargins Out.html", saveOptions);
+            doc.Save(MyDir + "Artifacts/HtmlSaveOptions.ExportPageMargins.html", saveOptions);
 }
         [TestCase(HtmlVersion.Html5)]
         [TestCase(HtmlVersion.Xhtml)]
@@ -270,14 +270,14 @@ namespace ApiExamples
             {
                 case false:
 
-                    doc.Save(MyDir + "Artifacts/DocumentExportFonts Out 1.html", saveOptions);
-                    Assert.IsNotEmpty(Directory.GetFiles(MyDir + "Artifacts/", "DocumentExportFonts Out 1.times.ttf", SearchOption.AllDirectories)); //Verify that the font has been added to the folder
+                    doc.Save(MyDir + "Artifacts/DocumentExportFonts 1.html", saveOptions);
+                    Assert.IsNotEmpty(Directory.GetFiles(MyDir + "Artifacts/", "DocumentExportFonts 1.times.ttf", SearchOption.AllDirectories)); //Verify that the font has been added to the folder
                     break;
 
                 case true:
 
                     doc.Save(MyDir + "Artifacts/DocumentExportFonts Out 2.html", saveOptions);
-                    Assert.IsEmpty(Directory.GetFiles(MyDir + "Artifacts/", "DocumentExportFonts Out 2.times.ttf", SearchOption.AllDirectories)); //Verify that the font is not added to the folder
+                    Assert.IsEmpty(Directory.GetFiles(MyDir + "Artifacts/", "DocumentExportFonts 2.times.ttf", SearchOption.AllDirectories)); //Verify that the font is not added to the folder
                     break;
             }
         }
@@ -293,12 +293,12 @@ namespace ApiExamples
             saveOptions.ResourceFolder = MyDir + "Artifacts/Resources";
             saveOptions.ResourceFolderAlias = "http://example.com/resources";
 
-            doc.Save(MyDir + "Artifacts/HtmlSaveOptions.ResourceFolder Out.html", saveOptions);
+            doc.Save(MyDir + "Artifacts/HtmlSaveOptions.ResourceFolder.html", saveOptions);
 
-            Assert.IsNotEmpty(Directory.GetFiles(MyDir + "Artifacts/Resources", "HtmlSaveOptions.ResourceFolder Out.001.jpeg", SearchOption.AllDirectories));
-            Assert.IsNotEmpty(Directory.GetFiles(MyDir + "Artifacts/Resources", "HtmlSaveOptions.ResourceFolder Out.002.png", SearchOption.AllDirectories));
-            Assert.IsNotEmpty(Directory.GetFiles(MyDir + "Artifacts/Resources", "HtmlSaveOptions.ResourceFolder Out.calibri.ttf", SearchOption.AllDirectories));
-            Assert.IsNotEmpty(Directory.GetFiles(MyDir + "Artifacts/Resources", "HtmlSaveOptions.ResourceFolder Out.css", SearchOption.AllDirectories));
+            Assert.IsNotEmpty(Directory.GetFiles(MyDir + "Artifacts/Resources", "HtmlSaveOptions.ResourceFolder.001.jpeg", SearchOption.AllDirectories));
+            Assert.IsNotEmpty(Directory.GetFiles(MyDir + "Artifacts/Resources", "HtmlSaveOptions.ResourceFolder.002.png", SearchOption.AllDirectories));
+            Assert.IsNotEmpty(Directory.GetFiles(MyDir + "Artifacts/Resources", "HtmlSaveOptions.ResourceFolder.calibri.ttf", SearchOption.AllDirectories));
+            Assert.IsNotEmpty(Directory.GetFiles(MyDir + "Artifacts/Resources", "HtmlSaveOptions.ResourceFolder.css", SearchOption.AllDirectories));
 
         }
 
@@ -315,12 +315,12 @@ namespace ApiExamples
             saveOptions.ResourceFolder = MyDir + "Artifacts/Resources";
             saveOptions.ResourceFolderAlias = "http://example.com/resources";
 
-            doc.Save(MyDir + "Artifacts/HtmlSaveOptions.ResourceFolder Out.html", saveOptions);
+            doc.Save(MyDir + "Artifacts/HtmlSaveOptions.ResourceFolder.html", saveOptions);
 
-            Assert.IsNotEmpty(Directory.GetFiles(MyDir + "Artifacts/Images", "HtmlSaveOptions.ResourceFolder Out.001.jpeg", SearchOption.AllDirectories));
-            Assert.IsNotEmpty(Directory.GetFiles(MyDir + "Artifacts/Images", "HtmlSaveOptions.ResourceFolder Out.002.png", SearchOption.AllDirectories));
-            Assert.IsNotEmpty(Directory.GetFiles(MyDir + "Artifacts/Fonts", "HtmlSaveOptions.ResourceFolder Out.calibri.ttf", SearchOption.AllDirectories));
-            Assert.IsNotEmpty(Directory.GetFiles(MyDir + "Artifacts/Resources", "HtmlSaveOptions.ResourceFolder Out.css", SearchOption.AllDirectories));
+            Assert.IsNotEmpty(Directory.GetFiles(MyDir + "Artifacts/Images", "HtmlSaveOptions.ResourceFolder.001.jpeg", SearchOption.AllDirectories));
+            Assert.IsNotEmpty(Directory.GetFiles(MyDir + "Artifacts/Images", "HtmlSaveOptions.ResourceFolder.002.png", SearchOption.AllDirectories));
+            Assert.IsNotEmpty(Directory.GetFiles(MyDir + "Artifacts/Fonts", "HtmlSaveOptions.ResourceFolder.calibri.ttf", SearchOption.AllDirectories));
+            Assert.IsNotEmpty(Directory.GetFiles(MyDir + "Artifacts/Resources", "HtmlSaveOptions.ResourceFolder.css", SearchOption.AllDirectories));
         }
     }
 }

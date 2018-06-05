@@ -31,7 +31,7 @@ namespace ApiExamples
         [OneTimeTearDown]
         public void OneTimeTearDown()
         {
-            Directory.Delete(artifactsPath, true);
+            File.Delete(artifactsPath);
         }
 
         internal static void SetUnlimitedLicense()

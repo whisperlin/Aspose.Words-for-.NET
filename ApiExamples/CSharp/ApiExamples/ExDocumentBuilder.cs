@@ -399,12 +399,12 @@ namespace ApiExamples
             builder.InsertHtml(mathMl);
             //ExEnd
 
-            doc.Save(MyDir + "Artifacts/MathML Out.docx");
-            doc.Save(MyDir + "Artifacts/MathML Out.pdf");
+            doc.Save(MyDir + "Artifacts/MathML.docx");
+            doc.Save(MyDir + "Artifacts/MathML.pdf");
 
-            Assert.IsTrue(DocumentHelper.CompareDocs(MyDir + @"\Golds\MathML Gold.docx", MyDir + "Artifacts/MathML Out.docx"));
+            Assert.IsTrue(DocumentHelper.CompareDocs(MyDir + @"\Golds\MathML Gold.docx", MyDir + "Artifacts/MathML.docx"));
 #if !(NETSTANDARD2_0 || __MOBILE__)
-            DocumentHelper.ComparePdf(MyDir + @"\Golds\MathML Gold.pdf", MyDir + "Artifacts/MathML Out.pdf");
+            DocumentHelper.ComparePdf(MyDir + @"\Golds\MathML Gold.pdf", MyDir + "Artifacts/MathML.pdf");
 #endif
         }
 

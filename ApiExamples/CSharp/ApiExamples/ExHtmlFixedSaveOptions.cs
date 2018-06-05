@@ -177,7 +177,7 @@ namespace ApiExamples
             saveOptions.ExportEmbeddedFonts = false;
             saveOptions.ResourceSavingCallback = new ResourceSavingCallback();
 
-            doc.Save(MyDir + "Artifacts/UseMachineFonts Out.html", saveOptions);
+            doc.Save(MyDir + "Artifacts/UseMachineFonts.html", saveOptions);
         }
 
         private class ResourceSavingCallback : IResourceSavingCallback
