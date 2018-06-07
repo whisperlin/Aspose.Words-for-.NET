@@ -150,10 +150,13 @@ namespace ApiExamples
             doc.Range.Replace(new Regex("(header|footer)"), "", options);
 
             doc.Save(ArtifactsDir + "HeaderFooter.HeaderFooterOrder.docx");
-
+#if __MOBILE__
+            Assert.AreEqual("First header\nFirst footer\nSecond header\nSecond footer\nThird header\n" +
+                            "Third footer\n", logger.Text);
+#else
             Assert.AreEqual("First header\r\nFirst footer\r\nSecond header\r\nSecond footer\r\nThird header\r\n" +
                             "Third footer\r\n", logger.Text);
-
+#endif
             //Prepare our string builder for assert results without "DifferentFirstPageHeaderFooter"
             logger.ClearText();
             
@@ -162,7 +165,11 @@ namespace ApiExamples
             firstPageSection.PageSetup.DifferentFirstPageHeaderFooter = false;
 
             doc.Range.Replace(new Regex("(header|footer)"), "", options);
+#if __MOBILE__
+            Assert.AreEqual("Third header\nFirst header\nThird footer\nFirst footer\nSecond header\nSecond footer\n", logger.Text);
+#else
             Assert.AreEqual("Third header\r\nFirst header\r\nThird footer\r\nFirst footer\r\nSecond header\r\nSecond footer\r\n", logger.Text);
+#endif
         }
 
         private class ReplaceLog : IReplacingCallback

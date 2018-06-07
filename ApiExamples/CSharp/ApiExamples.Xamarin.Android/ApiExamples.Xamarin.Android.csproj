@@ -103,8 +103,8 @@
     <Reference Include="Aspose.BarCode, Version=18.5.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
       <HintPath>..\packages\Aspose.BarCode.18.5.0\lib\netstandard2.0\Aspose.BarCode.dll</HintPath>
     </Reference>
-    <Reference Include="Aspose.Words, Version=18.5.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
-      <HintPath>..\packages\Aspose.Words.18.5.0\lib\MonoAndroid23\Aspose.Words.dll</HintPath>
+    <Reference Include="Aspose.Words, Version=18.6.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
+      <HintPath>..\packages\Aspose.Words.18.6.0\lib\MonoAndroid23\Aspose.Words.dll</HintPath>
     </Reference>
     <Reference Include="FormsViewGroup, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Xamarin.Forms.3.0.0.530893\lib\MonoAndroid10\FormsViewGroup.dll</HintPath>
