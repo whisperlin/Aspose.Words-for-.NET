@@ -13,9 +13,6 @@ using Aspose.Words.Drawing;
 using Aspose.Words.Fields;
 using Aspose.Words.MailMerging;
 using NUnit.Framework;
-#if NETSTANDARD2_0
-using lcpi.data.oledb;
-#endif
 #if !(NETSTANDARD2_0 || __MOBILE__)
 using System.Data.OleDb;
 #endif
