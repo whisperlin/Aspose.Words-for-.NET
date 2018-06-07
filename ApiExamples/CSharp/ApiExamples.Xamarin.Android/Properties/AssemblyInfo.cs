@@ -23,7 +23,7 @@
 using System.Reflection;
 using System.Runtime.InteropServices;
 
-[assembly: AssemblyTitle("Xamarin.Android")]
+[assembly: AssemblyTitle("ApiExamples.Xamarin.Android")]
 [assembly: AssemblyDescription("NUnit Test Runner for Android")]
 
 [assembly: AssemblyCompany("NUnit Software")]

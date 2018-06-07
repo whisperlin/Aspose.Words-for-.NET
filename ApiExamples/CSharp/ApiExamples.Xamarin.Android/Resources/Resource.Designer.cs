@@ -9,9 +9,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Android.Runtime.ResourceDesignerAttribute("Xamarin.Android.Resource", IsApplication=true)]
+[assembly: global::Android.Runtime.ResourceDesignerAttribute("ApiExamples.Xamarin.Android.Resource", IsApplication=true)]
 
-namespace Xamarin.Android
+namespace ApiExamples.Xamarin.Android
 {
 	
 	
@@ -26,11 +26,11 @@ namespace Xamarin.Android
 		
 		public static void UpdateIdValues()
 		{
-			global::Nunit.Runner.Resource.String.ApplicationName = global::Xamarin.Android.Resource.String.ApplicationName;
-			global::Nunit.Runner.Resource.String.Hello = global::Xamarin.Android.Resource.String.Hello;
-			global::PCLStorage.Resource.String.ApplicationName = global::Xamarin.Android.Resource.String.ApplicationName;
-			global::PCLStorage.Resource.String.Hello = global::Xamarin.Android.Resource.String.Hello;
-			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::Xamarin.Android.Resource.Attribute.actionBarSize;
+			global::Nunit.Runner.Resource.String.ApplicationName = global::ApiExamples.Xamarin.Android.Resource.String.ApplicationName;
+			global::Nunit.Runner.Resource.String.Hello = global::ApiExamples.Xamarin.Android.Resource.String.Hello;
+			global::PCLStorage.Resource.String.ApplicationName = global::ApiExamples.Xamarin.Android.Resource.String.ApplicationName;
+			global::PCLStorage.Resource.String.Hello = global::ApiExamples.Xamarin.Android.Resource.String.Hello;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::ApiExamples.Xamarin.Android.Resource.Attribute.actionBarSize;
 		}
 		
 		public partial class Animation

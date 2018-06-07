@@ -21,18 +21,14 @@
 // WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 // ***********************************************************************
 
-using Android;
 using Android.App;
 using Android.Content.PM;
 using Android.OS;
-using Android.Support.V4.App;
-using Android.Support.V4.Content;
-using Android.Widget;
 using NUnit.Runner.Services;
 
 namespace Xamarin.Android
 {
-    [Activity(Label = "NUnit", Icon = "@drawable/icon", Theme = "@android:style/Theme.Holo.Light", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+    [Activity(Label = "ApiExamples.Xamarin.Android", Icon = "@drawable/icon", Theme = "@android:style/Theme.Holo.Light", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : Xamarin.Forms.Platform.Android.FormsApplicationActivity
     {
         protected override void OnCreate(Bundle savedInstanceState)

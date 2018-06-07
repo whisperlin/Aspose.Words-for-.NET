@@ -633,28 +633,6 @@ namespace ApiExamples
         [Test]
         public void FontSubstitutionWarnings()
         {
-            Document doc = new Document(MyDir + "Rendering.doc");
-
-            // Create a new class implementing IWarningCallback and assign it to the PdfSaveOptions class.
-            HandleDocumentWarnings callback = new HandleDocumentWarnings();
-            doc.WarningCallback = callback;
-
-            FontSettings fontSettings = new FontSettings();
-            fontSettings.DefaultFontName = "Arial";
-            fontSettings.SetFontSubstitutes("Arial", new String[] { "Arvo", "Slab" });
-            fontSettings.SetFontsFolder(MyDir + @"MyFonts\", false);
-
-            doc.FontSettings = fontSettings;
-
-            doc.Save(ArtifactsDir + "Rendering.MissingFontNotification.pdf");
-
-            Assert.True(callback.mFontWarnings[0].Description.Equals("Font substitutes: 'Arial' replaced with 'Arvo'."));
-            Assert.True(callback.mFontWarnings[1].Description.Equals("Font 'Times New Roman' has not been found. Using 'Noticia Text' font instead. Reason: closest match according to font info from the document."));
-        }
-
-        [Test]
-        public void FontSubstitutionWarningsClosestMatch()
-        {
             Document doc = new Document(MyDir + "Font.DisapearingBulletPoints.doc");
 
             // Create a new class implementing IWarningCallback and assign it to the PdfSaveOptions class.
@@ -663,7 +641,12 @@ namespace ApiExamples
 
             doc.Save(ArtifactsDir + "Font.DisapearingBulletPoints.pdf");
 
+#if __MOBILE__
+            Assert.True(callback.mFontWarnings[4].Description.Equals("Font 'SymbolPS' has not been found. Using 'Roboto Thin' font instead. Reason: closest match according to font info from the document."));
+#else
             Assert.True(callback.mFontWarnings[0].Description.Equals("Font 'SymbolPS' has not been found. Using 'Wingdings' font instead. Reason: closest match according to font info from the document."));
+#endif
+
         }
 
         [Test]

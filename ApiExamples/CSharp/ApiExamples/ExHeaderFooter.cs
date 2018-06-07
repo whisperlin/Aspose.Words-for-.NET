@@ -149,6 +149,8 @@ namespace ApiExamples
 
             doc.Range.Replace(new Regex("(header|footer)"), "", options);
 
+            doc.Save(ArtifactsDir + "HeaderFooter.HeaderFooterOrder.docx");
+
             Assert.AreEqual("First header\r\nFirst footer\r\nSecond header\r\nSecond footer\r\nThird header\r\n" +
                             "Third footer\r\n", logger.Text);
 

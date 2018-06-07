@@ -232,13 +232,27 @@ namespace ApiExamples
                 case false:
 
                     doc.Save(ArtifactsDir + "DocumentExportFonts 1.html", saveOptions);
-                    Assert.IsNotEmpty(Directory.GetFiles(ArtifactsDir, "DocumentExportFonts 1.times.ttf", SearchOption.AllDirectories)); //Verify that the font has been added to the folder
+#if __MOBILE__
+                    Assert.IsNotEmpty(Directory.GetFiles(ArtifactsDir, "DocumentExportFonts 1.notoserif-regular.ttf",
+                        SearchOption.AllDirectories));
                     break;
-
+#else
+                    Assert.IsNotEmpty(Directory.GetFiles(ArtifactsDir, "DocumentExportFonts 1.times.ttf",
+                        SearchOption.AllDirectories));
+                    break;
+#endif
                 case true:
 
                     doc.Save(ArtifactsDir + "DocumentExportFonts 2.html", saveOptions);
-                    Assert.IsEmpty(Directory.GetFiles(ArtifactsDir, "DocumentExportFonts 2.times.ttf", SearchOption.AllDirectories)); //Verify that the font is not added to the folder
+#if __MOBILE__
+                    Assert.IsEmpty(Directory.GetFiles(ArtifactsDir, "DocumentExportFonts 2.notoserif-regular.ttf",
+                        SearchOption.AllDirectories));
+                    break;
+#else
+                    Assert.IsEmpty(Directory.GetFiles(ArtifactsDir, "DocumentExportFonts 2.times.ttf",
+                        SearchOption.AllDirectories));
+                    break;
+#endif
                     break;
             }
         }
