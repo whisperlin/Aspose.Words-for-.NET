@@ -23,23 +23,50 @@ namespace ApiExamples
         [OneTimeSetUp]
         public void OneTimeSetUp()
         {
+            CopyData();
+
             SetUnlimitedLicense();
 
             if (Directory.Exists(ArtifactsDir))
             {
-                Directory.Delete(ArtifactsDir, true);
-                Directory.CreateDirectory(ArtifactsDir);
+                try
+                {
+                    Directory.Delete(ArtifactsDir, true);
+                    Directory.CreateDirectory(ArtifactsDir);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                    throw;
+                }
+                
             }
             else
             {
-                Directory.CreateDirectory(ArtifactsDir);
+                try
+                {
+                    Directory.CreateDirectory(ArtifactsDir);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                    throw;
+                }
             }
         }
 
         [OneTimeTearDown]
         public void OneTimeTearDown()
         {
-            Directory.Delete(ArtifactsDir, true);
+            try
+            {
+                Directory.Delete(ArtifactsDir, true);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
         }
 
         internal static void SetUnlimitedLicense()
@@ -97,11 +124,11 @@ namespace ApiExamples
 
         static ApiExampleBase()
         {
-            gArtifactsDir = Path.Combine(GetExternalAppPath(), "Artifacts/");
-            gMyDir = Path.Combine(GetSdCardPath(), "Data/");
-            gImageDir = Path.Combine(GetSdCardPath(), "Data/Images/");
-            gDatabaseDir = Path.Combine(GetSdCardPath(), "Data/Database/");
-            gGoldsDir = Path.Combine(GetSdCardPath(), "Data/Golds/");
+            gArtifactsDir = Path.Combine(GetExternalAppPath(), "Data/Artifacts/");
+            gMyDir = Path.Combine(GetExternalAppPath(), "Data/");
+            gImageDir = Path.Combine(GetExternalAppPath(), "Data/Images/");
+            gDatabaseDir = Path.Combine(GetExternalAppPath(), "Data/Database/");
+            gGoldsDir = Path.Combine(GetExternalAppPath(), "Data/Golds/");
         }
 
         private static readonly String gArtifactsDir;
@@ -110,7 +137,43 @@ namespace ApiExamples
         private static readonly String gDatabaseDir;
         private static readonly String gGoldsDir;
 
-        internal static readonly string TestLicenseFileName = Path.Combine(GetSdCardPath(), "Data/License/Aspose.Total.lic");
+        internal static readonly string TestLicenseFileName = Path.Combine(GetExternalAppPath(), "Data/License/Aspose.Total.lic");
+
+        public void CopyData()
+        {
+            string sdCardDataDir = GetSdCardPath() + "Data/";
+            string dataDestinationPath = GetExternalAppPath() + "Data/";
+
+            if (Directory.Exists(dataDestinationPath))
+            {
+                Directory.Delete(dataDestinationPath, true);
+                Directory.CreateDirectory(dataDestinationPath);
+            }
+            else
+            {
+                Directory.CreateDirectory(dataDestinationPath);
+            }
+
+            //Now Create all of the directories
+            foreach (string dirPath in Directory.GetDirectories(sdCardDataDir, "*",
+                SearchOption.AllDirectories))
+            {
+                Directory.CreateDirectory(dirPath.Replace(sdCardDataDir, dataDestinationPath));
+
+                string test = ExtractString(@"\w+$", dirPath);
+
+                string destinationPath = dataDestinationPath + test;
+
+                foreach (string newPath in Directory.GetFiles(dirPath, "*.*",
+                    SearchOption.AllDirectories))
+                    File.Copy(newPath, newPath.Replace(dirPath, destinationPath), true);
+            }
+
+            //Copy all the files & Replaces any files with the same name
+            foreach (string newPath in Directory.GetFiles(sdCardDataDir, "*.*",
+                SearchOption.AllDirectories))
+                File.Copy(newPath, newPath.Replace(sdCardDataDir, dataDestinationPath), true);
+        }
 
         /// <summary>
         /// Extended SD Card path location for KitKat (Android 19 / 4.4) and upwards.
@@ -121,7 +184,7 @@ namespace ApiExamples
         internal static string GetSdCardPath()
         {
             string appExternalSdPath = GetExternalAppPath();
-            string externalSdPath = ExtractString(@"^/storage/.+?/", appExternalSdPath);
+            string externalSdPath = ExtractString(@"^[/]storage[/].+?[/]", appExternalSdPath);
 
             return externalSdPath;
         }
@@ -143,7 +206,7 @@ namespace ApiExamples
             if (externalFilesDirs.Any())
             {
                 // we only want the external drive, otherwise nothing!
-                string appExternalSdPath = externalFilesDirs.Length > 1 ? externalFilesDirs[1].AbsolutePath : string.Empty;
+                string appExternalSdPath = externalFilesDirs.Length > 1 ? externalFilesDirs[1].AbsolutePath + Path.DirectorySeparatorChar : externalFilesDirs[0].AbsolutePath + Path.DirectorySeparatorChar;
 
                 // note that in the case of an SD card, ONLY the path it returns is writeable. You can 
                 // drop back to the "root" as we did with the internal one above, but that's readonly.
