@@ -815,7 +815,7 @@ namespace ApiExamples
         }
 
         [Test]
-        [Ignore("WORDSNET-16868")]
+        [Description("WORDSNET-16868")]
         public void SignPdfDocument()
         {
             //ExStart

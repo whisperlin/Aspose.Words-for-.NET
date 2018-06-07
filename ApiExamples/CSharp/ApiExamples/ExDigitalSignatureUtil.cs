@@ -59,7 +59,7 @@ namespace ApiExamples
         }
 
         [Test]
-        [Ignore("WORDSNET-16868")]
+        [Description("WORDSNET-16868")]
         public void SignDocument()
         {
             //ExStart
@@ -82,8 +82,7 @@ namespace ApiExamples
         }
 
         [Test]
-        [Description("WORDSNET-13036")]
-        [Ignore("WORDSNET-16868")]
+        [Description("WORDSNET-13036, WORDSNET-16868")]
         public void SignDocumentObfuscationBug()
         {
             CertificateHolder ch = CertificateHolder.Create(MyDir + "morzal.pfx", "aw");
@@ -97,7 +96,7 @@ namespace ApiExamples
         }
 
         [Test]
-        [Ignore("WORDSNET-16868")]
+        [Description("WORDSNET-16868")]
         public void IncorrectPasswordForDecrypring()
         {
             CertificateHolder certificateHolder = CertificateHolder.Create(MyDir + "morzal.pfx", "aw");
@@ -113,7 +112,7 @@ namespace ApiExamples
         }
 
         [Test]
-        [Ignore("WORDSNET-16868")]
+        [Description("WORDSNET-16868")]
         public void SingDocumentWithPasswordDecrypring()
         {
             //ExStart
