@@ -48,7 +48,7 @@ namespace ApiExamples
             //ExSummary:Shows how to load all existing signatures from a document.
             // By string:
             DigitalSignatureCollection digitalSignatures = DigitalSignatureUtil.LoadSignatures(MyDir + "Document.DigitalSignature.docx");
-
+            Assert.NotNull(digitalSignatures);
             // By stream:
             Stream stream = new FileStream(MyDir + "Document.DigitalSignature.docx", FileMode.Open);
 

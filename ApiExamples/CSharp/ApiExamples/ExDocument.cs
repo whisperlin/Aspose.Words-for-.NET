@@ -778,6 +778,7 @@ namespace ApiExamples
         }
 
         [Test]
+        [Ignore("WORDSXAND-132")]
         public void ValidateIndividualDocumentSignatures()
         {
             //ExStart

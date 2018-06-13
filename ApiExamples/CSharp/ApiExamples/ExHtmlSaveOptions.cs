@@ -253,7 +253,6 @@ namespace ApiExamples
                         SearchOption.AllDirectories));
                     break;
 #endif
-                    break;
             }
         }
 
