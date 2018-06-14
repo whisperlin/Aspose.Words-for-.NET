@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2001-2017 Aspose Pty Ltd. All Rights Reserved.
+﻿// Copyright (c) 2001-2018 Aspose Pty Ltd. All Rights Reserved.
 //
 // This file is part of Aspose.Words. The source code in this file
 // is only intended as a supplement to the documentation, and is provided
@@ -38,8 +38,10 @@ namespace ApiExamples
             newComment.AddReply("John Doe", "JD", new DateTime(2017, 9, 25, 12, 15, 0), "New reply");
             //ExEnd
 
-            MemoryStream dstStream = new MemoryStream();
-            doc.Save(dstStream, SaveFormat.Docx);
+            using (MemoryStream dstStream = new MemoryStream())
+            {
+                doc.Save(dstStream, SaveFormat.Docx);
+            }
 
             Comment docComment = (Comment)doc.GetChild(NodeType.Comment, 0, true);
 

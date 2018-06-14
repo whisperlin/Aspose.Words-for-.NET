@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2001-2017 Aspose Pty Ltd. All Rights Reserved.
+﻿// Copyright (c) 2001-2018 Aspose Pty Ltd. All Rights Reserved.
 //
 // This file is part of Aspose.Words. The source code in this file
 // is only intended as a supplement to the documentation, and is provided
@@ -22,21 +22,21 @@ namespace ApiExamples
             //ExFor:DigitalSignatureUtil.RemoveAllSignatures(Stream, Stream)
             //ExFor:DigitalSignatureUtil.RemoveAllSignatures(String, String)
             //ExSummary:Shows how to remove every signature from a document.
-            // By string:
+            // Remove all signatures from the document using string parameters
             Document doc = new Document(MyDir + "Document.DigitalSignature.docx");
             string outFileName = ArtifactsDir + "Document.NoSignatures.FromString.docx";
 
             DigitalSignatureUtil.RemoveAllSignatures(doc.OriginalFileName, outFileName);
 
-            // By stream:
-            Stream streamIn = new FileStream(MyDir + "Document.DigitalSignature.docx", FileMode.Open);
-            Stream streamOut = new FileStream(ArtifactsDir + "Document.NoSignatures.FromStream.doc", FileMode.Create);
-
-            DigitalSignatureUtil.RemoveAllSignatures(streamIn, streamOut);
+            // Remove all signatures from the document using stream parameters
+            using (Stream streamIn = new FileStream(MyDir + "Document.DigitalSignature.docx", FileMode.Open))
+            {
+                using (Stream streamOut = new FileStream(ArtifactsDir + "Document.NoSignatures.FromStream.docx", FileMode.Create))
+                {
+                    DigitalSignatureUtil.RemoveAllSignatures(streamIn, streamOut);
+                } 
+            }
             //ExEnd
-
-            streamIn.Close();
-            streamOut.Close();
         }
 
         [Test]
@@ -46,12 +46,12 @@ namespace ApiExamples
             //ExFor:DigitalSignatureUtil.LoadSignatures(Stream)
             //ExFor:DigitalSignatureUtil.LoadSignatures(String)
             //ExSummary:Shows how to load all existing signatures from a document.
-            // By string:
+            // Load all signatures from the document using string parameters
             DigitalSignatureCollection digitalSignatures = DigitalSignatureUtil.LoadSignatures(MyDir + "Document.DigitalSignature.docx");
             Assert.NotNull(digitalSignatures);
-            // By stream:
+            
+            // Load all signatures from the document using stream parameters
             Stream stream = new FileStream(MyDir + "Document.DigitalSignature.docx", FileMode.Open);
-
             digitalSignatures = DigitalSignatureUtil.LoadSignatures(stream);
             //ExEnd
 
@@ -71,14 +71,14 @@ namespace ApiExamples
 
             SignOptions signOptions = new SignOptions { Comments = "My comment", SignTime = DateTime.Now };
 
-            Stream streamIn = new FileStream(MyDir + "Document.DigitalSignature.docx", FileMode.Open);
-            Stream streamOut = new FileStream(ArtifactsDir + "Document.DigitalSignature.docx", FileMode.OpenOrCreate);
-
-            DigitalSignatureUtil.Sign(streamIn, streamOut, certificateHolder, signOptions);
+            using (Stream streamIn = new FileStream(MyDir + "Document.DigitalSignature.docx", FileMode.Open))
+            {
+                using (Stream streamOut = new FileStream(ArtifactsDir + "Document.DigitalSignature.docx", FileMode.OpenOrCreate))
+                {
+                    DigitalSignatureUtil.Sign(streamIn, streamOut, certificateHolder, signOptions);
+                }
+            }
             //ExEnd
-
-            streamIn.Dispose();
-            streamOut.Dispose();
         }
 
         [Test]

@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2001-2017 Aspose Pty Ltd. All Rights Reserved.
+﻿// Copyright (c) 2001-2018 Aspose Pty Ltd. All Rights Reserved.
 //
 // This file is part of Aspose.Words. The source code in this file
 // is only intended as a supplement to the documentation, and is provided
@@ -97,9 +97,12 @@ namespace ApiExamples
 
             builder.InsertCell();
             builder.Write("Row 1, Col 1");
+            //ExEnd
 
-            MemoryStream dstStream = new MemoryStream();
-            builder.Document.Save(dstStream, SaveFormat.Docx);
+            using (MemoryStream dstStream = new MemoryStream())
+            {
+                builder.Document.Save(dstStream, SaveFormat.Docx);
+            }
 
             Table table = (Table)builder.Document.GetChild(NodeType.Table, 0, true);
 
@@ -109,7 +112,6 @@ namespace ApiExamples
             Assert.AreEqual(10, cell.CellFormat.TopPadding);
             Assert.AreEqual(40, cell.CellFormat.RightPadding);
             Assert.AreEqual(50, cell.CellFormat.BottomPadding);
-            //ExEnd
         }
     }
 }

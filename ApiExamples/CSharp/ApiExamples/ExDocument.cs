@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2001-2017 Aspose Pty Ltd. All Rights Reserved.
+﻿// Copyright (c) 2001-2018 Aspose Pty Ltd. All Rights Reserved.
 //
 // This file is part of Aspose.Words. The source code in this file
 // is only intended as a supplement to the documentation, and is provided
@@ -126,18 +126,14 @@ namespace ApiExamples
             //ExId:OpenFromStream
             //ExSummary:Opens a document from a stream.
             // Open the stream. Read only access is enough for Aspose.Words to load a document.
-            Stream stream = File.OpenRead(MyDir + "Document.doc");
-
-            // Load the entire document into memory.
-            Document doc = new Document(stream);
-
-            // You can close the stream now, it is no longer needed because the document is in memory.
-            stream.Close();
-
+            using (Stream stream = File.OpenRead(MyDir + "Document.doc"))
+            {
+                // Load the entire document into memory.
+                Document doc = new Document(stream);
+                Assert.AreEqual("Hello World!\x000c", doc.GetText()); //ExSkip
+            }
             // ... do something with the document
             //ExEnd
-
-            Assert.AreEqual("Hello World!\x000c", doc.GetText());
         }
 
         [Test]
@@ -149,7 +145,7 @@ namespace ApiExamples
             //ExFor:LoadOptions.BaseUri
             //ExId:DocumentCtor_LoadOptions
             //ExSummary:Opens an HTML document with images from a stream using a base URI.
-
+            Document doc;
             // We are opening this HTML file:      
             //    <html>
             //    <body>
@@ -160,16 +156,15 @@ namespace ApiExamples
             String fileName = MyDir + "Document.OpenFromStreamWithBaseUri.html";
 
             // Open the stream.
-            Stream stream = File.OpenRead(fileName);
+            using (Stream stream = File.OpenRead(fileName))
+            {
+                // Open the document. Note the Document constructor detects HTML format automatically.
+                // Pass the URI of the base folder so any images with relative URIs in the HTML document can be found.
+                LoadOptions loadOptions = new LoadOptions();
+                loadOptions.BaseUri = MyDir;
 
-            // Open the document. Note the Document constructor detects HTML format automatically.
-            // Pass the URI of the base folder so any images with relative URIs in the HTML document can be found.
-            LoadOptions loadOptions = new LoadOptions();
-            loadOptions.BaseUri = MyDir;
-            Document doc = new Document(stream, loadOptions);
-
-            // You can close the stream now, it is no longer needed because the document is in memory.
-            stream.Close();
+                doc = new Document(stream, loadOptions);
+            }
 
             // Save in the DOC format.
             doc.Save(ArtifactsDir + "Document.OpenFromStreamWithBaseUri.doc");
@@ -204,15 +199,16 @@ namespace ApiExamples
             byte[] dataBytes = webClient.DownloadData(url);
 
             // Wrap the bytes representing the document in memory into a MemoryStream object.
-            MemoryStream byteStream = new MemoryStream(dataBytes);
+            using (MemoryStream byteStream = new MemoryStream(dataBytes))
+            {
+                // Load this memory stream into a new Aspose.Words Document.
+                // The file format of the passed data is inferred from the content of the bytes itself. 
+                // You can load any document format supported by Aspose.Words in the same way.
+                Document doc = new Document(byteStream);
 
-            // Load this memory stream into a new Aspose.Words Document.
-            // The file format of the passed data is inferred from the content of the bytes itself. 
-            // You can load any document format supported by Aspose.Words in the same way.
-            Document doc = new Document(byteStream);
-
-            // Convert the document to any format supported by Aspose.Words.
-            doc.Save(ArtifactsDir + "Document.OpenFromWeb.docx");
+                // Convert the document to any format supported by Aspose.Words.
+                doc.Save(ArtifactsDir + "Document.OpenFromWeb.docx");
+            }
             //ExEnd
         }
 
@@ -237,17 +233,18 @@ namespace ApiExamples
             byte[] pageBytes = encoding.GetBytes(pageSource);
 
             // Load the HTML into a stream.
-            MemoryStream stream = new MemoryStream(pageBytes);
+            using (MemoryStream stream = new MemoryStream(pageBytes))
+            {
+                // The baseUri property should be set to ensure any relative img paths are retrieved correctly.
+                LoadOptions options = new LoadOptions(Aspose.Words.LoadFormat.Html, "", url);
 
-            // The baseUri property should be set to ensure any relative img paths are retrieved correctly.
-            LoadOptions options = new LoadOptions(Aspose.Words.LoadFormat.Html, "", url);
+                // Load the HTML document from stream and pass the LoadOptions object.
+                Document doc = new Document(stream, options);
 
-            // Load the HTML document from stream and pass the LoadOptions object.
-            Document doc = new Document(stream, options);
-
-            // Save the document to disk.
-            // The extension of the filename can be changed to save the document into other formats. e.g PDF, DOCX, ODT, RTF.
-            doc.Save(ArtifactsDir + "Document.HtmlPageFromWebpage.doc");
+                // Save the document to disk.
+                // The extension of the filename can be changed to save the document into other formats. e.g PDF, DOCX, ODT, RTF.
+                doc.Save(ArtifactsDir + "Document.HtmlPageFromWebpage.doc");
+            }
             //ExEnd
         }
 
@@ -297,9 +294,10 @@ namespace ApiExamples
             //ExStart
             //ExFor:Document.#ctor(Stream,LoadOptions)
             //ExSummary:Loads a Microsoft Word document encrypted with a password from a stream.
-            Stream stream = File.OpenRead(MyDir + "Document.LoadEncrypted.doc");
-            Document doc = new Document(stream, new LoadOptions("qwerty"));
-            stream.Close();
+            using (Stream stream = File.OpenRead(MyDir + "Document.LoadEncrypted.doc"))
+            {
+                Document doc = new Document(stream, new LoadOptions("qwerty"));
+            }
             //ExEnd
         }
 
@@ -363,11 +361,13 @@ namespace ApiExamples
             //ExSummary:Shows how to save a document to a stream.
             Document doc = new Document(MyDir + "Document.doc");
 
-            MemoryStream dstStream = new MemoryStream();
-            doc.Save(dstStream, SaveFormat.Docx);
+            using (MemoryStream dstStream = new MemoryStream())
+            {
+                doc.Save(dstStream, SaveFormat.Docx);
 
-            // Rewind the stream position back to zero so it is ready for next reader.
-            dstStream.Position = 0;
+                // Rewind the stream position back to zero so it is ready for next reader.
+                dstStream.Position = 0;
+            }
             //ExEnd
         }
 
