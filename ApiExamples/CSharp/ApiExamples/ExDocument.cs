@@ -2226,7 +2226,8 @@ namespace ApiExamples
 
             doc.LayoutOptions.IsShowHiddenText = true;
 
-            doc.Save(ArtifactsDir + "Document.LayoutOptions.pdf");
+            doc.Save(MyDir + @"\Artifacts\Document.LayoutOptions.pdf");
+            //ExEnd
         }
 
         [Test]
