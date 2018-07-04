@@ -12,7 +12,6 @@ using System.Globalization;
 using System.IO;
 using System.Text.RegularExpressions;
 using System.Threading;
-using Aspose.BarCode.BarCodeRecognition;
 using Aspose.Words;
 using Aspose.Words.Fields;
 using Aspose.Words.Replacing;
