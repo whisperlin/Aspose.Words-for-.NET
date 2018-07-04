@@ -10,24 +10,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
-using Android;
 using Android.App;
 using Android.Content;
-using Android.Content.PM;
-using Android.OS;
 using Android.OS.Storage;
-using Android.Support.Design.Widget;
-using Android.Support.V4.App;
-using Android.Support.V4.Content;
-using Android.Support.V7.App;
 using Android.Util;
-using Android.Views;
 using Aspose.Words;
 using Java.Lang;
 using Java.Lang.Reflect;
 using NUnit.Framework;
 using Exception = System.Exception;
-using Object = System.Object;
 using String = System.String;
 
 namespace ApiExamples
