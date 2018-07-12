@@ -16,6 +16,9 @@ using Aspose.Words;
 using Aspose.Words.Fields;
 using Aspose.Words.Replacing;
 using NUnit.Framework;
+#if !(NETSTANDARD2_0 || __MOBILE__)
+using Aspose.BarCode.BarCodeRecognition;
+#endif
 
 namespace ApiExamples
 {
