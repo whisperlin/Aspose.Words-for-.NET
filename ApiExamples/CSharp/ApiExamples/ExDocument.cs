@@ -2517,5 +2517,35 @@ namespace ApiExamples
             doc.Save(MyDir + @"\Artifacts\Document.ShowRevisionsInBalloons.pdf");
             //ExEnd
         }
+
+        [Test] // TODO: Check, need to use another document
+        public void CopyStylesFromTemplateViaDocument()
+        {
+            //ExStart
+            //ExFor:Document.CopyStylesFromTemplate(Document)
+            //ExSummary:Shows how to copies styles from the template to a document.
+            Document template = new Document(MyDir + "Rendering.doc");
+
+            Document target = new Document(MyDir + "Document.docx");
+            target.CopyStylesFromTemplate(template);
+
+            target.Save(MyDir + @"\Artifacts\CopyStylesFromTemplateViaDocument.docx");
+            //ExEnd
+        }
+
+        [Test]
+        public void CopyStylesFromTemplateViaString()
+        {
+            //ExStart
+            //ExFor:Document.CopyStylesFromTemplate(String)
+            //ExSummary:Shows how to copies styles from the template to a document.
+            string templatePath = MyDir + "Rendering.doc";
+            
+            Document target = new Document(MyDir + "Document.docx");
+            target.CopyStylesFromTemplate(templatePath);
+
+            target.Save(MyDir + @"\Artifacts\CopyStylesFromTemplateViaString.docx");
+            //ExEnd
+        }
     }
 }

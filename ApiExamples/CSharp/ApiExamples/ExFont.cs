@@ -1278,5 +1278,63 @@ namespace ApiExamples
             Assert.AreEqual(1, doc.FontSettings.GetFontSubstitutes("Kreon-Regular").Length);
             //ExEnd
         }
+
+        [Test] //TODO: Check all on dev side
+        public void LoadFontFallbackSettingsFromFile()
+        {
+            //ExStart
+            //ExFor:FontFallbackSettings.Load(String)
+            //ExSummary:Shows how to load and set font fallback settings from file
+            Document doc = new Document(MyDir + "Rendering.doc");
+            
+            // By default fallback settings are initialized with predefined settings which mimics the Microsoft Word fallback.
+            FontSettings fontSettings = new FontSettings();
+            fontSettings.FallbackSettings.Load(MyDir + "Fallback.xml");
+
+            doc.FontSettings = fontSettings;
+            doc.Save(MyDir + @"\Artifacts\LoadFontFallbackSettingsFromFile.pdf");
+            //ExEnd
+        }
+
+        [Test] //TODO: Check all on dev side
+        public void LoadFontFallbackSettingsFromStream()
+        {
+            //ExStart
+            //ExFor:FontFallbackSettings.Load(Stream)
+            //ExSummary:Shows how to load and set font fallback settings from stream
+            Document doc = new Document(MyDir + "Rendering.doc");
+
+            // By default fallback settings are initialized with predefined settings which mimics the Microsoft Word fallback.
+            using (FileStream fontFallbackStream = new FileStream(MyDir + "Fallback.xml", FileMode.Open))
+            {
+                FontSettings fontSettings = new FontSettings();
+                fontSettings.FallbackSettings.Load(fontFallbackStream);
+
+                doc.FontSettings = fontSettings;
+            }
+
+            doc.Save(MyDir + @"\Artifacts\LoadFontFallbackSettingsFromStream.pdf");
+            //ExEnd
+        }
+
+        [Test] //TODO: Check all on dev side
+        public void SaveFontFallbackSettings()
+        {
+            //ExStart
+            //ExFor:FontFallbackSettings.Save(String)
+            //ExFor:FontFallbackSettings.Save(Stream)
+            //ExSummary:Shows how to save font fallback settings from current document to a file or stream
+            Document doc = new Document(MyDir + "LoadFontFallbackSettingsFromStream.docx");
+            
+            // Saves font fallback setting by string
+            doc.FontSettings.FallbackSettings.Save(MyDir + @"\Artifacts\FallbackSettings.xml");
+            
+            // Saves font fallback setting by stream
+            using (FileStream fontFallbackStream =
+                new FileStream(MyDir + @"\Artifacts\FallbackSettings.xml", FileMode.Create))
+            {
+                doc.FontSettings.FallbackSettings.Save(fontFallbackStream);
+            }
+        }
     }
 }

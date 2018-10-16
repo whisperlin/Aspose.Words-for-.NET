@@ -166,6 +166,29 @@ namespace ApiExamples
             //ExEnd
         }
 
+        [Test] //TODO: Check
+        public void InsertFieldNone()
+        {
+            //ExStart
+            //ExFor:FieldUnknown.#ctor
+            //ExSummary:Shows how to work with 'FieldNone' field in a document.
+            Document doc = new Document();
+            DocumentBuilder builder = new DocumentBuilder(doc);
+
+            builder.InsertField(FieldType.FieldNone, false);
+            
+            MemoryStream stream = new MemoryStream();
+            doc.Save(stream, SaveFormat.Docx);
+
+            FieldUnknown fieldUnknown = (FieldUnknown)doc.Range.Fields.FirstOrDefault(p => p.Type == FieldType.FieldNone);
+            if (fieldUnknown != null)
+                Assert.AreEqual(FieldType.FieldNone, fieldUnknown.Type);
+            else
+                Assert.Fail("FieldUnknown doesn't exist");
+            //ExEnd
+        }
+
+
         [Test]
         public void InsertTcField()
         {

@@ -162,6 +162,17 @@ namespace ApiExamples
         }
 
         [Test]
+        public void InsertHorizontalRule()
+        {
+            //ExStart
+            //ExFor:DocumentBuilder.InsertHorizontalRule
+            //ExSummary:Shows how to insert horizontal rule shape in a document.
+            DocumentBuilder builder = new DocumentBuilder();
+            builder.InsertHorizontalRule();
+            //ExEnd
+        }
+
+        [Test]
         public void FieldLocale()
         {
             //ExStart
