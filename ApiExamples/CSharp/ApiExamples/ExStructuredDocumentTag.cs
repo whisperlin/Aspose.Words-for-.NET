@@ -45,7 +45,7 @@ namespace ApiExamples
             Assert.AreEqual(SdtType.RichText, sdTagRichText.SdtType);
         }
 
-        [Test] //TODO:Check
+        [Test]
         public void SetSpecificStyleToSdt()
         {
             //ExStart

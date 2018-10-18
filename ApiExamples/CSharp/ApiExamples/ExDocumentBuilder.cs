@@ -461,7 +461,7 @@ namespace ApiExamples
             builder.Writeln("");
             builder.Writeln("");
 
-            String[] items =
+            string[] items =
             {
                 "-- Select your favorite footwear --", "Sneakers", "Oxfords", "Flip-flops", "Other",
                 "I prefer to be barefoot"
@@ -2054,7 +2054,7 @@ namespace ApiExamples
             //ExStart
             //ExFor:DocumentBuilder.InsertDocument(Document, ImportFormatMode)
             //ExFor:ImportFormatMode.KeepSourceFormatting
-            //ExSummary:Shows how to insert a document content into another document keep formating of inserted document.
+            //ExSummary:Shows how to insert a document content into another document keep formatting of inserted document.
             Document doc = new Document(MyDir + "Document.docx");
 
             DocumentBuilder builder = new DocumentBuilder(doc);

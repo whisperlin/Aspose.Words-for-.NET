@@ -1154,15 +1154,13 @@ namespace ApiExamples
         {
             Document doc = new Document(MyDir + "Shape.ShapeSize.docx");
 
-            //How we know about reletive size???
             Shape shape = (Shape) doc.GetChild(NodeType.Shape, 0, true);
 
-            //Change shape size and rotation
+            // Change shape size and rotation
             shape.Height = 300;
             shape.Width = 500;
             shape.Rotation = 30;
 
-            //How assert result without reletive sizes???
             doc.Save(MyDir + @"\Artifacts\Shape.Resize.docx");
         }
 

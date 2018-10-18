@@ -8,9 +8,7 @@
 //////////////////////////////////////////////////////////////////////////
 
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Data;
 using System.Text;
 using System.Globalization;
 using System.IO;
@@ -23,7 +21,6 @@ using Aspose.Words.BuildingBlocks;
 using Aspose.Words.Fields;
 using Aspose.Words.Replacing;
 using NUnit.Framework;
-using NUnit.Framework.Constraints;
 
 namespace ApiExamples
 {
@@ -166,7 +163,7 @@ namespace ApiExamples
             //ExEnd
         }
 
-        [Test] //TODO: Check
+        [Test]
         public void InsertFieldNone()
         {
             //ExStart
@@ -270,13 +267,13 @@ namespace ApiExamples
         private class InsertTcFieldHandler : IReplacingCallback
         {
             // Store the text and switches to be used for the TC fields.
-            private readonly String mFieldText;
-            private readonly String mFieldSwitches;
+            private readonly string mFieldText;
+            private readonly string mFieldSwitches;
 
             /// <summary>
             /// The display text and switches to use for each TC field. Display name can be an empty String or null.
             /// </summary>
-            public InsertTcFieldHandler(String text, String switches)
+            public InsertTcFieldHandler(string text, string switches)
             {
                 mFieldText = text;
                 mFieldSwitches = switches;
@@ -293,13 +290,13 @@ namespace ApiExamples
                 // match String as the display text.
                 String insertText;
 
-                if (!String.IsNullOrEmpty(mFieldText))
+                if (!string.IsNullOrEmpty(mFieldText))
                     insertText = mFieldText;
                 else
                     insertText = args.Match.Value;
 
                 // Insert the TC field before this node using the specified String as the display text and user defined switches.
-                builder.InsertField(String.Format("TC \"{0}\" {1}", insertText, mFieldSwitches));
+                builder.InsertField(string.Format("TC \"{0}\" {1}", insertText, mFieldSwitches));
 
                 // We have done what we want so skip replacement.
                 return ReplaceAction.Skip;
